@@ -93,10 +93,6 @@ class mainPageVC: UIViewController, UITextFieldDelegate
         return jsonData
     }
 
-    @IBAction func hideButton(sender: UIButton) {
-        performSegueWithIdentifier("nextView", sender: self)
-    }
-
     @IBAction func loginButton(sender: UIButton)
     {
         let username: NSString = loginTF.text!

@@ -15,6 +15,7 @@
 		355C50BC1CEF66C000DC2631 /* mark1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C50BB1CEF66C000DC2631 /* mark1Tests.swift */; };
 		35639EA21CF312CE00B2A54C /* signUpPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35639EA11CF312CE00B2A54C /* signUpPageVC.swift */; };
 		35639EA41CF449DE00B2A54C /* homePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35639EA31CF449DE00B2A54C /* homePageVC.swift */; };
+		35639EA61CF4751900B2A54C /* userClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35639EA51CF4751900B2A54C /* userClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		355C50BD1CEF66C000DC2631 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35639EA11CF312CE00B2A54C /* signUpPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpPageVC.swift; sourceTree = "<group>"; };
 		35639EA31CF449DE00B2A54C /* homePageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homePageVC.swift; sourceTree = "<group>"; };
+		35639EA51CF4751900B2A54C /* userClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				355C50A61CEF66BC00DC2631 /* AppDelegate.swift */,
 				35639EA11CF312CE00B2A54C /* signUpPageVC.swift */,
 				355C50A81CEF66BC00DC2631 /* mainPageVC.swift */,
+				35639EA51CF4751900B2A54C /* userClass.swift */,
 				355C50AA1CEF66BC00DC2631 /* Main.storyboard */,
 				35639EA31CF449DE00B2A54C /* homePageVC.swift */,
 				355C50AD1CEF66BC00DC2631 /* Assets.xcassets */,
@@ -209,6 +212,7 @@
 				355C50A71CEF66BC00DC2631 /* AppDelegate.swift in Sources */,
 				35639EA41CF449DE00B2A54C /* homePageVC.swift in Sources */,
 				35639EA21CF312CE00B2A54C /* signUpPageVC.swift in Sources */,
+				35639EA61CF4751900B2A54C /* userClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
