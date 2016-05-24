@@ -16,7 +16,8 @@ class signUpPageVC: UIViewController, UITextFieldDelegate
     @IBOutlet weak var passwdTF: UITextField!
     @IBOutlet weak var passwdTF2: UITextField!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.loginTF.delegate = self
         self.mailTF.delegate = self
@@ -24,6 +25,12 @@ class signUpPageVC: UIViewController, UITextFieldDelegate
         self.passwdTF2.delegate = self
         hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        view.endEditing(true)
+        return false
     }
 
     override func didReceiveMemoryWarning() {

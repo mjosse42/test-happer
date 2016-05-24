@@ -11,7 +11,7 @@ import Foundation
 
 enum eRank: Int
 {
-    case silver
+    case silver = 1
     case gold
     case platine
     case ruby
@@ -20,13 +20,13 @@ enum eRank: Int
 
 class userClass
 {
-    private var userId: Int
+    private var userId: NSInteger
     private var userName: NSString
     private var userMail: NSString
     private var loggued: Bool
     private var rank: eRank
-    private var credit: Int
-    private var xP: Int
+    private var credit: NSInteger
+    private var xP: NSInteger
     
     init()
     {
@@ -52,7 +52,7 @@ class userClass
     
     // MARK: getters
     
-    func getUserId() -> Int
+    func getUserId() -> NSInteger
     {
         return self.userId
     }
@@ -72,17 +72,32 @@ class userClass
         return self.rank
     }
     
-    func getCredit() -> Int
+    func getCredit() -> NSInteger
     {
         return self.credit
     }
     
-    func getXp() -> Int
+    func getXp() -> NSInteger
     {
         return self.xP
     }
     
     // MARK: setters
+    
+    func setUserId(new: NSInteger)
+    {
+        self.userId = new
+    }
+    
+    func loggued_in()
+    {
+        self.loggued = true
+    }
+    
+    func loggued_out()
+    {
+        self.loggued = false
+    }
     
     func setUserName(new: NSString)
     {
@@ -94,13 +109,32 @@ class userClass
         self.userMail = new
     }
     
-    func addCredit(amount: Int)
+    func addCredit(amount: NSInteger)
     {
         self.credit += amount
     }
     
-    func addXp(amount: Int)
+    func addXp(amount: NSInteger)
     {
         self.xP += amount
+    }
+    
+    func setRank(rank: NSInteger)
+    {
+        switch rank
+        {
+            case 1:
+                self.rank = eRank.silver
+            case 2:
+                self.rank = eRank.gold
+            case 3:
+                self.rank = eRank.platine
+            case 4:
+                self.rank = eRank.ruby
+            case 5:
+                self.rank = eRank.saphir
+            default:
+                self.rank = eRank.silver
+        }
     }
 }

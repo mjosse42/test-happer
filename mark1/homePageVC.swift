@@ -11,16 +11,39 @@ import UIKit
 class homePageVC: UIViewController
 {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let tab = parseJSON(getJSON())
+        print(tab)
+        print("end")
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func getJSON() -> NSData
+    {
+        let url: String = "http://192.168.0.50:8888/getproducts.php"
+        return NSData(contentsOfURL: NSURL(string: url)!)!
+    }
+    
+    func parseJSON(inputData: NSData) -> NSDictionary?
+    {
+        var boardsDictionary: NSDictionary? = nil
+        do
+        {
+            try boardsDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+        }
+        catch
+        {
+            print("Error")
+        }
+        return boardsDictionary
+    }
 
     /*
     // MARK: - Navigation

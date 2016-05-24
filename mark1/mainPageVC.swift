@@ -27,6 +27,7 @@ class mainPageVC: UIViewController, UITextFieldDelegate
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwdTF: UITextField!
     
+    let userSession: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
@@ -36,6 +37,7 @@ class mainPageVC: UIViewController, UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.loginTF.delegate = self
         self.passwdTF.delegate = self
         hideKeyboardWhenTappedAround()
@@ -122,7 +124,16 @@ class mainPageVC: UIViewController, UITextFieldDelegate
             }
             else
             {
+                let user = userClass()
                 print("loggued in")
+                user.setUserId(jsonData!.valueForKey("id") as! NSInteger)
+                user.setUserName(jsonData!.valueForKey("login") as! NSString)
+                user.setUserMail(jsonData!.valueForKey("mail") as! NSString)
+                user.setRank(jsonData!.valueForKey("rank") as! NSInteger)
+                user.addXp(jsonData!.valueForKey("exp") as! NSInteger)
+                user.addCredit(jsonData!.valueForKey("credit") as! NSInteger)
+                userSession.setObject(user, forKey: "user")
+                user.loggued_in()
             }
         }
     }
