@@ -10,10 +10,11 @@ import UIKit
 
 class homePageVC: UIViewController
 {
+    // MARK: Properties
+    @IBOutlet weak var buttonOutlet: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -33,4 +34,23 @@ class homePageVC: UIViewController
     }
     */
 
+    // MARK: Actions
+    @IBAction func bitchButton(sender: UIButton) {
+        let button = buttonOutlet!
+        if button.backgroundColor == UIColor.orangeColor() {
+            button.backgroundColor = UIColor.magentaColor()
+        }
+        else if button.backgroundColor == UIColor.magentaColor() {
+            button.backgroundColor = UIColor.cyanColor()
+        }
+        else if button.backgroundColor == UIColor.cyanColor() {
+            button.backgroundColor = UIColor.yellowColor()
+        }
+        else if button.backgroundColor == UIColor.yellowColor() {
+            button.backgroundColor = UIColor.redColor()
+        }
+        else if button.backgroundColor == UIColor.redColor() {
+            button.backgroundColor = UIColor.orangeColor()
+        }
+    }
 }
