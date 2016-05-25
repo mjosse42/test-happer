@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3543B6F41CF607FA005762E5 /* signUpv2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B6F31CF607F9005762E5 /* signUpv2VC.swift */; };
 		355C50A71CEF66BC00DC2631 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C50A61CEF66BC00DC2631 /* AppDelegate.swift */; };
 		355C50A91CEF66BC00DC2631 /* mainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C50A81CEF66BC00DC2631 /* mainPageVC.swift */; };
 		355C50AC1CEF66BC00DC2631 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 355C50AA1CEF66BC00DC2631 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3543B6F31CF607F9005762E5 /* signUpv2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpv2VC.swift; sourceTree = "<group>"; };
 		355C50A31CEF66BA00DC2631 /* mark1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mark1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		355C50A61CEF66BC00DC2631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		355C50A81CEF66BC00DC2631 /* mainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainPageVC.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				355C50A81CEF66BC00DC2631 /* mainPageVC.swift */,
 				35639EA51CF4751900B2A54C /* userClass.swift */,
 				355C50AA1CEF66BC00DC2631 /* Main.storyboard */,
+				3543B6F31CF607F9005762E5 /* signUpv2VC.swift */,
 				35639EA31CF449DE00B2A54C /* homePageVC.swift */,
 				355C50AD1CEF66BC00DC2631 /* Assets.xcassets */,
 				355C50AF1CEF66BD00DC2631 /* LaunchScreen.storyboard */,
@@ -236,6 +239,7 @@
 				355C50A71CEF66BC00DC2631 /* AppDelegate.swift in Sources */,
 				35639EA41CF449DE00B2A54C /* homePageVC.swift in Sources */,
 				35639EA21CF312CE00B2A54C /* signUpPageVC.swift in Sources */,
+				3543B6F41CF607FA005762E5 /* signUpv2VC.swift in Sources */,
 				35639EA61CF4751900B2A54C /* userClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
