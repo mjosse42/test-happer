@@ -20,8 +20,8 @@
 		550E0BCF1CF59B8B00AD3E2E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */; };
 		550E0BD11CF59B9000AD3E2E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BD01CF59B9000AD3E2E /* FBSDKLoginKit.framework */; };
 		550E0BD31CF59B9C00AD3E2E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BD21CF59B9C00AD3E2E /* FBSDKShareKit.framework */; };
-		55E891E31CF5F12900BF79D3 /* Didot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55E891E21CF5F12900BF79D3 /* Didot.ttf */; };
-		55E891E51CF5F13300BF79D3 /* NeutraTextBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55E891E41CF5F13300BF79D3 /* NeutraTextBook.otf */; };
+		55E891E71CF5F86900BF79D3 /* NeutraTextBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55E891E61CF5F86900BF79D3 /* NeutraTextBook.otf */; };
+		55E891E91CF5F87600BF79D3 /* Didot.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55E891E81CF5F87600BF79D3 /* Didot.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		550E0BD01CF59B9000AD3E2E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		550E0BD21CF59B9C00AD3E2E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		55E891E21CF5F12900BF79D3 /* Didot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Didot.ttf; path = ../../Downloads/Polices/Didot.ttf; sourceTree = "<group>"; };
-		55E891E41CF5F13300BF79D3 /* NeutraTextBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NeutraTextBook.otf; path = ../../Downloads/Polices/NeutraTextBook.otf; sourceTree = "<group>"; };
+		55E891E61CF5F86900BF79D3 /* NeutraTextBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeutraTextBook.otf; sourceTree = "<group>"; };
+		55E891E81CF5F87600BF79D3 /* Didot.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Didot.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,8 @@
 		355C509A1CEF66BA00DC2631 = {
 			isa = PBXGroup;
 			children = (
-				55E891E41CF5F13300BF79D3 /* NeutraTextBook.otf */,
-				55E891E21CF5F12900BF79D3 /* Didot.ttf */,
+				55E891E81CF5F87600BF79D3 /* Didot.ttf */,
+				55E891E61CF5F86900BF79D3 /* NeutraTextBook.otf */,
 				550E0BD21CF59B9C00AD3E2E /* FBSDKShareKit.framework */,
 				550E0BD01CF59B9000AD3E2E /* FBSDKLoginKit.framework */,
 				550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */,
@@ -213,8 +213,8 @@
 				355C50B11CEF66BD00DC2631 /* LaunchScreen.storyboard in Resources */,
 				355C50AE1CEF66BC00DC2631 /* Assets.xcassets in Resources */,
 				355C50AC1CEF66BC00DC2631 /* Main.storyboard in Resources */,
-				55E891E31CF5F12900BF79D3 /* Didot.ttf in Resources */,
-				55E891E51CF5F13300BF79D3 /* NeutraTextBook.otf in Resources */,
+				55E891E71CF5F86900BF79D3 /* NeutraTextBook.otf in Resources */,
+				55E891E91CF5F87600BF79D3 /* Didot.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
