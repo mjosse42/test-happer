@@ -41,5 +41,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+    <key>Fonts provided by application</key>
+    <array>
+        <string>NeutraTextBook.otf</string>
+        <string>Didot.ttf</string>
+    </array>
 </dict>
 </plist>
