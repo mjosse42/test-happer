@@ -3,11 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--mainPage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController title="mainPage" id="BYZ-38-t0r" customClass="mainPageVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -16,13 +18,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-qf-EkM">
+                                <rect key="frame" x="167" y="258" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9qo-KP-Bgz"/>
+                                    <constraint firstAttribute="height" constant="80" id="qDY-NE-VXn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAPPER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntl-II-fgd">
+                                <rect key="frame" x="157" y="323" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G4E-QQ-xOb"/>
+                                    <constraint firstAttribute="width" constant="100" id="vJs-Ns-9I9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0A-5J-eDI">
+                                <rect key="frame" x="20" y="590" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="7WT-Et-WmR"/>
+                                    <constraint firstAttribute="height" constant="30" id="h4r-w1-Y5J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Connexion">
+                                    <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-0X-y7j" customClass="FBSDKButton">
+                                <rect key="frame" x="20" y="552" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tk3-j6-OAs"/>
+                                </constraints>
+                                <state key="normal" title="Bouton facebook"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSZ-N0-1AD">
+                                <rect key="frame" x="234" y="590" width="160" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="4fb-1Y-xC0"/>
+                                    <constraint firstAttribute="height" constant="30" id="9yy-0e-BYV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Créer un compte">
+                                    <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ntl-II-fgd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2sq-Ew-AcS"/>
+                            <constraint firstItem="wWq-qf-EkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8F6-9i-XFj"/>
+                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9NH-H0-6Zp"/>
+                            <constraint firstItem="FSZ-N0-1AD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Bzv-vf-VpB"/>
+                            <constraint firstItem="wWq-qf-EkM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-70" id="EzR-ll-iwv"/>
+                            <constraint firstItem="ntl-II-fgd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="FLC-NY-e0Q"/>
+                            <constraint firstItem="33h-0X-y7j" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="HM9-qf-jrI"/>
+                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="8" id="KGD-Jh-gmX"/>
+                            <constraint firstItem="33h-0X-y7j" firstAttribute="top" secondItem="ntl-II-fgd" secondAttribute="bottom" constant="199" id="eGb-pg-btc"/>
+                            <constraint firstItem="33h-0X-y7j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lps-b1-lXs"/>
+                            <constraint firstItem="FSZ-N0-1AD" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="8" id="vbo-Eu-dBe"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-602" y="238"/>
+            <point key="canvasLocation" x="-947" y="201"/>
         </scene>
         <!--Sign Up PageVC-->
         <scene sceneID="HAx-39-IJc">
@@ -163,7 +225,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVP-gI-h36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-115" y="238"/>
+            <point key="canvasLocation" x="-116" y="201"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_Happer" width="256" height="256"/>
+    </resources>
 </document>

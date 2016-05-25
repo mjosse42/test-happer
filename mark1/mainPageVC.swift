@@ -21,11 +21,28 @@ extension UIViewController
         self.hideKeyboardWhenTappedAround()
     }
 }
+
+extension UIView
+{
+    func addBackground()
+    {
+        let width = UIScreen.mainScreen().bounds.size.width
+        let height = UIScreen.mainScreen().bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, width, height))
+        imageViewBackground.image = UIImage(named: "background_connexion.png")
+        
+        imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        self.addSubview(imageViewBackground)
+        self.sendSubviewToBack(imageViewBackground)
+    }}
+
 class mainPageVC: UIViewController, UITextFieldDelegate
 {
     
-    @IBOutlet weak var loginTF: UITextField!
-    @IBOutlet weak var passwdTF: UITextField!
+    //@IBOutlet weak var loginTF: UITextField!
+    //@IBOutlet weak var passwdTF: UITextField!
     
     let userSession: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
@@ -38,9 +55,11 @@ class mainPageVC: UIViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loginTF.delegate = self
-        self.passwdTF.delegate = self
+        //self.loginTF.delegate = self
+        //self.passwdTF.delegate = self
         hideKeyboardWhenTappedAround()
+        self.view.addBackground()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -48,7 +67,7 @@ class mainPageVC: UIViewController, UITextFieldDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    /*
     func login(login: NSString, passwd: NSString) -> NSDictionary?
     {
         var jsonData: NSDictionary = NSDictionary()
@@ -137,5 +156,6 @@ class mainPageVC: UIViewController, UITextFieldDelegate
             }
         }
     }
+ */
 }
 
