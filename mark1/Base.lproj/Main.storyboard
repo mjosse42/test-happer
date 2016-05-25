@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NeutraTextBook.otf">
@@ -41,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSZ-N0-1AD">
-                                <rect key="frame" x="224" y="479" width="160" height="30"/>
+                                <rect key="frame" x="224" y="510" width="160" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="4fb-1Y-xC0"/>
                                     <constraint firstAttribute="height" constant="30" id="9yy-0e-BYV"/>
@@ -52,14 +51,15 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-0X-y7j" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="30" y="441" width="354" height="30"/>
+                                <rect key="frame" x="132" y="456" width="150" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="tk3-j6-OAs"/>
+                                    <constraint firstAttribute="width" constant="150" id="RG7-Vk-Wlc"/>
+                                    <constraint firstAttribute="height" constant="40" id="tk3-j6-OAs"/>
                                 </constraints>
                                 <state key="normal" title="Bouton facebook"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0A-5J-eDI">
-                                <rect key="frame" x="30" y="479" width="140" height="30"/>
+                                <rect key="frame" x="30" y="510" width="140" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="7WT-Et-WmR"/>
                                     <constraint firstAttribute="height" constant="30" id="h4r-w1-Y5J"/>
@@ -74,15 +74,14 @@
                         <constraints>
                             <constraint firstItem="ntl-II-fgd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2sq-Ew-AcS"/>
                             <constraint firstItem="wWq-qf-EkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8F6-9i-XFj"/>
-                            <constraint firstItem="33h-0X-y7j" firstAttribute="top" secondItem="ntl-II-fgd" secondAttribute="bottom" constant="83" id="9bp-jp-77G"/>
                             <constraint firstItem="wWq-qf-EkM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="EzR-ll-iwv"/>
                             <constraint firstItem="ntl-II-fgd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="FLC-NY-e0Q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FSZ-N0-1AD" secondAttribute="trailing" constant="10" id="TiQ-Vp-h77"/>
-                            <constraint firstItem="33h-0X-y7j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="i8k-zU-46y"/>
-                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="kUd-Up-1lV"/>
-                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="8" id="lh6-Mj-ebq"/>
-                            <constraint firstAttribute="trailing" secondItem="33h-0X-y7j" secondAttribute="trailing" constant="30" id="pbz-Fy-Hm9"/>
-                            <constraint firstItem="FSZ-N0-1AD" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="8" id="qnT-8U-uTm"/>
+                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="G7J-D9-Vbf"/>
+                            <constraint firstItem="FSZ-N0-1AD" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="14" id="KCU-qV-i19"/>
+                            <constraint firstAttribute="trailing" secondItem="FSZ-N0-1AD" secondAttribute="trailing" constant="30" id="nYS-1R-gRf"/>
+                            <constraint firstItem="33h-0X-y7j" firstAttribute="top" secondItem="ntl-II-fgd" secondAttribute="bottom" constant="98" id="nfw-WN-0iw"/>
+                            <constraint firstItem="33h-0X-y7j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sl1-ET-uKe"/>
+                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="14" id="tPu-Ay-7hv"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
