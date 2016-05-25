@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3543B6F21CF5DDD6005762E5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		355C50A31CEF66BA00DC2631 /* mark1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mark1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		355C50A61CEF66BC00DC2631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		355C50A81CEF66BC00DC2631 /* mainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainPageVC.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 				35639EA11CF312CE00B2A54C /* signUpPageVC.swift */,
 				355C50A81CEF66BC00DC2631 /* mainPageVC.swift */,
 				35639EA51CF4751900B2A54C /* userClass.swift */,
+				3543B6F21CF5DDD6005762E5 /* Bridging-Header.h */,
 				355C50AA1CEF66BC00DC2631 /* Main.storyboard */,
 				35639EA31CF449DE00B2A54C /* homePageVC.swift */,
 				355C50AD1CEF66BC00DC2631 /* Assets.xcassets */,
@@ -366,6 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Josse.mark1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "mark1/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -382,6 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Josse.mark1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "mark1/Bridging-Header.h";
 			};
 			name = Release;
 		};

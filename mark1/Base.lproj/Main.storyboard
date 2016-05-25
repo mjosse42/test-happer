@@ -47,7 +47,7 @@
                                     <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-0X-y7j" customClass="FBSDKButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-0X-y7j" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="20" y="552" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="tk3-j6-OAs"/>
@@ -82,6 +82,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="fbLogin" destination="33h-0X-y7j" id="5J5-p0-pVd"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-947" y="201"/>

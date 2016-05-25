@@ -38,11 +38,12 @@ extension UIView
         self.sendSubviewToBack(imageViewBackground)
     }}
 
-class mainPageVC: UIViewController, UITextFieldDelegate
+class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate
 {
     
     //@IBOutlet weak var loginTF: UITextField!
     //@IBOutlet weak var passwdTF: UITextField!
+    @IBOutlet weak var fbLogin: FBSDKLoginButton!
     
     let userSession: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
@@ -54,7 +55,8 @@ class mainPageVC: UIViewController, UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.fbLogin.readPermissions = ["public_profile","email", "user_friends" ]
+        self.fbLogin.delegate = self
         //self.loginTF.delegate = self
         //self.passwdTF.delegate = self
         hideKeyboardWhenTappedAround()
@@ -157,5 +159,15 @@ class mainPageVC: UIViewController, UITextFieldDelegate
         }
     }
  */
+    // MARK: FBSDK
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
+    {
+        
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
+    {
+        
+    }
 }
 
