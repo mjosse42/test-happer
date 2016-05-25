@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NeutraTextBook.otf">
@@ -39,49 +40,47 @@
                                 <color key="textColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSZ-N0-1AD">
-                                <rect key="frame" x="224" y="510" width="160" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0A-5J-eDI">
+                                <rect key="frame" x="56" y="492" width="115" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="4fb-1Y-xC0"/>
-                                    <constraint firstAttribute="height" constant="30" id="9yy-0e-BYV"/>
+                                    <constraint firstAttribute="width" constant="115" id="Zwa-Fb-5KB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="20"/>
-                                <state key="normal" title="Créer un compte">
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="15"/>
+                                <state key="normal" title="Connexion">
                                     <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-0X-y7j" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="132" y="456" width="150" height="40"/>
+                                <rect key="frame" x="56" y="428" width="302" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="RG7-Vk-Wlc"/>
                                     <constraint firstAttribute="height" constant="40" id="tk3-j6-OAs"/>
                                 </constraints>
                                 <state key="normal" title="Bouton facebook"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0A-5J-eDI">
-                                <rect key="frame" x="30" y="510" width="140" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSZ-N0-1AD">
+                                <rect key="frame" x="214" y="492" width="144" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="7WT-Et-WmR"/>
-                                    <constraint firstAttribute="height" constant="30" id="h4r-w1-Y5J"/>
+                                    <constraint firstAttribute="width" constant="144" id="QM1-vx-BNe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="20"/>
-                                <state key="normal" title="Connexion">
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="15"/>
+                                <state key="normal" title="Créer un compte">
                                     <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="33h-0X-y7j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="1Ua-aW-d8G"/>
                             <constraint firstItem="ntl-II-fgd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2sq-Ew-AcS"/>
+                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="leading" secondItem="33h-0X-y7j" secondAttribute="leading" id="6Cz-98-cza"/>
                             <constraint firstItem="wWq-qf-EkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8F6-9i-XFj"/>
                             <constraint firstItem="wWq-qf-EkM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="EzR-ll-iwv"/>
                             <constraint firstItem="ntl-II-fgd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="FLC-NY-e0Q"/>
-                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="G7J-D9-Vbf"/>
-                            <constraint firstItem="FSZ-N0-1AD" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="14" id="KCU-qV-i19"/>
-                            <constraint firstAttribute="trailing" secondItem="FSZ-N0-1AD" secondAttribute="trailing" constant="30" id="nYS-1R-gRf"/>
-                            <constraint firstItem="33h-0X-y7j" firstAttribute="top" secondItem="ntl-II-fgd" secondAttribute="bottom" constant="98" id="nfw-WN-0iw"/>
-                            <constraint firstItem="33h-0X-y7j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sl1-ET-uKe"/>
-                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="14" id="tPu-Ay-7hv"/>
+                            <constraint firstItem="33h-0X-y7j" firstAttribute="top" secondItem="ntl-II-fgd" secondAttribute="bottom" constant="70" id="FOi-Ww-JXZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="33h-0X-y7j" secondAttribute="trailing" constant="36" id="XIP-gn-5uc"/>
+                            <constraint firstItem="FSZ-N0-1AD" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="24" id="d59-Sk-MGM"/>
+                            <constraint firstItem="Q0A-5J-eDI" firstAttribute="top" secondItem="33h-0X-y7j" secondAttribute="bottom" constant="24" id="hKQ-nU-ZlB"/>
+                            <constraint firstItem="FSZ-N0-1AD" firstAttribute="trailing" secondItem="33h-0X-y7j" secondAttribute="trailing" id="u5g-XD-2Z4"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
