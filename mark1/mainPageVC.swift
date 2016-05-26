@@ -11,9 +11,6 @@ import FBSDKLoginKit
 
 class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate
 {
-    
-    //@IBOutlet weak var loginTF: UITextField!
-    //@IBOutlet weak var passwdTF: UITextField!
     @IBOutlet weak var fbLogin: FBSDKLoginButton!
     
     let userSession: NSUserDefaults = NSUserDefaults.standardUserDefaults()

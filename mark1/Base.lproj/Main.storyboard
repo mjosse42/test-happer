@@ -189,6 +189,7 @@
                         <outlet property="tField_1" destination="L8D-NH-fUq" id="IKp-Nr-Rah"/>
                         <outlet property="tField_2" destination="Ksc-co-RV2" id="k8l-4y-HnY"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="loginToMain" animates="NO" id="zoh-3y-ipI"/>
+                        <segue destination="IHr-4q-7wu" kind="show" identifier="loginToHome" animates="NO" id="wqX-ng-w2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAc-Yp-fPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,7 +199,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-425" y="227"/>
+            <point key="canvasLocation" x="-604" y="370"/>
         </scene>
         <!--Inscription-->
         <scene sceneID="5ny-BM-ReH">
@@ -338,13 +339,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVP-gI-h36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415" y="1134"/>
+            <point key="canvasLocation" x="136" y="227"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo_Happer" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Klt-wO-wzK"/>
+        <segue reference="zoh-3y-ipI"/>
+        <segue reference="Qn7-yz-mdU"/>
     </inferredMetricsTieBreakers>
 </document>

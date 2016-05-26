@@ -157,75 +157,89 @@ class signUpVC: UIViewController, UITextFieldDelegate
     
     @IBAction func createAccount(sender: UIButton)
     {
-        if (!checkFields())
+        if (!checkFields()) // fonction a ameliorer, meilleur parsing largement envisageable
         {
             return
         }
-        //return // =====>> MARK: A virer
+        
         let login = NSString(string: self.Field_1.text!)
         let mail = NSString(string: self.Field_2.text!)
         let passwd = NSString(string: self.Field_3.text!)
         let conf = NSString(string: self.Field_4.text!)
-        if (conf.isEqualToString(passwd as String))
+
+
+        if (conf.isEqualToString(passwd as String)) // les deux passwords sont égaux, sinon on ne va pas plus loin
         {
+            
+            
             var jsonData = NSDictionary()
             let postr = NSString(string : "login=\(login)&passwd=\(passwd)&mail=\(mail)")
             let url = NSURL(string: "http://192.168.0.50:8888/adduser.php")
+            
+            // comme pour le login pour l'instant
+            
             let request = NSMutableURLRequest(URL :url!)
-            let postData: NSData = postr.dataUsingEncoding(NSASCIIStringEncoding)!
             request.HTTPMethod = "POST"
+            
+            let postData: NSData = postr.dataUsingEncoding(NSUTF8StringEncoding)!
             request.HTTPBody = postData
-            print(request.HTTPBody)
+            
+            
             let postLength: NSString = String(postData.length)
+            
+            
             request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
+            
             var response: NSURLResponse?
+            
             var urlData: NSData?
+
             do
             {
                 urlData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
             }
-            catch _ as NSError
-            {
-                urlData = nil
-            }
             catch
             {
-                fatalError()
+                print("Catch-Location:: 'signUpVC.swift' :: sendingSyncronousRequest <urlData>")
             }
-            if (urlData != nil)
+            
+            let res = response as! NSHTTPURLResponse!
+
+            if (res.statusCode >= 200 && res.statusCode < 300)
             {
-                let res = response as! NSHTTPURLResponse!
-                if (res.statusCode >= 200 && res.statusCode < 300)
+                
+                do
                 {
-                    do
-                    {
-                        jsonData = try NSJSONSerialization.JSONObjectWithData(urlData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                    }
-                    catch
-                    {
-                        print("Erreure de récuperation du fichier JSON")
-                    }
+                    jsonData = try NSJSONSerialization.JSONObjectWithData(urlData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                 }
-                else
+                catch
                 {
-                    print(res.statusCode)
-                    return
+                    print("Catch-Location:: 'signUpVC.swift' :: sendingSyncronousRequest <jsonData>")
                 }
             }
+                
+            else
+            {
+                print("Server Status Code : \(res.statusCode)")
+                return
+            }
+            
             print(jsonData)
+            
             let success: NSInteger = jsonData.valueForKey("success") as! NSInteger
             if (success == 1)
             {
-                print("Un compte à été ajouté")
+                print("SUCCESS")
             }
             else
             {
-                print("Rien n'a été créé")
+                print("FAIL")
             }
         }
-        else
+
+        else // alert passwd don't match
         {
             let alert = UIAlertController(title: "Une erreur est survenue", message: "Les mots de passe ne correspondent pas", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Modifier", style: UIAlertActionStyle.Default, handler: nil))
