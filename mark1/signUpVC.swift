@@ -1,5 +1,5 @@
 //
-//  signUpv2VC.swift
+//  signUpVC.swift
 //  mark1
 //
 //  Created by Josse on 25/05/2016.
@@ -73,7 +73,7 @@ extension UITextField {
     }
 }
 
-class signUpv2VC: UIViewController, UITextFieldDelegate
+class signUpVC: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var Field_1: UITextField!
     @IBOutlet weak var Field_2: UITextField!
