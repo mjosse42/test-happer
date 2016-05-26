@@ -23,11 +23,11 @@ class signUpPageVC: UIViewController, UITextFieldDelegate
         self.mailTF.delegate = self
         self.passwdTF.delegate = self
         self.passwdTF2.delegate = self
-        hideKeyboardWhenTappedAround()
+        
         // Do any additional setup after loading the view.
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+     override func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         view.endEditing(true)
         return false

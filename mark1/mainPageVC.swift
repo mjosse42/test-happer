@@ -9,36 +9,6 @@
 import UIKit
 import FBSDKLoginKit
 
-extension UIViewController
-{
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:
-            #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-        self.hideKeyboardWhenTappedAround()
-    }
-}
-
-extension UIView
-{
-    func addBackground()
-    {
-        let width = UIScreen.mainScreen().bounds.size.width
-        let height = UIScreen.mainScreen().bounds.size.height
-        
-        let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, width, height))
-        imageViewBackground.image = UIImage(named: "background_connexion.png")
-        
-        imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
-        
-        self.addSubview(imageViewBackground)
-        self.sendSubviewToBack(imageViewBackground)
-    }}
-
 class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate
 {
     
@@ -48,19 +18,13 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
     
     let userSession: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
-    {
-        view.endEditing(true)
-        return false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fbLogin.readPermissions = ["public_profile","email", "user_friends" ]
         self.fbLogin.delegate = self
         //self.loginTF.delegate = self
         //self.passwdTF.delegate = self
-        hideKeyboardWhenTappedAround()
+        initKeyboard()
         self.view.addBackground()
         
         // Do any additional setup after loading the view, typically from a nib.
