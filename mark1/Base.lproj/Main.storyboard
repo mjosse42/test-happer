@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -117,12 +117,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="79e-hy-cRP">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="79e-hy-cRP">
                                 <rect key="frame" x="167" y="248" width="80" height="80"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="dr4-B3-Y0C"/>
                                     <constraint firstAttribute="width" constant="80" id="rLJ-Hu-ox1"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qby-XU-7CC" appends="YES" id="Hdz-Wu-deg"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="30" text="HAPPER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fo-0w-kiY">
                                 <rect key="frame" x="157" y="318" width="100" height="40"/>
@@ -184,9 +188,15 @@
                     <connections>
                         <outlet property="tField_1" destination="L8D-NH-fUq" id="IKp-Nr-Rah"/>
                         <outlet property="tField_2" destination="Ksc-co-RV2" id="k8l-4y-HnY"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginToMain" animates="NO" id="zoh-3y-ipI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAc-Yp-fPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qby-XU-7CC">
+                    <connections>
+                        <action selector="tapFunc:" destination="nhE-Zw-r47" id="NyJ-C3-bIo"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-425" y="227"/>
         </scene>
@@ -202,12 +212,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-Lz-lne">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-Lz-lne">
                                 <rect key="frame" x="167" y="248" width="80" height="80"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="OXM-Oc-nKJ"/>
                                     <constraint firstAttribute="width" constant="80" id="rhh-0z-0wz"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zFa-lc-cP9" appends="YES" id="OGh-J3-5hY"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="30" text="HAPPER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkj-iM-mf9">
                                 <rect key="frame" x="157" y="318" width="100" height="40"/>
@@ -296,10 +310,15 @@
                         <outlet property="Field_2" destination="FBO-8N-77Z" id="W1i-Bj-Vkx"/>
                         <outlet property="Field_3" destination="YII-qw-VeX" id="jHQ-fn-6za"/>
                         <outlet property="Field_4" destination="Kdh-27-uG9" id="RPp-WA-VKs"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="signUpToMain" id="Klt-wO-wzK"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="signUpToMain" animates="NO" id="Klt-wO-wzK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvq-pV-KOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zFa-lc-cP9">
+                    <connections>
+                        <action selector="tapLogo:" destination="1tZ-WF-BKT" id="2sp-EL-ffc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1171" y="1189"/>
         </scene>
@@ -325,4 +344,7 @@
     <resources>
         <image name="logo_Happer" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Klt-wO-wzK"/>
+    </inferredMetricsTieBreakers>
 </document>

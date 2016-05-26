@@ -14,7 +14,6 @@ class loginPageVC: UIViewController, UITextFieldDelegate
     @IBOutlet weak var tField_1: UITextField!
     @IBOutlet weak var tField_2: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addBackground()
@@ -48,5 +47,9 @@ class loginPageVC: UIViewController, UITextFieldDelegate
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func tapFunc(sender: UITapGestureRecognizer)
+    {
+        performSegueWithIdentifier("loginToMain", sender: self)
+    }
 
 }

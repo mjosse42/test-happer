@@ -236,5 +236,9 @@ class signUpVC: UIViewController, UITextFieldDelegate
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func tapLogo(sender: UITapGestureRecognizer) {
+        performSegueWithIdentifier("signUpToMain", sender: self)
+    }
 
 }
