@@ -79,22 +79,6 @@ class signUpv2VC: UIViewController, UITextFieldDelegate
     @IBOutlet weak var Field_2: UITextField!
     @IBOutlet weak var Field_3: UITextField!
     @IBOutlet weak var Field_4: UITextField!
-
-    @IBAction func tgrField_1(sender: UITapGestureRecognizer) {
-        self.Field_1.text = ""
-    }
-    
-    @IBAction func tgrField_2(sender: UITapGestureRecognizer) {
-        self.Field_2.text = ""
-    }
-    
-    @IBAction func tgrField_3(sender: UITapGestureRecognizer) {
-        self.Field_3.text = ""
-    }
-    
-    @IBAction func tgrField_4(sender: UITapGestureRecognizer) {
-        self.Field_4.text = ""
-    }
     
     override func viewDidLoad()
     {
@@ -122,14 +106,9 @@ class signUpv2VC: UIViewController, UITextFieldDelegate
     }
     
     func doAlert(title: String, message: String) {
-        
-        let alert: UIAlertView = UIAlertView()
-        alert.title = title
-        alert.message = message
-        alert.addButtonWithTitle("Modifier")
-        alert.delegate = self
-        alert.show()
-
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Modifier", style: UIAlertActionStyle.Default, handler: nil))
+        presentViewController(alert, animated: true, completion:nil)
     }
     
     func checkFields() -> Bool {
@@ -164,10 +143,6 @@ class signUpv2VC: UIViewController, UITextFieldDelegate
     {
         if (!checkFields())
         {
-            self.Field_1.text = "  Nom d'Utilisateur"
-            self.Field_2.text = "  Adresse Mail"
-            self.Field_3.text = "  Mot de Passe"
-            self.Field_4.text = "  Confirmer Mot de Passe"
             return
         }
         return // =====>> MARK: A virer
@@ -230,12 +205,9 @@ class signUpv2VC: UIViewController, UITextFieldDelegate
         }
         else
         {
-            let alert: UIAlertView = UIAlertView()
-            alert.title = "Une erreur est survenue"
-            alert.message = "Les mots de passe ne correspondent pas"
-            alert.addButtonWithTitle("Modifier")
-            alert.delegate = self
-            alert.show()
+            let alert = UIAlertController(title: "Une erreur est survenue", message: "Les mots de passe ne correspondent pas", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Modifier", style: UIAlertActionStyle.Default, handler: nil))
+            presentViewController(alert, animated: true, completion:nil)
         }
     }
 

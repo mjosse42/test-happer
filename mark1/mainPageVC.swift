@@ -26,7 +26,10 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
         //self.passwdTF.delegate = self
         initKeyboard()
         self.view.addBackground()
-        
+         if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            performSegueWithIdentifier("logToHome", sender: self)
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
