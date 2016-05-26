@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nhE-Zw-r47">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NeutraTextBook.otf">
+            <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
@@ -47,6 +48,9 @@
                                 <state key="normal" title="Connexion">
                                     <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="nhE-Zw-r47" kind="show" animates="NO" id="OWm-ry-f8U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-0X-y7j" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="56" y="428" width="302" height="40"/>
@@ -64,6 +68,9 @@
                                 <state key="normal" title="Créer un compte">
                                     <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="1tZ-WF-BKT" kind="show" animates="NO" id="XOI-gn-Pk4"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-qf-EkM">
                                 <rect key="frame" x="167" y="248" width="80" height="80"/>
@@ -126,20 +133,62 @@
                                 <color key="textColor" red="0.99226981400000003" green="0.99617439510000005" blue="0.9916679263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L8D-NH-fUq">
+                                <rect key="frame" x="40" y="373" width="334" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="uD2-bo-o36"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTI-lJ-cbq">
+                                <rect key="frame" x="127" y="488" width="160" height="30"/>
+                                <color key="backgroundColor" red="0.019018415361642838" green="0.0077855954878032207" blue="0.016384249553084373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="RTo-oS-FUj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="20"/>
+                                <state key="normal" title="Connexion">
+                                    <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connexion:" destination="nhE-Zw-r47" eventType="touchUpInside" id="E73-tX-8nE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ksc-co-RV2">
+                                <rect key="frame" x="40" y="428" width="334" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Ffd-gd-o85"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oTI-lJ-cbq" firstAttribute="top" secondItem="Ksc-co-RV2" secondAttribute="bottom" constant="25" id="Dpl-h4-1Bi"/>
+                            <constraint firstItem="L8D-NH-fUq" firstAttribute="top" secondItem="1Fo-0w-kiY" secondAttribute="bottom" constant="15" id="FYC-PW-uyk"/>
+                            <constraint firstAttribute="trailing" secondItem="Ksc-co-RV2" secondAttribute="trailing" constant="40" id="Fu7-gd-p0h"/>
                             <constraint firstItem="79e-hy-cRP" firstAttribute="centerX" secondItem="dPK-20-N2R" secondAttribute="centerX" id="YDO-aA-vFe"/>
                             <constraint firstItem="1Fo-0w-kiY" firstAttribute="centerX" secondItem="dPK-20-N2R" secondAttribute="centerX" id="cvq-b0-c45"/>
+                            <constraint firstItem="oTI-lJ-cbq" firstAttribute="centerX" secondItem="dPK-20-N2R" secondAttribute="centerX" id="fkj-sx-WM3"/>
+                            <constraint firstItem="Ksc-co-RV2" firstAttribute="leading" secondItem="dPK-20-N2R" secondAttribute="leading" constant="40" id="gfX-TB-rGx"/>
+                            <constraint firstItem="L8D-NH-fUq" firstAttribute="leading" secondItem="dPK-20-N2R" secondAttribute="leading" constant="40" id="hAS-VD-Vuo"/>
+                            <constraint firstItem="Ksc-co-RV2" firstAttribute="top" secondItem="L8D-NH-fUq" secondAttribute="bottom" constant="20" id="ibw-qB-IYf"/>
                             <constraint firstItem="79e-hy-cRP" firstAttribute="centerY" secondItem="dPK-20-N2R" secondAttribute="centerY" constant="-80" id="mOf-K5-0O9"/>
+                            <constraint firstAttribute="trailing" secondItem="L8D-NH-fUq" secondAttribute="trailing" constant="40" id="pyr-v3-XkG"/>
                             <constraint firstItem="1Fo-0w-kiY" firstAttribute="centerY" secondItem="dPK-20-N2R" secondAttribute="centerY" constant="-30" id="vG1-4q-E01"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="tField_1" destination="L8D-NH-fUq" id="IKp-Nr-Rah"/>
+                        <outlet property="tField_2" destination="Ksc-co-RV2" id="k8l-4y-HnY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAc-Yp-fPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-610" y="83"/>
+            <point key="canvasLocation" x="-425" y="227"/>
         </scene>
         <!--Inscription-->
         <scene sceneID="5ny-BM-ReH">
@@ -176,7 +225,7 @@
                                     <constraint firstAttribute="height" constant="35" id="XpQ-N9-5ms"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhU-vD-1RF">
                                 <rect key="frame" x="40" y="373" width="334" height="35"/>
@@ -185,7 +234,7 @@
                                     <constraint firstAttribute="height" constant="35" id="mTa-Q4-d0K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YII-qw-VeX">
                                 <rect key="frame" x="40" y="473" width="334" height="35"/>
@@ -194,7 +243,7 @@
                                     <constraint firstAttribute="height" constant="35" id="aqT-g8-Cp5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-6u-uDo">
                                 <rect key="frame" x="127" y="579" width="160" height="30"/>
@@ -217,7 +266,7 @@
                                     <constraint firstAttribute="height" constant="35" id="N2Z-kO-Q7S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <constraints>
@@ -247,11 +296,12 @@
                         <outlet property="Field_2" destination="FBO-8N-77Z" id="W1i-Bj-Vkx"/>
                         <outlet property="Field_3" destination="YII-qw-VeX" id="jHQ-fn-6za"/>
                         <outlet property="Field_4" destination="Kdh-27-uG9" id="RPp-WA-VKs"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="signUpToMain" id="Klt-wO-wzK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvq-pV-KOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1183" y="1022"/>
+            <point key="canvasLocation" x="-1171" y="1189"/>
         </scene>
         <!--homePage-->
         <scene sceneID="TaS-Vz-dod">
@@ -269,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVP-gI-h36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="190"/>
+            <point key="canvasLocation" x="-415" y="1134"/>
         </scene>
     </scenes>
     <resources>

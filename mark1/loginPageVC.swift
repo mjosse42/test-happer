@@ -11,10 +11,29 @@ import UIKit
 class loginPageVC: UIViewController, UITextFieldDelegate
 {
 
+    @IBOutlet weak var tField_1: UITextField!
+    @IBOutlet weak var tField_2: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addBackground()
+        tField_1.delegate = self
+        tField_2.delegate = self
+        self.initKeyboard()
+        self.initTextField()
+        
+        tField_1.effect()
+        tField_2.effect()
         // Do any additional setup after loading the view.
+    }
+
+    func initTextField()
+    {
+        tField_1.effect()
+        tField_1.attributedPlaceholder = NSAttributedString(string:"  Nom d'utilisateur", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        tField_2.effect()
+        tField_2.attributedPlaceholder = NSAttributedString(string: "  Mot de Passe", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +41,8 @@ class loginPageVC: UIViewController, UITextFieldDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func connexion(sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation
