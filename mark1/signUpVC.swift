@@ -66,23 +66,23 @@ extension UITextField {
     func effect(placeholder :String) {
         self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         self.layer.masksToBounds = false
-        self.layer.backgroundColor = UIColor.clearColor().CGColor
+        self.layer.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0.5).CGColor
         self.textColor = UIColor.whiteColor()
         let height = CGFloat(5.0)
         let width = CGFloat(1.0)
         let borderBottom = CALayer()
         borderBottom.borderColor = UIColor.whiteColor().CGColor
-        borderBottom.frame = CGRect(x: -10.0, y: self.frame.size.height - width - 5.0, width: self.frame.size.width + 20.0, height: width)
+        borderBottom.frame = CGRect(x: -self.frame.size.width * 0.03, y: self.frame.size.height - width - self.frame.size.height * 0.12, width: self.frame.size.width * 1.06, height: width)
         borderBottom.borderWidth = width
         self.layer.addSublayer(borderBottom)
         let borderLeft = CALayer()
         borderLeft.borderColor = UIColor.whiteColor().CGColor
-        borderLeft.frame = CGRect(x: -10.0, y: self.frame.size.height - height - 5.0, width: width, height: height)
+        borderLeft.frame = CGRect(x: -self.frame.size.width * 0.03, y: self.frame.size.height - height - self.frame.size.height * 0.12, width: width, height: height)
         borderLeft.borderWidth = width
         self.layer.addSublayer(borderLeft)
         let borderRight = CALayer()
         borderRight.borderColor = UIColor.whiteColor().CGColor
-        borderRight.frame = CGRect(x: self.frame.size.width - width + 10.0, y: self.frame.size.height - height - 5.0, width: width, height: height)
+        borderRight.frame = CGRect(x: self.frame.size.width * 1.03 - width, y: self.frame.size.height - height - self.frame.size.height * 0.12, width: width, height: height)
         borderRight.borderWidth = width
         self.layer.addSublayer(borderRight)
     }
