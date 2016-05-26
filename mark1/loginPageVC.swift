@@ -22,18 +22,13 @@ class loginPageVC: UIViewController, UITextFieldDelegate
         tField_2.delegate = self
         self.initKeyboard()
         self.initTextField()
-        
-        tField_1.effect()
-        tField_2.effect()
         // Do any additional setup after loading the view.
     }
 
     func initTextField()
     {
-        tField_1.effect()
-        tField_1.attributedPlaceholder = NSAttributedString(string:"  Nom d'utilisateur", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
-        tField_2.effect()
-        tField_2.attributedPlaceholder = NSAttributedString(string: "  Mot de Passe", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        tField_1.effect("Nom d'utilisateur")
+        tField_2.effect("Mot de Passe")
     }
 
     override func didReceiveMemoryWarning() {

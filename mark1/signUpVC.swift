@@ -49,27 +49,28 @@ extension UIView
 //===============>MARK ::> Extension made in Paul ^^ sert à appliquer le design aux text fields in current view
 
 extension UITextField {
-    func effect() {
+    func effect(placeholder :String) {
+        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        self.layer.masksToBounds = false
         self.layer.backgroundColor = UIColor.clearColor().CGColor
         self.textColor = UIColor.whiteColor()
         let height = CGFloat(5.0)
         let width = CGFloat(1.0)
         let borderBottom = CALayer()
         borderBottom.borderColor = UIColor.whiteColor().CGColor
-        borderBottom.frame = CGRect(x: 0.0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
+        borderBottom.frame = CGRect(x: -10.0, y: self.frame.size.height - width - 5.0, width: self.frame.size.width + 20.0, height: width)
         borderBottom.borderWidth = width
         self.layer.addSublayer(borderBottom)
         let borderLeft = CALayer()
         borderLeft.borderColor = UIColor.whiteColor().CGColor
-        borderLeft.frame = CGRect(x: 0.0, y: self.frame.size.height - height, width: width, height: height)
+        borderLeft.frame = CGRect(x: -10.0, y: self.frame.size.height - height - 5.0, width: width, height: height)
         borderLeft.borderWidth = width
         self.layer.addSublayer(borderLeft)
         let borderRight = CALayer()
         borderRight.borderColor = UIColor.whiteColor().CGColor
-        borderRight.frame = CGRect(x: self.frame.size.width - width, y: self.frame.size.height - height, width: width, height: height)
+        borderRight.frame = CGRect(x: self.frame.size.width - width + 10.0, y: self.frame.size.height - height - 5.0, width: width, height: height)
         borderRight.borderWidth = width
         self.layer.addSublayer(borderRight)
-        self.layer.masksToBounds = true
     }
 }
 
@@ -95,14 +96,10 @@ class signUpVC: UIViewController, UITextFieldDelegate
 
     func initTextField()
     {
-        Field_1.effect()
-        Field_1.attributedPlaceholder = NSAttributedString(string:"  Nom d'Utilisateur", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
-        Field_2.effect()
-        Field_2.attributedPlaceholder = NSAttributedString(string: "  Adresse Mail", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-        Field_3.effect()
-        Field_3.attributedPlaceholder = NSAttributedString(string: "  Mot de Passe", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-        Field_4.effect()
-        Field_4.attributedPlaceholder = NSAttributedString(string: "  Confirmer Mot de Passe", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        Field_1.effect("Nom d'Utilisateur")
+        Field_2.effect("Adresse Mail")
+        Field_3.effect("Mot de Passe")
+        Field_4.effect("Confirmer Mot de Passe")
     }
 
     override func didReceiveMemoryWarning() {
