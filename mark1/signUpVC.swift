@@ -161,20 +161,21 @@ class signUpVC: UIViewController, UITextFieldDelegate
         {
             return
         }
-        return // =====>> MARK: A virer
-        let login = NSString(string: Field_1.text!)
-        let mail = NSString(string: Field_2.text!)
-        let passwd = NSString(string: Field_3.text!)
-        let conf = NSString(string: Field_4.text!)
+        //return // =====>> MARK: A virer
+        let login = NSString(string: self.Field_1.text!)
+        let mail = NSString(string: self.Field_2.text!)
+        let passwd = NSString(string: self.Field_3.text!)
+        let conf = NSString(string: self.Field_4.text!)
         if (conf.isEqualToString(passwd as String))
         {
             var jsonData = NSDictionary()
             let postr = NSString(string : "login=\(login)&passwd=\(passwd)&mail=\(mail)")
             let url = NSURL(string: "http://192.168.0.50:8888/adduser.php")
             let request = NSMutableURLRequest(URL :url!)
-            let postData: NSData = postr.dataUsingEncoding(NSUTF8StringEncoding)!
+            let postData: NSData = postr.dataUsingEncoding(NSASCIIStringEncoding)!
             request.HTTPMethod = "POST"
             request.HTTPBody = postData
+            print(request.HTTPBody)
             let postLength: NSString = String(postData.length)
             request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -206,6 +207,11 @@ class signUpVC: UIViewController, UITextFieldDelegate
                     {
                         print("Erreure de récuperation du fichier JSON")
                     }
+                }
+                else
+                {
+                    print(res.statusCode)
+                    return
                 }
             }
             print(jsonData)
