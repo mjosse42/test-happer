@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1tZ-WF-BKT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1tZ-WF-BKT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -125,7 +125,7 @@
                                 <color key="textColor" red="0.99226981400000003" green="0.99617439510000005" blue="0.9916679263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  Adresse Mail" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBO-8N-77Z">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBO-8N-77Z">
                                 <rect key="frame" x="40" y="423" width="334" height="35"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -137,7 +137,7 @@
                                     <outletCollection property="gestureRecognizers" destination="3dI-40-weQ" appends="YES" id="bdc-sn-zcN"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  Nom d'utilisateur" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhU-vD-1RF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhU-vD-1RF">
                                 <rect key="frame" x="40" y="373" width="334" height="35"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -149,7 +149,7 @@
                                     <outletCollection property="gestureRecognizers" destination="rtp-lR-mIS" appends="YES" id="gwF-YC-PKe"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  Mot de Passe" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YII-qw-VeX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YII-qw-VeX">
                                 <rect key="frame" x="40" y="473" width="334" height="35"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -175,7 +175,7 @@
                                     <action selector="createAccount:" destination="1tZ-WF-BKT" eventType="touchUpInside" id="C8e-nM-OZL"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Confirmer Mot de Passe" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kdh-27-uG9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kdh-27-uG9">
                                 <rect key="frame" x="40" y="523" width="334" height="35"/>
                                 <gestureRecognizers/>
                                 <constraints>

@@ -104,13 +104,15 @@ class signUpv2VC: UIViewController, UITextFieldDelegate
         Field_2.delegate = self
         Field_3.delegate = self
         Field_4.delegate = self
-        
     // On appelle respectivement les extends-methods des text fields celle du design puis celles du clavier
-        
         Field_1.effect()
+        Field_1.attributedPlaceholder = NSAttributedString(string:"  Nom d'Utilisateur", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
         Field_2.effect()
+        Field_2.attributedPlaceholder = NSAttributedString(string: "  Adresse Mail", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         Field_3.effect()
+        Field_3.attributedPlaceholder = NSAttributedString(string: "  Mot de Passe", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         Field_4.effect()
+        Field_4.attributedPlaceholder = NSAttributedString(string: "  Confirmer Mot de Passe", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         initKeyboard()
     }
 
