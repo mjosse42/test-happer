@@ -37,12 +37,12 @@ class loginPageVC: UIViewController, UITextFieldDelegate
 
     @IBAction func connexion(sender: UIButton) {
         
-        let loginMail = tField_1.text
-        let passwd = tField_2.text
+        let loginMail = tField_1.text! as NSString
+        let passwd = tField_2.text! as NSString
 
         var jsonData = NSDictionary()  // ici, on stockera la réponse serveur, en JSON
 //  on prépare l'url avec le POST
-        let url = NSURL(string: "http://localhost:8888/login.php")
+        let url = NSURL(string: "http://192.168.0.50:8888/login.php")
         let body = "login=\(loginMail)&passwd=\(passwd)"
 // on commence a monter une requete HTTP
         let request = NSMutableURLRequest(URL: url!)
@@ -109,7 +109,7 @@ class loginPageVC: UIViewController, UITextFieldDelegate
         }
         print(jsonData) // Pour avoir le retour sur le log, j'aime bien.
 
-        let success: NSInteger = jsonData.valueForKey("success") as! NSInteger
+        let success = jsonData.valueForKey("id") as! NSInteger
     // la variable success contient 0 ou 1 Si s'est bien log ou pas
         if (success > 0) {
             print("SUCCESS")

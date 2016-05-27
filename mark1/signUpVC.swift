@@ -153,6 +153,7 @@ class signUpVC: UIViewController, UITextFieldDelegate
             if (success == 1)
             {
                 print("SUCCESS")
+                performSegueWithIdentifier("signUpToMain", sender: self)
             }
             else
             {

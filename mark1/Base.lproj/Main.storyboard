@@ -258,7 +258,7 @@
                                     <constraint firstAttribute="height" constant="35" id="aqT-g8-Cp5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-6u-uDo">
                                 <rect key="frame" x="127" y="579" width="160" height="30"/>
@@ -281,7 +281,7 @@
                                     <constraint firstAttribute="height" constant="35" id="N2Z-kO-Q7S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <constraints>
@@ -334,19 +334,31 @@
                     <view key="view" contentMode="scaleToFill" id="hlG-IY-iHG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accueil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pZ-Hj-DDL">
+                                <rect key="frame" x="179" y="357" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7pZ-Hj-DDL" firstAttribute="centerX" secondItem="hlG-IY-iHG" secondAttribute="centerX" id="cP7-WV-Zl0"/>
+                            <constraint firstItem="7pZ-Hj-DDL" firstAttribute="centerY" secondItem="hlG-IY-iHG" secondAttribute="centerY" id="xN9-0h-VF9"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVP-gI-h36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136" y="227"/>
+            <point key="canvasLocation" x="-75" y="220"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo_Happer" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wqX-ng-w2A"/>
         <segue reference="Klt-wO-wzK"/>
+        <segue reference="wqX-ng-w2A"/>
     </inferredMetricsTieBreakers>
 </document>

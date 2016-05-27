@@ -17,6 +17,7 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fbLogin.setTitle("Connexion avec Facebook", forState: UIControlState.Normal)
         self.fbLogin.readPermissions = ["public_profile","email", "user_friends" ]
         self.fbLogin.delegate = self
         //self.loginTF.delegate = self
@@ -25,7 +26,7 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
         self.view.addBackground()
          if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-            performSegueWithIdentifier("logToHome", sender: self)
+           // performSegueWithIdentifier("logToHome", sender: self)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -127,6 +128,17 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
     // MARK: FBSDK
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
     {
+        let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,friends"], HTTPMethod: "GET")
+        request.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+            if(error == nil)
+            {
+                print("result \(result)")
+            }
+            else
+            {
+                print("error \(error)")
+            }
+        })
         
     }
     

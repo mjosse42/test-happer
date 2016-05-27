@@ -10,13 +10,10 @@ import UIKit
 
 class homePageVC: UIViewController
 {
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        let tab = parseJSON(getJSON())
-        print(tab)
-        print("end")
     }
 
     override func didReceiveMemoryWarning()
