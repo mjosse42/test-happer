@@ -89,10 +89,28 @@ extension UITextField {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let userSession: NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        var initialViewController: UIViewController
+        
+        if(FBSDKAccessToken.currentAccessToken() != nil){
+            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("homePage") as! homePageVC
+            initialViewController = vc
+        }else{
+            initialViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainPage") as! mainPageVC
+        }
+        
+        self.window?.rootViewController = initialViewController
+        
+        self.window?.makeKeyAndVisible()
+        
+        return true
     }
 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {

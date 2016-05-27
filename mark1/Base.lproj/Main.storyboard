@@ -18,10 +18,47 @@
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Home PageVC-->
+        <scene sceneID="VfE-zY-gPb">
+            <objects>
+                <viewController storyboardIdentifier="homePage" id="caV-oc-TbS" customClass="homePageVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7dx-B5-WsR"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Gu-Ib-n5s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qoB-zF-KrG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accueil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hE-l6-scL">
+                                <rect key="frame" x="132" y="28" width="150" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="8ec-Rn-d68"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0hE-l6-scL" firstAttribute="top" secondItem="7dx-B5-WsR" secondAttribute="bottom" constant="8" id="NBX-PS-WNo"/>
+                            <constraint firstItem="0hE-l6-scL" firstAttribute="centerX" secondItem="qoB-zF-KrG" secondAttribute="centerX" id="zHa-D3-hYN"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="homeToMain" animates="NO" id="7pM-JU-2iu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppy-MK-ZdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1899" y="-183"/>
+        </scene>
         <!--mainPage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="mainPage" id="BYZ-38-t0r" customClass="mainPageVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainPage" title="mainPage" id="BYZ-38-t0r" customClass="mainPageVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -98,12 +135,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="fbLogin" destination="33h-0X-y7j" id="5J5-p0-pVd"/>
-                        <segue destination="IHr-4q-7wu" kind="show" identifier="logToHome" animates="NO" id="Qn7-yz-mdU"/>
+                        <segue destination="caV-oc-TbS" kind="show" identifier="mainToHome" animates="NO" id="jEL-Za-n6W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1059" y="190"/>
+            <point key="canvasLocation" x="-1376" y="-183"/>
         </scene>
         <!--Connexion-->
         <scene sceneID="7ut-TC-YIA">
@@ -189,7 +226,6 @@
                         <outlet property="tField_1" destination="L8D-NH-fUq" id="IKp-Nr-Rah"/>
                         <outlet property="tField_2" destination="Ksc-co-RV2" id="k8l-4y-HnY"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="loginToMain" animates="NO" id="zoh-3y-ipI"/>
-                        <segue destination="IHr-4q-7wu" kind="show" identifier="loginToHome" animates="NO" id="wqX-ng-w2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAc-Yp-fPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,7 +235,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-567" y="239"/>
+            <point key="canvasLocation" x="-512" y="-294"/>
         </scene>
         <!--Inscription-->
         <scene sceneID="5ny-BM-ReH">
@@ -321,44 +357,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1171" y="1189"/>
-        </scene>
-        <!--homePage-->
-        <scene sceneID="TaS-Vz-dod">
-            <objects>
-                <viewController title="homePage" id="IHr-4q-7wu" customClass="homePageVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WTd-RV-KTm"/>
-                        <viewControllerLayoutGuide type="bottom" id="6CP-0l-Usg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hlG-IY-iHG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accueil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pZ-Hj-DDL">
-                                <rect key="frame" x="179" y="357" width="56" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="7pZ-Hj-DDL" firstAttribute="centerX" secondItem="hlG-IY-iHG" secondAttribute="centerX" id="cP7-WV-Zl0"/>
-                            <constraint firstItem="7pZ-Hj-DDL" firstAttribute="centerY" secondItem="hlG-IY-iHG" secondAttribute="centerY" id="xN9-0h-VF9"/>
-                        </constraints>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yVP-gI-h36" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-75" y="220"/>
+            <point key="canvasLocation" x="-1979" y="744"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo_Happer" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Klt-wO-wzK"/>
-        <segue reference="wqX-ng-w2A"/>
+        <segue reference="7pM-JU-2iu"/>
     </inferredMetricsTieBreakers>
 </document>

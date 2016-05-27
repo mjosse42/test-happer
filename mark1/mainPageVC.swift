@@ -13,27 +13,16 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
 {
     @IBOutlet weak var fbLogin: FBSDKLoginButton!
     
-    let userSession: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fbLogin.setTitle("Connexion avec Facebook", forState: UIControlState.Normal)
         self.fbLogin.readPermissions = ["public_profile","email", "user_friends" ]
         self.fbLogin.delegate = self
-        //self.loginTF.delegate = self
-        //self.passwdTF.delegate = self
         initKeyboard()
         self.view.addBackground()
-         if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-           // performSegueWithIdentifier("logToHome", sender: self)
-        }
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     /*
     func login(login: NSString, passwd: NSString) -> NSDictionary?
@@ -128,6 +117,14 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
     // MARK: FBSDK
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
     {
+        if error == nil
+        {
+            performSegueWithIdentifier("mainToHome", sender: self)
+        }
+        else
+        {
+            print(error.localizedDescription)
+        }
         let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,friends"], HTTPMethod: "GET")
         request.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
             if(error == nil)
@@ -139,7 +136,6 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
                 print("error \(error)")
             }
         })
-        
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
@@ -147,4 +143,3 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
         
     }
 }
-

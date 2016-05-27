@@ -2,45 +2,25 @@
 //  homePageVC.swift
 //  mark1
 //
-//  Created by Josse on 24/05/2016.
+//  Created by Josse on 27/05/2016.
 //  Copyright © 2016 mjosse. All rights reserved.
 //
 
 import UIKit
 
-class homePageVC: UIViewController
-{
-    
-    override func viewDidLoad()
-    {
+class homePageVC: UIViewController {
+
+    override func viewDidLoad() {
         super.viewDidLoad()
+        print("yolo")
+        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func getJSON() -> NSData
-    {
-        let url: String = "http://192.168.0.50:8888/getproducts.php"
-        return NSData(contentsOfURL: NSURL(string: url)!)!
-    }
-    
-    func parseJSON(inputData: NSData) -> NSDictionary?
-    {
-        var boardsDictionary: NSDictionary? = nil
-        do
-        {
-            try boardsDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
-        }
-        catch
-        {
-            print("Error")
-        }
-        return boardsDictionary
-    }
 
     /*
     // MARK: - Navigation
@@ -51,4 +31,5 @@ class homePageVC: UIViewController
         // Pass the selected object to the new view controller.
     }
     */
+
 }
