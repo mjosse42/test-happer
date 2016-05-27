@@ -9,6 +9,89 @@
 import UIKit
 import FBSDKCoreKit
 
+extension UIViewController
+{
+    func initKeyboard() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:
+            #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+        self.initKeyboard()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        view.endEditing(true)
+        return false
+    }
+}
+
+extension UIView
+{
+    func addBackground()
+    {
+        let width = UIScreen.mainScreen().bounds.size.width
+        let height = UIScreen.mainScreen().bounds.size.height
+        
+        let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, width, height))
+        imageViewBackground.image = UIImage(named: "background_connexion.png")
+        
+        imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        self.addSubview(imageViewBackground)
+        self.sendSubviewToBack(imageViewBackground)
+    }
+}
+
+//===============>MARK ::> Extension made in Paul ^^ sert à appliquer le design aux text fields in current view
+
+extension UITextField {
+    func effect(placeholder :String) {
+        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        self.layer.masksToBounds = false
+        self.layer.backgroundColor = UIColor.clearColor().CGColor
+        self.textColor = UIColor.whiteColor()
+        let height = CGFloat(5.0)
+        let width = CGFloat(1.0)
+        let borderBottom = CALayer()
+        borderBottom.borderColor = UIColor.whiteColor().CGColor
+        borderBottom.frame = CGRect(x: -self.frame.size.width * 0.03, y: self.frame.size.height - width - self.frame.size.height * 0.12, width: self.frame.size.width * 0.78/*self.frame.size.width * 1.06*/, height: width)
+        borderBottom.borderWidth = width
+        self.layer.addSublayer(borderBottom)
+        let borderLeft = CALayer()
+        borderLeft.borderColor = UIColor.whiteColor().CGColor
+        borderLeft.frame = CGRect(x: -self.frame.size.width * 0.03, y: self.frame.size.height - height - self.frame.size.height * 0.12, width: width, height: height)
+        borderLeft.borderWidth = width
+        self.layer.addSublayer(borderLeft)
+        let borderRight = CALayer()
+        borderRight.borderColor = UIColor.whiteColor().CGColor
+        borderRight.frame = CGRect(x: self.frame.size.width * 0.75 - width, y: self.frame.size.height - height - self.frame.size.height * 0.12, width: width, height: height)
+        borderRight.borderWidth = width
+        self.layer.addSublayer(borderRight)
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
