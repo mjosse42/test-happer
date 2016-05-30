@@ -113,6 +113,13 @@ class loginPageVC: UIViewController, UITextFieldDelegate
     // la variable success contient 0 ou 1 Si s'est bien log ou pas
         if (success > 0) {
             print("SUCCESS")
+            let user = userClass()
+            user.addCredit(jsonData.valueForKey("credits") as! NSInteger)
+            user.setRank(jsonData.valueForKey("rank") as! NSInteger)
+            user.setUserId(jsonData.valueForKey("id") as! NSInteger)
+            user.setUserName(jsonData.valueForKey("login") as! NSString)
+            user.setUserMail(jsonData.valueForKey("mail") as! NSString)
+            user.addXp(jsonData.valueForKey("exp") as! NSInteger)
             //performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
         }
         else {
