@@ -39,6 +39,16 @@ class userClass
         self.xP = 0
     }
     
+    func announce()
+    {
+        print("user Id: \(self.userId)")
+        print("username: \(self.userName)")
+        print("rank: \(self.rank)")
+        print("credits: \(self.credit)")
+        print("xp: \(self.xP)")
+        print("loggued: \(self.loggued)")
+    }
+    
     func sync()
     {
         // Connexion au serveur et update du compte

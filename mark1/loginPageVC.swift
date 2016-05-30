@@ -120,6 +120,8 @@ class loginPageVC: UIViewController, UITextFieldDelegate
             user.setUserName(jsonData.valueForKey("login") as! NSString)
             user.setUserMail(jsonData.valueForKey("mail") as! NSString)
             user.addXp(jsonData.valueForKey("exp") as! NSInteger)
+            user.loggued_in()
+            user.announce() // display console de verification
             //performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
         }
         else {
