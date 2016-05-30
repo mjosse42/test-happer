@@ -12,7 +12,6 @@ class homePageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("yolo")
         // Do any additional setup after loading the view.
     }
 

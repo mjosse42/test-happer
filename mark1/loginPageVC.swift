@@ -42,7 +42,7 @@ class loginPageVC: UIViewController, UITextFieldDelegate
 
         var jsonData = NSDictionary()  // ici, on stockera la réponse serveur, en JSON
 //  on prépare l'url avec le POST
-        let url = NSURL(string: "http://192.168.0.50:8888/login.php")
+        let url = NSURL(string: "http://ec2-52-49-149-140.eu-west-1.compute.amazonaws.com:80/login.php")
         let body = "login=\(loginMail)&passwd=\(passwd)"
 // on commence a monter une requete HTTP
         let request = NSMutableURLRequest(URL: url!)
@@ -113,7 +113,7 @@ class loginPageVC: UIViewController, UITextFieldDelegate
     // la variable success contient 0 ou 1 Si s'est bien log ou pas
         if (success > 0) {
             print("SUCCESS")
-            performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
+            //performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
         }
         else {
             print("FAIL") // on en reste la, l'utilisateur s'est planté

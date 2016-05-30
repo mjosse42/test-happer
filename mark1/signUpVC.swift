@@ -95,7 +95,7 @@ class signUpVC: UIViewController, UITextFieldDelegate
             
             var jsonData = NSDictionary()
             let postr = NSString(string : "login=\(login)&passwd=\(passwd)&mail=\(mail)")
-            let url = NSURL(string: "http://192.168.0.50:8888/adduser.php")
+            let url = NSURL(string: "http://ec2-52-49-149-140.eu-west-1.compute.amazonaws.com:80/adduser.php")
             
             // comme pour le login pour l'instant
             
