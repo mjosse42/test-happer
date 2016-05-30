@@ -11,7 +11,7 @@ import FBSDKLoginKit
 
 class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate
 {
-    @IBOutlet weak var fbLogin: FBSDKLoginButton!
+    @IBOutlet weak var fbLogin: FBSDKLoginButtonFR!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,6 +124,7 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
         else
         {
             print(error.localizedDescription)
+            return
         }
         let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,friends"], HTTPMethod: "GET")
         request.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in

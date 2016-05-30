@@ -31,5 +31,8 @@ class homePageVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func homeToMainButton(sender: UIButton) {
+        performSegueWithIdentifier("homeToMain", sender: self)
+    }
 
 }
