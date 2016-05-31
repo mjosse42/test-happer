@@ -10,6 +10,31 @@ import UIKit
 
 class homePageVC: UITableViewController {
 
+    var selfies: [selfieClass] = []
+    
+    // MARK : code micka
+    
+    func makeSelfie() -> [selfieClass] {
+        var result = NSDictionary()
+        let url = NSURL(string: "http://ec2-52-49-149-140.eu-west-1.compute.amazonaws.com:80/getselfies.php")
+        let jsonData = NSData(contentsOfURL: url!)
+        do {
+            result = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+        }
+        catch {
+            print("Catch-Location:: accueilTVC :: Serialisation JSON")
+            EXIT_FAILURE
+        }
+        let tab = result.valueForKey("selfies") as! NSDictionary
+        var selfies: [selfieClass] = []
+        for val in tab
+        {
+            let new: selfieClass = selfieClass(id: val.value["id"] as! NSInteger, own_id: val.value["owner_id"] as! NSInteger, own_un: val.value["owner_un"] as! NSString, url: val.value["url"] as! NSString, rate: val.value["rate"] as? NSInteger, like: val.value["nb_like"] as? NSInteger)
+            selfies += [new]
+        }
+        return selfies
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Send notification "closeMenuViaNotification"
@@ -18,6 +43,7 @@ class homePageVC: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openFirst), name: "openFirst", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openSecond), name: "openSecond", object: nil)
         customNavBar()
+        self.selfies = makeSelfie()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,23 +85,20 @@ class homePageVC: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.selfies.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("TVC", forIndexPath: indexPath) as! accueilTVCell
+        let selfie = selfies[indexPath.row]
+        cell.imageCell.image = selfie.getImage()
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

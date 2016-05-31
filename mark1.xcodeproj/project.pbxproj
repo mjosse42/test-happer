@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3543B6F41CF607FA005762E5 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B6F31CF607F9005762E5 /* signUpVC.swift */; };
 		3543B6F81CF6F114005762E5 /* loginPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B6F71CF6F113005762E5 /* loginPageVC.swift */; };
+		355599331CFDECB900F55A06 /* selfieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355599321CFDECB900F55A06 /* selfieClass.swift */; };
+		355599351CFDF08C00F55A06 /* accueilTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355599341CFDF08C00F55A06 /* accueilTVCell.swift */; };
 		355C50A71CEF66BC00DC2631 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C50A61CEF66BC00DC2631 /* AppDelegate.swift */; };
 		355C50A91CEF66BC00DC2631 /* mainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C50A81CEF66BC00DC2631 /* mainPageVC.swift */; };
 		355C50AC1CEF66BC00DC2631 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 355C50AA1CEF66BC00DC2631 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		3543B6F31CF607F9005762E5 /* signUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 		3543B6F71CF6F113005762E5 /* loginPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginPageVC.swift; sourceTree = "<group>"; };
+		355599321CFDECB900F55A06 /* selfieClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selfieClass.swift; sourceTree = "<group>"; };
+		355599341CFDF08C00F55A06 /* accueilTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accueilTVCell.swift; sourceTree = "<group>"; };
 		355C50A31CEF66BA00DC2631 /* mark1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mark1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		355C50A61CEF66BC00DC2631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		355C50A81CEF66BC00DC2631 /* mainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainPageVC.swift; sourceTree = "<group>"; };
@@ -118,7 +122,9 @@
 				55AA331E1CFC3337007440AD /* FBSDKLoginButtonFR.swift */,
 				35639EA51CF4751900B2A54C /* userClass.swift */,
 				355C50AA1CEF66BC00DC2631 /* Main.storyboard */,
+				355599341CFDF08C00F55A06 /* accueilTVCell.swift */,
 				55A60C6D1CFDE24B0034A0FB /* homePageVC.swift */,
+				355599321CFDECB900F55A06 /* selfieClass.swift */,
 				55A60C691CFDA6560034A0FB /* leftMenuVC.swift */,
 				55A60C671CFD997E0034A0FB /* containerVC.swift */,
 				3543B6F71CF6F113005762E5 /* loginPageVC.swift */,
@@ -252,7 +258,9 @@
 				355C50A71CEF66BC00DC2631 /* AppDelegate.swift in Sources */,
 				3543B6F81CF6F114005762E5 /* loginPageVC.swift in Sources */,
 				3543B6F41CF607FA005762E5 /* signUpVC.swift in Sources */,
+				355599331CFDECB900F55A06 /* selfieClass.swift in Sources */,
 				35639EA61CF4751900B2A54C /* userClass.swift in Sources */,
+				355599351CFDF08C00F55A06 /* accueilTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
