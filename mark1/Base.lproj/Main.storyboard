@@ -33,6 +33,15 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHi-ML-KFg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FtN-38-FN9">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="736"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="hJF-Xg-YkN"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="jJr-Lh-J5W" kind="embed" id="h4r-KO-T5N"/>
+                                        </connections>
+                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6s4-Em-uSR">
                                         <rect key="frame" x="260" y="0.0" width="414" height="736"/>
                                         <userDefinedRuntimeAttributes>
@@ -42,15 +51,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="hoo-Nw-7Mr" kind="embed" id="mdk-5n-U3i"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FtN-38-FN9">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="736"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="260" id="hJF-Xg-YkN"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="jJr-Lh-J5W" kind="embed" id="h4r-KO-T5N"/>
                                         </connections>
                                     </containerView>
                                 </subviews>

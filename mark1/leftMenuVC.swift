@@ -10,10 +10,12 @@ import UIKit
 
 class leftMenuVC: UITableViewController {
 
+    // List of title in menu
     let menu = ["door 1", "door 2"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Si je le met ça marche, sinon ça sigabort :D
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
@@ -22,7 +24,7 @@ class leftMenuVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return menu.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -33,8 +35,10 @@ class leftMenuVC: UITableViewController {
 }
 
 extension leftMenuVC {
+    // Called when a choice is done
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        // Switch for each title from the menu and send specific notification to homePage
         switch indexPath.row {
         case 0:
             NSNotificationCenter.defaultCenter().postNotificationName("openFirst", object: nil)
@@ -43,6 +47,7 @@ extension leftMenuVC {
         default:
             print("indexPath.row:: \(indexPath.row)")
         }
+        // Close menu in containerVC
         NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
     }
 }
