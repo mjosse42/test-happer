@@ -100,6 +100,7 @@ class signUpVC: UIViewController, UITextFieldDelegate
             // comme pour le login pour l'instant
             
             let request = NSMutableURLRequest(URL :url!)
+            let session = NSURLSession.sharedSession()
             request.HTTPMethod = "POST"
             
             let postData: NSData = postr.dataUsingEncoding(NSUTF8StringEncoding)!
@@ -112,55 +113,44 @@ class signUpVC: UIViewController, UITextFieldDelegate
             request.setValue(postLength as String, forHTTPHeaderField: "Content-Length")
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
-            
-            var response: NSURLResponse?
-            
+
             var urlData: NSData?
-
-            do
-            {
-                urlData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
-            }
-            catch
-            {
-                print("Catch-Location:: 'signUpVC.swift' :: sendingSyncronousRequest <urlData>")
-            }
-            
-            let res = response as! NSHTTPURLResponse!
-
-            if (res.statusCode >= 200 && res.statusCode < 300)
-            {
-                
-                do
+            let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+                urlData = data! as NSData
+                let res = response as! NSHTTPURLResponse
+                if res.statusCode >= 200 && res.statusCode < 300 // voir statusCode => go Google // ici tout c'est bien passé, on a une réponse
                 {
-                    jsonData = try NSJSONSerialization.JSONObjectWithData(urlData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                    // on ouvre quand meme le colis avec précaution : try catch !
+                    
+                    do
+                    {
+                        jsonData = try NSJSONSerialization.JSONObjectWithData(urlData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary // On convertis en Dictionnaire, ce sera plus facile a lire
+                    }
+                    catch
+                    {
+                        print("Catch-Location:: 'loginPageVC' :: Serialization of server's response <jsonData>")
+                        return
+                    }
                 }
-                catch
+                else
                 {
-                    print("Catch-Location:: 'signUpVC.swift' :: sendingSyncronousRequest <jsonData>")
+                    // on oublie pas de regarder l'erreur 404 qui nous geule qu'on a posté un mauvais url
+                    print(res.statusCode)
+                    return
                 }
-            }
-                
-            else
-            {
-                print("Server Status Code : \(res.statusCode)")
-                return
-            }
-            
-            print(jsonData)
-            
-            let success: NSInteger = jsonData.valueForKey("success") as! NSInteger
-            if (success == 1)
-            {
-                print("SUCCESS")
-                performSegueWithIdentifier("signUpToMain", sender: self)
-            }
-            else
-            {
-                print("FAIL")
-            }
+                print(jsonData) // Pour avoir le retour sur le log, j'aime bien.
+                let success = jsonData.valueForKey("success") as! NSInteger
+                // la variable success contient 0 ou 1 Si s'est bien log ou pas
+                if (success > 0) {
+                    print("SUCCESS")
+                    self.performSegueWithIdentifier("signUpToMain", sender: self) // On bouge vers le home
+                }
+                else {
+                    print("FAIL") // on en reste la, l'utilisateur s'est planté
+                }
+            })
+            task.resume()
         }
-
         else // alert passwd don't match
         {
             let alert = UIAlertController(title: "Une erreur est survenue", message: "Les mots de passe ne correspondent pas", preferredStyle: UIAlertControllerStyle.Alert)

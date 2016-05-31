@@ -39,6 +39,8 @@ class loginPageVC: UIViewController, UITextFieldDelegate
         
         let loginMail = tField_1.text! as NSString
         let passwd = tField_2.text! as NSString
+        
+        let session = NSURLSession.sharedSession()
 
         var jsonData = NSDictionary()  // ici, on stockera la réponse serveur, en JSON
 //  on prépare l'url avec le POST
@@ -60,74 +62,57 @@ class loginPageVC: UIViewController, UITextFieldDelegate
 
         /* on viens d'informer le serveur que l'on souhaite communiquer en JSON  */
         
-        var response: NSURLResponse? //  Et en toute logique on attends sa réponse
+        var res = NSHTTPURLResponse() //  Et en toute logique on attends sa réponse
         var urlData: NSData? // ainsi que d'éventuelles données de la database
-        
-        do
-        {
-            // allo ?
-            urlData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
-        }
-        catch
-        {
-            // je t'entends pas
-            print("Catch-Location:: 'loginVC.swift' :: sendingSynchonousRequest <urlData>")
-            return
-        }
-        
-        // - allo ? c'est le client ?
-        // - oui oui oui ! j'ai une requete pour toi !
-        
-        
-         /* On a maintenant besoin de " decrypter " sa réponse */
-        
-        let res = response as! NSHTTPURLResponse!
-
-        if res.statusCode >= 200 && res.statusCode < 300 // voir statusCode => go Google // ici tout c'est bien passé, on a une réponse
-        {
-            
-            // on ouvre quand meme le colis avec précaution : try catch !
-            
-            do
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            urlData = data! as NSData
+            res = response as! NSHTTPURLResponse
+            if res.statusCode >= 200 && res.statusCode < 300 // voir statusCode => go Google // ici tout c'est bien passé, on a une réponse
             {
-                jsonData = try NSJSONSerialization.JSONObjectWithData(urlData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary // On convertis en Dictionnaire, ce sera plus facile a lire
+                // on ouvre quand meme le colis avec précaution : try catch !
+                
+                do
+                {
+                    jsonData = try NSJSONSerialization.JSONObjectWithData(urlData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary // On convertis en Dictionnaire, ce sera plus facile a lire
+                }
+                catch
+                {
+                    print("Catch-Location:: 'loginPageVC' :: Serialization of server's response <jsonData>")
+                    return
+                }
             }
-            catch
+            else
             {
-                print("Catch-Location:: 'loginPageVC' :: Serialization of server's response <jsonData>")
+                // on oublie pas de regarder l'erreur 404 qui nous geule qu'on a posté un mauvais url
+                print(res.statusCode)
                 return
             }
-        }
+            print(jsonData) // Pour avoir le retour sur le log, j'aime bien.
+            let success = jsonData.valueForKey("id") as! NSInteger
+            // la variable success contient 0 ou 1 Si s'est bien log ou pas
+            if (success > 0) {
+                print("SUCCESS")
+                let user = userClass()
+                user.addCredit(jsonData.valueForKey("credits") as! NSInteger)
+                user.setRank(jsonData.valueForKey("rank") as! NSInteger)
+                user.setUserId(jsonData.valueForKey("id") as! NSInteger)
+                user.setUserName(jsonData.valueForKey("login") as! NSString)
+                user.setUserMail(jsonData.valueForKey("mail") as! NSString)
+                user.addXp(jsonData.valueForKey("exp") as! NSInteger)
+                user.loggued_in()
+                user.announce() // display console de verification
+                self.performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
+            }
+            else {
+                print("FAIL") // on en reste la, l'utilisateur s'est planté
+            }
+        })
+        task.resume()
+    }
 
-         /* On a réussi à serialiser les données */
-
-        else
-        {
-            // on oublie pas de regarder l'erreur 404 qui nous geule qu'on a posté un mauvais url
-            print(res.statusCode)
-            return
-        }
-        print(jsonData) // Pour avoir le retour sur le log, j'aime bien.
-
-        let success = jsonData.valueForKey("id") as! NSInteger
-    // la variable success contient 0 ou 1 Si s'est bien log ou pas
-        if (success > 0) {
-            print("SUCCESS")
-            let user = userClass()
-            user.addCredit(jsonData.valueForKey("credits") as! NSInteger)
-            user.setRank(jsonData.valueForKey("rank") as! NSInteger)
-            user.setUserId(jsonData.valueForKey("id") as! NSInteger)
-            user.setUserName(jsonData.valueForKey("login") as! NSString)
-            user.setUserMail(jsonData.valueForKey("mail") as! NSString)
-            user.addXp(jsonData.valueForKey("exp") as! NSInteger)
-            user.loggued_in()
-            user.announce() // display console de verification
-            performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
-        }
-        else {
-            print("FAIL") // on en reste la, l'utilisateur s'est planté
-        }
-
+    @IBAction func tapFunc(sender: UITapGestureRecognizer)
+    {
+        performSegueWithIdentifier("loginToMain", sender: self)
     }
 
     /*
@@ -139,9 +124,4 @@ class loginPageVC: UIViewController, UITextFieldDelegate
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func tapFunc(sender: UITapGestureRecognizer)
-    {
-        performSegueWithIdentifier("loginToMain", sender: self)
-    }
-
 }
