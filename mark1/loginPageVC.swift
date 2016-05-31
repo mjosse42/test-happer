@@ -122,7 +122,7 @@ class loginPageVC: UIViewController, UITextFieldDelegate
             user.addXp(jsonData.valueForKey("exp") as! NSInteger)
             user.loggued_in()
             user.announce() // display console de verification
-            //performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
+            performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
         }
         else {
             print("FAIL") // on en reste la, l'utilisateur s'est planté

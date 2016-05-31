@@ -6,7 +6,6 @@
 //  Copyright © 2016 mjosse. All rights reserved.
 //
 
-
 import Foundation
 
 enum eRank: Int

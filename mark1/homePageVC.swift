@@ -12,26 +12,34 @@ class homePageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openFirst), name: "openFirst", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openSecond), name: "openSecond", object: nil)
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBAction func homeToMainButton(sender: UIButton) {
-        performSegueWithIdentifier("homeToMain", sender: self)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
+        view.endEditing(true)
     }
 
+    func openFirst() {
+        performSegueWithIdentifier("openFirst", sender: nil)
+    }
+
+    func openSecond() {
+        performSegueWithIdentifier("openSecond", sender: nil)
+    }
+
+    @IBAction func toggleMenu(sender: UIBarButtonItem) {
+        NSNotificationCenter.defaultCenter().postNotificationName("toggleMenu", object: nil)
+    }
 }

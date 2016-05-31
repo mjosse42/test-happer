@@ -114,7 +114,9 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
         }
     }
  */
+
     // MARK: FBSDK
+
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
     {
         if error == nil
@@ -138,9 +140,8 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
             }
         })
     }
-    
+
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
     {
-        
     }
 }
