@@ -83,7 +83,7 @@ class signUpVC: UIViewController, UITextFieldDelegate
             return
         }
         
-        let login = NSString(string: self.Field_1.text!)
+        let login = NSString(string: self.Field_1.text!.lowercaseString)
         let mail = NSString(string: self.Field_2.text!)
         let passwd = NSString(string: self.Field_3.text!)
         let conf = NSString(string: self.Field_4.text!)

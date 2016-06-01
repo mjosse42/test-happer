@@ -37,8 +37,8 @@ class loginPageVC: UIViewController, UITextFieldDelegate
 
     @IBAction func connexion(sender: UIButton) {
         
-        let loginMail = tField_1.text! as NSString
-        let passwd = tField_2.text! as NSString
+        let loginMail = tField_1.text!.lowercaseString as NSString
+        let passwd = tField_2.text!.lowercaseString as NSString
         
         let session = NSURLSession.sharedSession()
 
