@@ -52,10 +52,10 @@ class selfieClass {
         let facto = NSURL(string: url as String)!
         return facto
     }
-    func getRate() -> NSInteger? {
+    func getRate() -> NSInteger {
         return self.rate
     }
-    func getLike() -> NSInteger? {
+    func getLike() -> NSInteger {
         return self.like
     }
     func getImage() -> UIImage? {

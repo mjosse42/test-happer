@@ -90,8 +90,9 @@ class homePageVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TVC", forIndexPath: indexPath) as! accueilTVCell
         let selfie = selfies[indexPath.row]
-        cell.rating.rating = selfie.getRate()!
+        cell.rating.rating = selfie.getRate()
         cell.outfit.text = selfie.getOutfit() as String
+        cell.nbLike.text = String(selfie.getLike())
         cell.imageCell.image = selfie.getImage()
         return cell
     }

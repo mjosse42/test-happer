@@ -12,10 +12,9 @@ class accueilTVCell: UITableViewCell {
 
     
     @IBOutlet weak var imageCell: UIImageView!
-    @IBOutlet weak var leftView: UIView!
-    @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var rating: ratingControl!
     @IBOutlet weak var outfit: UILabel!
+    @IBOutlet weak var nbLike: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

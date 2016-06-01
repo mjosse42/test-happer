@@ -19,6 +19,7 @@
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -560,14 +561,6 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbE-zt-SQU">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="349"/>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uV9-aT-kBd">
-                                            <rect key="frame" x="261" y="291" width="145" height="50"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="heh-4f-bzO"/>
-                                                <constraint firstAttribute="width" constant="145" id="kJw-U7-B1a"/>
-                                            </constraints>
-                                        </view>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIU-g4-f1Q">
                                             <rect key="frame" x="8" y="291" width="140" height="50"/>
                                             <subviews>
@@ -604,12 +597,42 @@
                                                 <constraint firstItem="IAz-RH-Lbh" firstAttribute="centerX" secondItem="zIU-g4-f1Q" secondAttribute="centerX" id="uc8-Et-fnR"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwg-kf-gwn">
+                                            <rect key="frame" x="366" y="301" width="40" height="40"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="ZIA-Xd-kws">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="bhX-hd-DqE"/>
+                                                        <constraint firstAttribute="height" constant="40" id="mfY-e0-Vci"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k22-oA-VtI">
+                                                    <rect key="frame" x="0.0" y="7" width="40" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Jux-aB-XdD"/>
+                                                        <constraint firstAttribute="width" constant="40" id="lyn-yy-QxI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="15"/>
+                                                    <color key="textColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZIA-Xd-kws" firstAttribute="centerY" secondItem="bwg-kf-gwn" secondAttribute="centerY" id="DCf-Ts-h8K"/>
+                                                <constraint firstItem="ZIA-Xd-kws" firstAttribute="top" secondItem="bwg-kf-gwn" secondAttribute="top" id="EzN-ft-750"/>
+                                                <constraint firstItem="ZIA-Xd-kws" firstAttribute="centerX" secondItem="bwg-kf-gwn" secondAttribute="centerX" id="oC0-vd-7Py"/>
+                                                <constraint firstItem="ZIA-Xd-kws" firstAttribute="leading" secondItem="bwg-kf-gwn" secondAttribute="leading" id="pwz-bI-Lad"/>
+                                                <constraint firstItem="k22-oA-VtI" firstAttribute="centerY" secondItem="bwg-kf-gwn" secondAttribute="centerY" constant="-3" id="qyt-qW-1ru"/>
+                                                <constraint firstItem="k22-oA-VtI" firstAttribute="centerX" secondItem="bwg-kf-gwn" secondAttribute="centerX" id="zGX-vc-AYV"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="cbE-zt-SQU" firstAttribute="top" secondItem="rmU-nA-nor" secondAttribute="top" id="3Gf-Bc-WwG"/>
+                                        <constraint firstItem="bwg-kf-gwn" firstAttribute="trailing" secondItem="rmU-nA-nor" secondAttribute="trailingMargin" id="AU3-xJ-hAm"/>
                                         <constraint firstItem="cbE-zt-SQU" firstAttribute="leading" secondItem="rmU-nA-nor" secondAttribute="leading" id="CF0-HX-Cz1"/>
-                                        <constraint firstItem="uV9-aT-kBd" firstAttribute="trailing" secondItem="rmU-nA-nor" secondAttribute="trailingMargin" id="H1M-Ni-SeH"/>
-                                        <constraint firstItem="uV9-aT-kBd" firstAttribute="bottom" secondItem="rmU-nA-nor" secondAttribute="bottomMargin" id="IcT-30-Oqz"/>
+                                        <constraint firstItem="bwg-kf-gwn" firstAttribute="bottom" secondItem="rmU-nA-nor" secondAttribute="bottomMargin" id="M8C-r8-QDk"/>
                                         <constraint firstItem="zIU-g4-f1Q" firstAttribute="bottom" secondItem="rmU-nA-nor" secondAttribute="bottomMargin" id="OPv-gU-Crj"/>
                                         <constraint firstAttribute="bottom" secondItem="cbE-zt-SQU" secondAttribute="bottom" id="Zji-yC-cPQ"/>
                                         <constraint firstItem="zIU-g4-f1Q" firstAttribute="leading" secondItem="rmU-nA-nor" secondAttribute="leadingMargin" id="cgF-Gz-sa9"/>
@@ -618,10 +641,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageCell" destination="cbE-zt-SQU" id="wTm-UJ-IE5"/>
-                                    <outlet property="leftView" destination="uV9-aT-kBd" id="khK-8R-lS4"/>
+                                    <outlet property="nbLike" destination="k22-oA-VtI" id="I6N-Cm-2Xm"/>
                                     <outlet property="outfit" destination="rgH-Lp-UW8" id="rKu-cw-nAz"/>
                                     <outlet property="rating" destination="IAz-RH-Lbh" id="UdD-5f-oaA"/>
-                                    <outlet property="rightView" destination="IAz-RH-Lbh" id="EvT-Zx-dsP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -667,6 +689,7 @@
     </scenes>
     <resources>
         <image name="Icone_menu" width="21" height="21"/>
+        <image name="heart" width="31" height="31"/>
         <image name="logo_Happer" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
