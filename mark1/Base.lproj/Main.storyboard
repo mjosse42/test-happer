@@ -624,16 +624,207 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="aPU-Fy-wM1">
-                        <barButtonItem key="leftBarButtonItem" image="Icone_menu" id="hhJ-oc-caS">
+                        <barButtonItem key="leftBarButtonItem" image="IconeMenu" id="hhJ-oc-caS">
                             <connections>
                                 <action selector="toggleMenu:" destination="rpw-5Y-wRR" id="iC6-QK-09j"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="cUI-zO-4OU" kind="show" identifier="happlikeSegue" id="tfz-aW-Rl4"/>
+                        <segue destination="cpJ-Rl-dN4" kind="show" identifier="partageSegue" id="Ndc-hU-YeA"/>
+                        <segue destination="5VC-Tb-K23" kind="show" identifier="wishlistSegue" id="jbZ-Yr-UNN"/>
+                        <segue destination="9de-wa-sse" kind="show" identifier="amisSegue" id="inm-96-5NH"/>
+                        <segue destination="fWt-NY-ORN" kind="show" identifier="dressingSegue" id="YfK-pG-NFp"/>
+                        <segue destination="hs0-J0-uvD" kind="show" identifier="produitSegue" id="Va1-Vv-60O"/>
+                        <segue destination="HcB-pc-dwR" kind="show" identifier="compteSegue" id="TAZ-ot-AjL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBB-eS-Efl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-699" y="1667"/>
+        </scene>
+        <!--HapplikeVC-->
+        <scene sceneID="nP0-Fe-q7O">
+            <objects>
+                <viewController id="cUI-zO-4OU" customClass="happlikeVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oiT-4j-8gm"/>
+                        <viewControllerLayoutGuide type="bottom" id="tcu-6E-apf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FZU-z6-BMp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Happ'Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soj-qY-Xy8">
+                                <rect key="frame" x="115" y="342" width="185" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7A4-SG-JV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1697" y="2629"/>
+        </scene>
+        <!--PartageVC-->
+        <scene sceneID="PgG-7K-cbE">
+            <objects>
+                <viewController id="cpJ-Rl-dN4" customClass="partageVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LzN-be-wg7"/>
+                        <viewControllerLayoutGuide type="bottom" id="FAL-iM-Hy3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EaC-gE-HD0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partager mon style" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-5h-Aad">
+                                <rect key="frame" x="35" y="342" width="345" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hs8-I0-xF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2208" y="2629"/>
+        </scene>
+        <!--AmisVC-->
+        <scene sceneID="P69-xn-eyN">
+            <objects>
+                <viewController id="9de-wa-sse" customClass="amisVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gNJ-iG-1w0"/>
+                        <viewControllerLayoutGuide type="bottom" id="rpc-uY-pJX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VHf-9L-2vk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amis/Parrainage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmp-ph-NQk">
+                                <rect key="frame" x="57" y="342" width="301" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Lp-Ib-49k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="2629"/>
+        </scene>
+        <!--ProduitVC-->
+        <scene sceneID="MKY-nv-APa">
+            <objects>
+                <viewController id="hs0-J0-uvD" customClass="produitVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BHp-sb-bVU"/>
+                        <viewControllerLayoutGuide type="bottom" id="FHv-7Y-TsS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KMM-Mh-Bmc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Produit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTY-WN-cIG">
+                                <rect key="frame" x="141" y="342" width="132" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2O-Kv-taj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-699" y="2629"/>
+        </scene>
+        <!--DressingVC-->
+        <scene sceneID="V9W-Y0-MZ0">
+            <objects>
+                <viewController id="fWt-NY-ORN" customClass="dressingVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jIO-l2-m0o"/>
+                        <viewControllerLayoutGuide type="bottom" id="YsU-1R-jRf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B34-bs-Dz9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon dressing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXd-D6-Coi">
+                                <rect key="frame" x="82" y="342" width="250" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7S-kx-2eL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1197" y="2629"/>
+        </scene>
+        <!--CompteVC-->
+        <scene sceneID="2AF-PY-ig1">
+            <objects>
+                <viewController id="HcB-pc-dwR" customClass="compteVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Ho-Ll-dO7"/>
+                        <viewControllerLayoutGuide type="bottom" id="ajC-Zz-xF9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GSL-Qi-dxB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Compte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omb-0V-bE9">
+                                <rect key="frame" x="133" y="342" width="148" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hb-pX-N6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="2629"/>
+        </scene>
+        <!--WishlistVC-->
+        <scene sceneID="1DO-cM-YTJ">
+            <objects>
+                <viewController id="5VC-Tb-K23" customClass="wishlistVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="crg-ze-yVi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uzl-Cd-ZYS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AtA-cM-FGG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ma wishlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azh-Hc-Ukg">
+                                <rect key="frame" x="104" y="342" width="206" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEa-MM-gMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-211" y="2629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yGx-91-eOd">
@@ -655,7 +846,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icone_menu" width="21" height="21"/>
+        <image name="IconeMenu" width="21" height="21"/>
         <image name="heart" width="31" height="31"/>
         <image name="logo_Happer" width="256" height="256"/>
         <image name="rankRing" width="43" height="43"/>

@@ -66,7 +66,11 @@ class homePageVC: UITableViewController {
     func open(notification: NSNotification) {
         let dictionary = notification.object as! NSDictionary
         let destination = dictionary["toOpen"] as! String
-        performSegueWithIdentifier(destination, sender: nil)
+        if destination == "partageSegue" || destination == "happlikeSegue" || destination == "dressingSegue" || destination == "produitSegue" || destination == "wishlistSegue" || destination == "amisSegue" || destination == "compteSegue" {
+            performSegueWithIdentifier(destination, sender: nil)
+        } else {
+            print("You tried to perform " + destination)
+        }
     }
 
     @IBAction func toggleMenu(sender: UIBarButtonItem) {

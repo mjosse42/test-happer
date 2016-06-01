@@ -17,7 +17,6 @@ class containerVC: UIViewController {
         // Catchers for notification (close menu, clic at button bar from homePage)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(containerVC.start), name: "start", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(containerVC.toggleMenu), name: "toggleMenu", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(containerVC.closeMenu), name: "closeMenu", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(containerVC.push), name: "push", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(containerVC.scroller), name: "scroller", object: nil)
     }
