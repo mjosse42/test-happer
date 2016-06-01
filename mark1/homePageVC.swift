@@ -95,7 +95,6 @@ class homePageVC: UITableViewController {
         cell.outfit.text = selfie.getOutfit() as String
         cell.nbLike.text = String(selfie.getLike())
         cell.imageCell.image = selfie.getImage()
-        print(selfie.getId())
         return cell
     }
 

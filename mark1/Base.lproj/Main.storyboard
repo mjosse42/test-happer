@@ -527,27 +527,29 @@
                                     <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQp-Nx-kQ2">
-                                    <rect key="frame" x="8" y="21" width="89" height="46"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HJ-zt-hff">
-                                    <rect key="frame" x="315" y="21" width="89" height="46"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rankRing" translatesAutoresizingMaskIntoConstraints="NO" id="UmE-JL-b27">
+                                    <rect key="frame" x="8" y="27" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="6IT-kv-KST"/>
+                                        <constraint firstAttribute="width" constant="35" id="cBD-8G-hyz"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yp1-9s-2km">
+                                    <rect key="frame" x="315" y="17" width="91" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="55" id="37V-DX-NNg"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="gzc-Mx-7NW" firstAttribute="centerY" secondItem="yP6-e1-au3" secondAttribute="centerY" id="5bq-JL-W7Q"/>
                                 <constraint firstItem="gzc-Mx-7NW" firstAttribute="centerX" secondItem="yP6-e1-au3" secondAttribute="centerX" id="5gw-bk-87J"/>
-                                <constraint firstItem="fQp-Nx-kQ2" firstAttribute="top" secondItem="yP6-e1-au3" secondAttribute="top" constant="21" id="7tt-BP-tuO"/>
-                                <constraint firstItem="3HJ-zt-hff" firstAttribute="top" secondItem="yP6-e1-au3" secondAttribute="top" constant="21" id="Egp-wk-qEB"/>
-                                <constraint firstItem="3HJ-zt-hff" firstAttribute="leading" secondItem="gzc-Mx-7NW" secondAttribute="trailing" constant="8" id="HVb-zr-dYw"/>
-                                <constraint firstAttribute="bottom" secondItem="fQp-Nx-kQ2" secondAttribute="bottom" constant="21" id="Na3-Kh-MRn"/>
-                                <constraint firstItem="fQp-Nx-kQ2" firstAttribute="leading" secondItem="yP6-e1-au3" secondAttribute="leading" constant="8" id="Rqd-56-97r"/>
-                                <constraint firstAttribute="trailing" secondItem="3HJ-zt-hff" secondAttribute="trailing" constant="10" id="Shi-OR-QkS"/>
-                                <constraint firstItem="gzc-Mx-7NW" firstAttribute="leading" secondItem="fQp-Nx-kQ2" secondAttribute="trailing" constant="10" id="kBP-pa-2NR"/>
-                                <constraint firstAttribute="bottom" secondItem="3HJ-zt-hff" secondAttribute="bottom" constant="21" id="wUc-IN-fcR"/>
+                                <constraint firstItem="yp1-9s-2km" firstAttribute="leading" secondItem="gzc-Mx-7NW" secondAttribute="trailing" constant="8" id="HW5-5y-SjD"/>
+                                <constraint firstAttribute="trailing" secondItem="yp1-9s-2km" secondAttribute="trailing" constant="8" id="S8e-Ag-cDu"/>
+                                <constraint firstItem="yp1-9s-2km" firstAttribute="centerY" secondItem="yP6-e1-au3" secondAttribute="centerY" id="XFM-Ig-lpc"/>
+                                <constraint firstItem="UmE-JL-b27" firstAttribute="leading" secondItem="yP6-e1-au3" secondAttribute="leading" constant="8" id="kCc-fc-SMb"/>
+                                <constraint firstItem="UmE-JL-b27" firstAttribute="centerY" secondItem="yP6-e1-au3" secondAttribute="centerY" id="qKt-9U-aqa"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -691,6 +693,7 @@
         <image name="Icone_menu" width="21" height="21"/>
         <image name="heart" width="31" height="31"/>
         <image name="logo_Happer" width="256" height="256"/>
+        <image name="rankRing" width="43" height="43"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N5r-4J-dfS"/>
