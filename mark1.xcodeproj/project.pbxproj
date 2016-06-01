@@ -36,8 +36,8 @@
 		55F71BDD1CFF3EEE005F44E2 /* dressingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71BDC1CFF3EEE005F44E2 /* dressingVC.swift */; };
 		55F71BDF1CFF3F0E005F44E2 /* produitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71BDE1CFF3F0E005F44E2 /* produitVC.swift */; };
 		55F71BE11CFF3F2E005F44E2 /* wishlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71BE01CFF3F2E005F44E2 /* wishlistVC.swift */; };
-		55F71BE51CFF3F88005F44E2 /* amisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71BE41CFF3F88005F44E2 /* amisVC.swift */; };
 		55F71BE71CFF3FA8005F44E2 /* compteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71BE61CFF3FA8005F44E2 /* compteVC.swift */; };
+		55F71BE91CFF4EB4005F44E2 /* amisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71BE81CFF4EB3005F44E2 /* amisVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +84,8 @@
 		55F71BDC1CFF3EEE005F44E2 /* dressingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dressingVC.swift; sourceTree = "<group>"; };
 		55F71BDE1CFF3F0E005F44E2 /* produitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = produitVC.swift; sourceTree = "<group>"; };
 		55F71BE01CFF3F2E005F44E2 /* wishlistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wishlistVC.swift; sourceTree = "<group>"; };
-		55F71BE41CFF3F88005F44E2 /* amisVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = amisVC.swift; path = ../amisVC.swift; sourceTree = "<group>"; };
 		55F71BE61CFF3FA8005F44E2 /* compteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compteVC.swift; sourceTree = "<group>"; };
+		55F71BE81CFF4EB3005F44E2 /* amisVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = amisVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 				55AA331E1CFC3337007440AD /* FBSDKLoginButtonFR.swift */,
 				35639EA51CF4751900B2A54C /* userClass.swift */,
 				355C50AA1CEF66BC00DC2631 /* Main.storyboard */,
-				55F71BE41CFF3F88005F44E2 /* amisVC.swift */,
+				55F71BE81CFF4EB3005F44E2 /* amisVC.swift */,
 				55F71BE61CFF3FA8005F44E2 /* compteVC.swift */,
 				55F71BE01CFF3F2E005F44E2 /* wishlistVC.swift */,
 				55F71BDE1CFF3F0E005F44E2 /* produitVC.swift */,
@@ -291,7 +291,6 @@
 				55A60C6A1CFDA6560034A0FB /* leftMenuVC.swift in Sources */,
 				355C50A91CEF66BC00DC2631 /* mainPageVC.swift in Sources */,
 				355C50A71CEF66BC00DC2631 /* AppDelegate.swift in Sources */,
-				55F71BE51CFF3F88005F44E2 /* amisVC.swift in Sources */,
 				55F71BDF1CFF3F0E005F44E2 /* produitVC.swift in Sources */,
 				55F71BD71CFF1ADB005F44E2 /* menuClass.swift in Sources */,
 				3543B6F81CF6F114005762E5 /* loginPageVC.swift in Sources */,
@@ -299,6 +298,7 @@
 				55F71BE11CFF3F2E005F44E2 /* wishlistVC.swift in Sources */,
 				55F71BD91CFF3E99005F44E2 /* partageVC.swift in Sources */,
 				355599331CFDECB900F55A06 /* selfieClass.swift in Sources */,
+				55F71BE91CFF4EB4005F44E2 /* amisVC.swift in Sources */,
 				35639EA61CF4751900B2A54C /* userClass.swift in Sources */,
 				355599351CFDF08C00F55A06 /* accueilTVCell.swift in Sources */,
 			);
