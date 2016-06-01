@@ -506,10 +506,10 @@
             </objects>
             <point key="canvasLocation" x="-113" y="1274"/>
         </scene>
-        <!--Home PageVC-->
+        <!--homePage-->
         <scene sceneID="bpE-5C-4oe">
             <objects>
-                <tableViewController id="rpw-5Y-wRR" customClass="homePageVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="accueil" title="homePage" id="rpw-5Y-wRR" customClass="homePageVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" id="KiS-fM-QAx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -696,7 +696,7 @@
         <image name="rankRing" width="43" height="43"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N5r-4J-dfS"/>
-        <segue reference="Klt-wO-wzK"/>
+        <segue reference="jEL-Za-n6W"/>
+        <segue reference="7pM-JU-2iu"/>
     </inferredMetricsTieBreakers>
 </document>

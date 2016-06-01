@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialViewController: UIViewController
         
         if(FBSDKAccessToken.currentAccessToken() != nil){
-            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("homePage") as! homePageVC
+            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("homePage") as! containerVC
             initialViewController = vc
         }else{
             initialViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainPage") as! mainPageVC

@@ -38,10 +38,13 @@ class homePageVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("test1")
         // Close menu at start
         NSNotificationCenter.defaultCenter().postNotificationName("start", object: nil)
+         print("test2")
         // Catchers for notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openFirst), name: "openFirst", object: nil)
+        print("test3")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openSecond), name: "openSecond", object: nil)
         customNavBar()
         self.selfies = makeSelfie()
