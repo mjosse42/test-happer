@@ -6,4 +6,16 @@
 //  Copyright © 2016 mjosse. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class menu {
+    var segueKey: String
+    var text: String
+    var image: UIImage?
+    
+    init(segueKey: String, text: String, image: UIImage?) {
+        self.segueKey = segueKey
+        self.text = text
+        self.image = image
+    }
+}

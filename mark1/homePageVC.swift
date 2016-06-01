@@ -38,14 +38,10 @@ class homePageVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test1")
         // Close menu at start
         NSNotificationCenter.defaultCenter().postNotificationName("start", object: nil)
-         print("test2")
         // Catchers for notification
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openFirst), name: "openFirst", object: nil)
-        print("test3")
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openSecond), name: "openSecond", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.open), name: "open", object: nil)
         customNavBar()
         self.selfies = makeSelfie()
     }
@@ -67,12 +63,10 @@ class homePageVC: UITableViewController {
     }
     
     // Function called when notifications are catched in viewDidLoad
-    func openFirst() {
-        performSegueWithIdentifier("openFirst", sender: nil)
-    }
-    
-    func openSecond() {
-        performSegueWithIdentifier("openSecond", sender: nil)
+    func open(notification: NSNotification) {
+        let dictionary = notification.object as! NSDictionary
+        let destination = dictionary["toOpen"] as! String
+        performSegueWithIdentifier(destination, sender: nil)
     }
 
     @IBAction func toggleMenu(sender: UIBarButtonItem) {
