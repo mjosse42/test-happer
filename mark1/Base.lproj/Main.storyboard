@@ -16,6 +16,9 @@
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -251,7 +254,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="uD2-bo-o36"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTI-lJ-cbq">
@@ -273,7 +276,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Ffd-gd-o85"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
@@ -515,12 +518,12 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les Inspirations du Jour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzc-Mx-7NW">
-                                    <rect key="frame" x="107" y="34" width="200" height="21"/>
+                                    <rect key="frame" x="107" y="32" width="200" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="KK2-Ct-Fmu"/>
+                                        <constraint firstAttribute="height" constant="25" id="nMs-AI-rag"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQp-Nx-kQ2">
@@ -668,6 +671,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N5r-4J-dfS"/>
-        <segue reference="7pM-JU-2iu"/>
+        <segue reference="Klt-wO-wzK"/>
     </inferredMetricsTieBreakers>
 </document>
