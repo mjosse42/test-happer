@@ -48,6 +48,6 @@ extension leftMenuVC {
             print("indexPath.row:: \(indexPath.row)")
         }
         // Close menu in containerVC
-        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("push", object: nil)
     }
 }

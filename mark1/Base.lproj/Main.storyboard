@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -449,10 +449,10 @@
             </objects>
             <point key="canvasLocation" x="-1881" y="1667"/>
         </scene>
-        <!--View Controller-->
+        <!--SecondVC-->
         <scene sceneID="0jv-ev-4qS">
             <objects>
-                <viewController id="pBc-N7-N75" sceneMemberID="viewController">
+                <viewController id="pBc-N7-N75" customClass="secondVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xG4-5i-wBA"/>
                         <viewControllerLayoutGuide type="bottom" id="mDU-7r-P4j"/>
@@ -475,10 +475,10 @@
             </objects>
             <point key="canvasLocation" x="-113" y="2111"/>
         </scene>
-        <!--View Controller-->
+        <!--FirstVC-->
         <scene sceneID="44b-EG-Ira">
             <objects>
-                <viewController id="2jB-8m-uoM" sceneMemberID="viewController">
+                <viewController id="2jB-8m-uoM" customClass="firstVC" customModule="mark1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z2Z-SX-QUQ"/>
                         <viewControllerLayoutGuide type="bottom" id="WxX-1O-kYV"/>
@@ -556,20 +556,20 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbE-zt-SQU">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="349"/>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-RH-Lbh">
-                                            <rect key="frame" x="8" y="291" width="145" height="50"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="gBo-Ub-WxO"/>
-                                                <constraint firstAttribute="width" constant="145" id="op2-wo-kPZ"/>
-                                            </constraints>
-                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uV9-aT-kBd">
                                             <rect key="frame" x="261" y="291" width="145" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="heh-4f-bzO"/>
                                                 <constraint firstAttribute="width" constant="145" id="kJw-U7-B1a"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-RH-Lbh">
+                                            <rect key="frame" x="8" y="291" width="145" height="50"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="gBo-Ub-WxO"/>
+                                                <constraint firstAttribute="width" constant="145" id="op2-wo-kPZ"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -597,7 +597,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="aPU-Fy-wM1">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="hhJ-oc-caS">
+                        <barButtonItem key="leftBarButtonItem" image="Icone_menu" id="hhJ-oc-caS">
                             <connections>
                                 <action selector="toggleMenu:" destination="rpw-5Y-wRR" id="iC6-QK-09j"/>
                             </connections>
@@ -632,6 +632,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icone_menu" width="21" height="21"/>
         <image name="logo_Happer" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>

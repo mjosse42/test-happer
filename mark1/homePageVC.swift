@@ -37,8 +37,8 @@ class homePageVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Send notification "closeMenuViaNotification"
-        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
+        // Close menu at start
+        NSNotificationCenter.defaultCenter().postNotificationName("start", object: nil)
         // Catchers for notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openFirst), name: "openFirst", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.openSecond), name: "openSecond", object: nil)
@@ -60,12 +60,6 @@ class homePageVC: UITableViewController {
     deinit {
         // Clean catcher when instance are destroyed
         NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    // Tap on homePage activate this (even if menu is open)
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
-        view.endEditing(true)
     }
     
     // Function called when notifications are catched in viewDidLoad
