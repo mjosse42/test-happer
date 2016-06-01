@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NeutraTextBook.otf">
+            <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
@@ -564,29 +565,59 @@
                                                 <constraint firstAttribute="width" constant="145" id="kJw-U7-B1a"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-RH-Lbh">
-                                            <rect key="frame" x="8" y="291" width="145" height="50"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIU-g4-f1Q">
+                                            <rect key="frame" x="8" y="291" width="140" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-Lp-UW8">
+                                                    <rect key="frame" x="0.0" y="30" width="145" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Agq-6d-4lv"/>
+                                                        <constraint firstAttribute="width" constant="145" id="aJv-W0-to6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-RH-Lbh" customClass="ratingControl" customModule="mark1" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="aZf-af-P8K"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                                            </accessibility>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="gBo-Ub-WxO"/>
-                                                <constraint firstAttribute="width" constant="145" id="op2-wo-kPZ"/>
+                                                <constraint firstItem="rgH-Lp-UW8" firstAttribute="top" secondItem="IAz-RH-Lbh" secondAttribute="bottom" constant="5" id="0MV-Yd-ZlE"/>
+                                                <constraint firstAttribute="bottom" secondItem="rgH-Lp-UW8" secondAttribute="bottom" id="bhx-JY-R6A"/>
+                                                <constraint firstAttribute="width" constant="140" id="c0E-l2-sbj"/>
+                                                <constraint firstItem="IAz-RH-Lbh" firstAttribute="top" secondItem="zIU-g4-f1Q" secondAttribute="top" id="i3C-d5-hoM"/>
+                                                <constraint firstItem="IAz-RH-Lbh" firstAttribute="leading" secondItem="zIU-g4-f1Q" secondAttribute="leading" id="lvf-Pu-jKa"/>
+                                                <constraint firstAttribute="trailing" secondItem="IAz-RH-Lbh" secondAttribute="trailing" id="o3G-jd-ucp"/>
+                                                <constraint firstAttribute="height" constant="50" id="smZ-Iw-WOp"/>
+                                                <constraint firstItem="rgH-Lp-UW8" firstAttribute="leading" secondItem="zIU-g4-f1Q" secondAttribute="leading" id="tbF-vF-kKn"/>
+                                                <constraint firstItem="IAz-RH-Lbh" firstAttribute="centerX" secondItem="zIU-g4-f1Q" secondAttribute="centerX" id="uc8-Et-fnR"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="cbE-zt-SQU" firstAttribute="top" secondItem="rmU-nA-nor" secondAttribute="top" id="3Gf-Bc-WwG"/>
-                                        <constraint firstItem="IAz-RH-Lbh" firstAttribute="bottom" secondItem="rmU-nA-nor" secondAttribute="bottomMargin" id="C1T-ja-elu"/>
                                         <constraint firstItem="cbE-zt-SQU" firstAttribute="leading" secondItem="rmU-nA-nor" secondAttribute="leading" id="CF0-HX-Cz1"/>
                                         <constraint firstItem="uV9-aT-kBd" firstAttribute="trailing" secondItem="rmU-nA-nor" secondAttribute="trailingMargin" id="H1M-Ni-SeH"/>
                                         <constraint firstItem="uV9-aT-kBd" firstAttribute="bottom" secondItem="rmU-nA-nor" secondAttribute="bottomMargin" id="IcT-30-Oqz"/>
+                                        <constraint firstItem="zIU-g4-f1Q" firstAttribute="bottom" secondItem="rmU-nA-nor" secondAttribute="bottomMargin" id="OPv-gU-Crj"/>
                                         <constraint firstAttribute="bottom" secondItem="cbE-zt-SQU" secondAttribute="bottom" id="Zji-yC-cPQ"/>
-                                        <constraint firstItem="IAz-RH-Lbh" firstAttribute="leading" secondItem="rmU-nA-nor" secondAttribute="leadingMargin" id="dtB-S0-qQe"/>
+                                        <constraint firstItem="zIU-g4-f1Q" firstAttribute="leading" secondItem="rmU-nA-nor" secondAttribute="leadingMargin" id="cgF-Gz-sa9"/>
                                         <constraint firstAttribute="trailing" secondItem="cbE-zt-SQU" secondAttribute="trailing" id="hv1-yN-AeI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageCell" destination="cbE-zt-SQU" id="wTm-UJ-IE5"/>
                                     <outlet property="leftView" destination="uV9-aT-kBd" id="khK-8R-lS4"/>
+                                    <outlet property="outfit" destination="rgH-Lp-UW8" id="rKu-cw-nAz"/>
+                                    <outlet property="rating" destination="IAz-RH-Lbh" id="UdD-5f-oaA"/>
                                     <outlet property="rightView" destination="IAz-RH-Lbh" id="EvT-Zx-dsP"/>
                                 </connections>
                             </tableViewCell>

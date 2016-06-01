@@ -29,7 +29,7 @@ class homePageVC: UITableViewController {
         var selfies: [selfieClass] = []
         for val in tab
         {
-            let new: selfieClass = selfieClass(id: val.value["id"] as! NSInteger, own_id: val.value["owner_id"] as! NSInteger, own_un: val.value["owner_un"] as! NSString, url: val.value["url"] as! NSString, rate: val.value["rate"] as? NSInteger, like: val.value["nb_like"] as? NSInteger)
+            let new: selfieClass = selfieClass(id: val.value["id"] as! NSInteger, own_id: val.value["owner_id"] as! NSInteger, own_un: val.value["owner_un"] as! NSString, url: val.value["url"] as! NSString, rate: val.value["rate"] as! NSInteger, like: val.value["nb_like"] as! NSInteger, outfit: val.value["outfit"] as! NSString)
             selfies += [new]
         }
         return selfies
@@ -90,6 +90,8 @@ class homePageVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TVC", forIndexPath: indexPath) as! accueilTVCell
         let selfie = selfies[indexPath.row]
+        cell.rating.rating = selfie.getRate()!
+        cell.outfit.text = selfie.getOutfit() as String
         cell.imageCell.image = selfie.getImage()
         return cell
     }
