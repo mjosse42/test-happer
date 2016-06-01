@@ -32,6 +32,7 @@ class homePageVC: UITableViewController {
             let new: selfieClass = selfieClass(id: val.value["id"] as! NSInteger, own_id: val.value["owner_id"] as! NSInteger, own_un: val.value["owner_un"] as! NSString, url: val.value["url"] as! NSString, rate: val.value["rate"] as! NSInteger, like: val.value["nb_like"] as! NSInteger, outfit: val.value["outfit"] as! NSString)
             selfies += [new]
         }
+        selfies.sortInPlace({ $0.getId() > $1.getId() })
         return selfies
     }
 
@@ -94,6 +95,7 @@ class homePageVC: UITableViewController {
         cell.outfit.text = selfie.getOutfit() as String
         cell.nbLike.text = String(selfie.getLike())
         cell.imageCell.image = selfie.getImage()
+        print(selfie.getId())
         return cell
     }
 
