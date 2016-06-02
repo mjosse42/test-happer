@@ -55,8 +55,8 @@ class selfieClass {
     func getRate() -> NSInteger {
         return self.rate
     }
-    func getLike() -> NSInteger {
-        return self.like
+    func getLike() -> String {
+        return String(self.like)
     }
     func getImage() -> UIImage? {
         return self.image!

@@ -13,7 +13,7 @@ class actuTVCell: UITableViewCell {
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var rating: ratingControl!
     @IBOutlet weak var outfit: UILabel!
-    @IBOutlet weak var likeCount: UILabel!
+    @IBOutlet weak var nbLike: UILabel!
 
     
     override func awakeFromNib() {

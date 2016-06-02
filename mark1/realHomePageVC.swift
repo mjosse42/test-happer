@@ -67,14 +67,36 @@ class realHomePageVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.selfies = makeSelfie()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(realHomePageVC.logoTapped(_:)))
         tapGesture.numberOfTapsRequired = 1
-        self.logoProgressBar.addGestureRecognizer(tapGesture)
+        self.mybutton.addGestureRecognizer(tapGesture)
         self.view.bringSubviewToFront(logoProgressBar)
-        // Do any additional setup after loading the view.
+
+        // Close menu at start
+        NSNotificationCenter.defaultCenter().postNotificationName("start", object: nil)
+        // Catchers for notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.open), name: "open", object: nil)
+        customNavBar()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    // Function called when notifications are catched in viewDidLoad
+    func open(notification: NSNotification) {
+        let dictionary = notification.object as! NSDictionary
+        let destination = dictionary["toOpen"] as! String
+        if destination == "partageSegue" || destination == "happlikeSegue" || destination == "dressingSegue" || destination == "produitSegue" || destination == "wishlistSegue" || destination == "amisSegue" || destination == "compteSegue" {
+            performSegueWithIdentifier(destination, sender: nil)
+        } else {
+            print("You tried to perform " + destination)
+        }
+    }
+
+    func customNavBar() {
+        let nav = self.navigationController!.navigationBar
+        nav.barTintColor = UIColor.blackColor()
+        nav.tintColor = UIColor.whiteColor()
     }
 
     // MARK : tableViewControl
@@ -88,7 +110,7 @@ class realHomePageVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = self.tab.dequeueReusableCellWithIdentifier("realTVCell", forIndexPath: indexPath) as! actuTVCell
         let selfie = self.selfies[indexPath.row]
         cell.photo.image = selfie.getImage()
-        cell.likeCount.text = String(selfie.getLike())
+        cell.nbLike.text = selfie.getLike()
         cell.outfit.text = selfie.getOutfit() as String
         cell.rating.rating = selfie.getRate()
         return cell
@@ -103,5 +125,8 @@ class realHomePageVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func toggleMenu(sender: UIBarButtonItem) {
+        NSNotificationCenter.defaultCenter().postNotificationName("toggleMenu", object: nil)
+    }
 }
