@@ -523,9 +523,6 @@
                                             <constraint firstAttribute="width" constant="100" id="5SC-Uq-6cp"/>
                                         </constraints>
                                         <state key="normal" image="logo_Happer_96x96"/>
-                                        <connections>
-                                            <action selector="logoTapped:" destination="u9v-GP-sn9" eventType="touchUpInside" id="mPp-ct-ylH"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -554,9 +551,6 @@
                                         <color key="value" red="0.97855883836746216" green="0.064883269369602203" blue="0.11033227294683456" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="GN4-1d-mLu" appends="YES" id="eBf-GI-pfs"/>
-                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Djr-HR-Xyc">
                                 <rect key="frame" x="20" y="119" width="374" height="597"/>
@@ -704,11 +698,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYz-V1-2Xs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="GN4-1d-mLu">
-                    <connections>
-                        <action selector="logoTapped:" destination="u9v-GP-sn9" id="cAy-SK-EH8"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-932" y="1595"/>
         </scene>

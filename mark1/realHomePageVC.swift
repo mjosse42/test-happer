@@ -49,7 +49,7 @@ class realHomePageVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         return selfies
     }
 
-    @IBAction func logoTapped(sender: UIButton) {
+    func logoTapped(sender: UIButton) {
         print("TEST")
         if self.currentCount != self.maxCount {
             self.currentCount += 1
@@ -65,9 +65,10 @@ class realHomePageVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tab.delegate = self
         self.logoProgressBar.angle = 0
         self.selfies = makeSelfie()
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(realHomePageVC.logoTapped(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        self.logoProgressBar.addGestureRecognizer(tapGesture)
         self.view.bringSubviewToFront(logoProgressBar)
-
         // Do any additional setup after loading the view.
     }
 
