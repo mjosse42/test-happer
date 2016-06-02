@@ -12,12 +12,13 @@ class leftMenuVC: UITableViewController {
 
     // List of title in menu
     var menuList: [menu] = []
+    @IBOutlet weak var footerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Si je le met ça marche, sinon ça sigabort :D
-        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "menuCell")
+        customNavBar()
         loadSampleMenu()
+        customFooter()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +37,18 @@ class leftMenuVC: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("menuCell", forIndexPath: indexPath) as! menuCell
         cell.cellImage.image = menuList[indexPath.row].image
         cell.cellLabel.text = menuList[indexPath.row].text
+        let borderBottom = CALayer()
+        borderBottom.borderColor = UIColor.blackColor().CGColor
+        borderBottom.frame = CGRect(x: 0.0, y: cell.cellView.frame.size.height, width: cell.cellView.frame.size.width, height: 1.0)
+        borderBottom.borderWidth = 1.0
+        cell.cellView.layer.addSublayer(borderBottom)
         return cell
+    }
+
+    func customNavBar() {
+        let nav = self.navigationController!.navigationBar
+        nav.barTintColor = UIColor.blackColor()
+        nav.tintColor = UIColor.whiteColor()
     }
     
     func loadSampleMenu() {
@@ -57,6 +69,14 @@ class leftMenuVC: UITableViewController {
         let icone8 = UIImage(named: "IconeCompte")!
         let menu8 = menu(segueKey: "compteSegue", text: "Mon compte", image: icone8)
         menuList += [menu1, menu2, menu3, menu4, menu5, menu6, menu7, menu8]
+    }
+
+    func customFooter () {
+        let borderTop = CALayer()
+        borderTop.borderColor = UIColor.blackColor().CGColor
+        borderTop.frame = CGRect(x: 0.0, y: 0.0, width: self.footerView.layer.frame.size.width, height: 1.0)
+        borderTop.borderWidth = 1.0
+        self.footerView.layer.addSublayer(borderTop)
     }
 }
 
