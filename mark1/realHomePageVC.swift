@@ -58,16 +58,12 @@ class realHomePageVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.logoProgressBar.animateToAngle(Double(newAngleValue), duration: 0.5, completion: nil)
         }
     }
- 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tab.delegate = self
         self.logoProgressBar.angle = 0
         self.selfies = makeSelfie()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(realHomePageVC.logoTapped(_:)))
-        tapGesture.numberOfTapsRequired = 1
-        self.mybutton.addGestureRecognizer(tapGesture)
         self.view.bringSubviewToFront(logoProgressBar)
 
         // Close menu at start

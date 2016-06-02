@@ -15,13 +15,22 @@ class customProgressBar: UIView {
     
     // MARK : init
     
+    func alacon() {
+        print("alacon")
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(customProgressBar.alacon))
+        tapGesture.numberOfTapsRequired = 1
+        self.addGestureRecognizer(tapGesture)
         configure()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(customProgressBar.alacon))
+        tapGesture.numberOfTapsRequired = 1
+        self.addGestureRecognizer(tapGesture)
         configure()
     }
     
