@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "logo_Happer_72x72.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "logo_Happer_72x72.png",
       "scale" : "2x"
     },
     {
