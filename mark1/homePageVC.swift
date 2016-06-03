@@ -18,6 +18,7 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let maxCount: Float = 5
     var currentCount: Float = 0
+    var currentID: NSInteger = 0
     var selfies: [selfieClass] = []
     
     override func viewDidLoad() {
@@ -78,7 +79,12 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.currentCount += 1
             let newAngleValue = newAngle()
             print(newAngleValue)
+            print("ID Select: \(self.currentID)")
             self.progressBar.animateToAngle(Double(newAngleValue), duration: 0.5, completion: nil)
+        }
+        else {
+            self.currentCount = 0
+            self.progressBar.animateFromAngle(self.progressBar.angle, toAngle: 0, duration: 0.5, completion: nil)
         }
     }
     func resetPB() {
@@ -100,6 +106,7 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.table.dequeueReusableCellWithIdentifier("HTC", forIndexPath: indexPath) as! homeTableCell
         let selfie = self.selfies[indexPath.row]
+        self.currentID = selfie.getId()
         cell.likes.text = selfie.getLike()
         cell.outfit.text = selfie.getOutfit() as String
         cell.rating.rating = selfie.getRate()
