@@ -8,7 +8,7 @@
 
 import UIKit
 
-class leftMenuVC: UITableViewController {
+class leftMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // List of title in menu
     var menuList: [menu] = []
@@ -25,32 +25,27 @@ class leftMenuVC: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuList.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("menuCell", forIndexPath: indexPath) as! menuCell
         cell.cellImage.image = menuList[indexPath.row].image
         cell.cellLabel.text = menuList[indexPath.row].text
-        let borderBottom = CALayer()
-        borderBottom.borderColor = UIColor.blackColor().CGColor
-        borderBottom.frame = CGRect(x: 0.0, y: cell.cellView.frame.size.height, width: cell.cellView.frame.size.width, height: 1.0)
-        borderBottom.borderWidth = 1.0
-        cell.cellView.layer.addSublayer(borderBottom)
         return cell
     }
 
     // Called when a choice is done
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         // Switch for each title from the menu and send specific notification to homePage
         switch indexPath.row {
-        case 0..<8:
+        case 0..<9:
             let dictionary = ["toOpen" : menuList[indexPath.row].segueKey]
             NSNotificationCenter.defaultCenter().postNotificationName("open", object: dictionary)
         default:
@@ -82,11 +77,13 @@ class leftMenuVC: UITableViewController {
         let menu5 = menu(segueKey: "produitSegue", text: "Produit", image: icone5)
         let icone6 = UIImage(named: "IconeWishlist")!
         let menu6 = menu(segueKey: "wishlistSegue", text: "Ma wishlist", image: icone6)
-        let icone7 = UIImage(named: "IconeAmis")!
-        let menu7 = menu(segueKey: "amisSegue", text: "Amis/Parrainage", image: icone7)
-        let icone8 = UIImage(named: "IconeCompte")!
-        let menu8 = menu(segueKey: "compteSegue", text: "Mon compte", image: icone8)
-        menuList += [menu1, menu2, menu3, menu4, menu5, menu6, menu7, menu8]
+        let icone7 = UIImage(named: "IconeCoeur")!
+        let menu7 = menu(segueKey: "coeurSegue", text: "Mes coups de coeur", image: icone7)
+        let icone8 = UIImage(named: "IconeAmis")!
+        let menu8 = menu(segueKey: "amisSegue", text: "Amis/Parrainage", image: icone8)
+        let icone9 = UIImage(named: "IconeCompte")!
+        let menu9 = menu(segueKey: "compteSegue", text: "Mon compte", image: icone9)
+        menuList += [menu1, menu2, menu3, menu4, menu5, menu6, menu7, menu8, menu9]
     }
 
     func customFooter () {
