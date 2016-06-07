@@ -15,6 +15,7 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var viewPB: UIView!
     @IBOutlet weak var happiePB: circularPB!
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var logo: UIImageView!
     
     var defaults = NSUserDefaults.standardUserDefaults()
     var maxCount: Float = 0
@@ -23,6 +24,8 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.logo.transform = CGAffineTransformMakeRotation(-1.57)
+        self.happiePB.addSubview(logo)
         self.happiePB.progress = 0
         //self.happiePB.transform = CGAffineTransformMakeRotation(-1.57)
         self.currentCount = defaults.floatForKey("currentCount")

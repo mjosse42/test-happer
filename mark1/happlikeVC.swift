@@ -14,11 +14,14 @@ class happlikeVC: UIViewController {
     @IBOutlet weak var happiePB: circularPB!
     @IBOutlet weak var botView: UIView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var logo: UIImageView!
     
     var defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.logo.transform = CGAffineTransformMakeRotation(-1.57)
+        self.happiePB.addSubview(logo)
         self.happiePB.progress = 0
         self.defaults.setFloat(0.0, forKey: "currentCount")
         self.defaults.setFloat(5.0, forKey: "maxCount")

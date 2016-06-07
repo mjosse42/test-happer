@@ -506,6 +506,7 @@
                         <outlet property="botView" destination="QTJ-aZ-hyS" id="6xg-pB-sGf"/>
                         <outlet property="happiePB" destination="4zP-82-7PF" id="8BU-kM-rgi"/>
                         <outlet property="happieView" destination="DA8-Pl-4UN" id="Xq7-iq-lxL"/>
+                        <outlet property="logo" destination="Wl5-CS-5yB" id="HWR-cb-fLq"/>
                         <outlet property="topView" destination="kNL-qo-V5X" id="J7V-NQ-myw"/>
                     </connections>
                 </viewController>
@@ -953,6 +954,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="happiePB" destination="0tk-d4-C90" id="PY3-Pq-JXg"/>
+                        <outlet property="logo" destination="TwM-yG-0fK" id="XSD-vs-xPi"/>
                         <outlet property="table" destination="YR5-TQ-7y1" id="JbP-lC-ZJ8"/>
                         <outlet property="viewPB" destination="Wju-5c-WaT" id="f73-ef-FUh"/>
                         <segue destination="fWt-NY-ORN" kind="show" identifier="dressingSegue" id="5go-81-T2z"/>
