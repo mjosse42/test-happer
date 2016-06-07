@@ -10,6 +10,10 @@ import UIKit
 
 class happlikeVC: UIViewController {
 
+    @IBOutlet weak var happieView: UIView!
+    @IBOutlet weak var happiePB: KDCircularProgress!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,6 +22,18 @@ class happlikeVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let duration: NSTimeInterval = 0.6
+         UIView.animateWithDuration(duration, animations: { () -> Void in
+         self.happieView.frame = CGRectMake(
+         self.happieView.frame.origin.x,
+         self.happieView.frame.origin.y - 400,
+         self.happieView.frame.size.width,
+         self.happieView.frame.size.height)
+         })
+    }
+    
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         NSNotificationCenter.defaultCenter().postNotificationName("scroller", object: nil)
