@@ -18,7 +18,6 @@
 		355C50B11CEF66BD00DC2631 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 355C50AF1CEF66BD00DC2631 /* LaunchScreen.storyboard */; };
 		355C50BC1CEF66C000DC2631 /* mark1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C50BB1CEF66C000DC2631 /* mark1Tests.swift */; };
 		35639EA61CF4751900B2A54C /* userClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35639EA51CF4751900B2A54C /* userClass.swift */; };
-		35F6115B1D0186B900500AC0 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6115A1D0186B900500AC0 /* KDCircularProgress.swift */; };
 		35F6115D1D0188E000500AC0 /* circularPB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6115C1D0188E000500AC0 /* circularPB.swift */; };
 		35F611601D01909200500AC0 /* homeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6115F1D01909200500AC0 /* homeTableCell.swift */; };
 		550E0BCD1CF59B8300AD3E2E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BCC1CF59B8300AD3E2E /* Bolts.framework */; };
@@ -69,7 +68,6 @@
 		355C50BB1CEF66C000DC2631 /* mark1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mark1Tests.swift; sourceTree = "<group>"; };
 		355C50BD1CEF66C000DC2631 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35639EA51CF4751900B2A54C /* userClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userClass.swift; sourceTree = "<group>"; };
-		35F6115A1D0186B900500AC0 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		35F6115C1D0188E000500AC0 /* circularPB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = circularPB.swift; sourceTree = "<group>"; };
 		35F6115F1D01909200500AC0 /* homeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeTableCell.swift; sourceTree = "<group>"; };
 		550E0BCC1CF59B8300AD3E2E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
@@ -121,9 +119,9 @@
 			children = (
 				55E891E81CF5F87600BF79D3 /* Didot.ttf */,
 				55E891E61CF5F86900BF79D3 /* NeutraTextBook.otf */,
+				550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */,
 				550E0BD21CF59B9C00AD3E2E /* FBSDKShareKit.framework */,
 				550E0BD01CF59B9000AD3E2E /* FBSDKLoginKit.framework */,
-				550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */,
 				550E0BCC1CF59B8300AD3E2E /* Bolts.framework */,
 				355C50A51CEF66BC00DC2631 /* mark1 */,
 				355C50BA1CEF66C000DC2631 /* mark1Tests */,
@@ -143,8 +141,8 @@
 		355C50A51CEF66BC00DC2631 /* mark1 */ = {
 			isa = PBXGroup;
 			children = (
-				35F6115E1D01906500500AC0 /* tableHomePage */,
 				35F611591D01865900500AC0 /* circularPB */,
+				35F6115E1D01906500500AC0 /* tableHomePage */,
 				355C50A61CEF66BC00DC2631 /* AppDelegate.swift */,
 				355C50A81CEF66BC00DC2631 /* mainPageVC.swift */,
 				55AA331E1CFC3337007440AD /* FBSDKLoginButtonFR.swift */,
@@ -186,7 +184,6 @@
 		35F611591D01865900500AC0 /* circularPB */ = {
 			isa = PBXGroup;
 			children = (
-				35F6115A1D0186B900500AC0 /* KDCircularProgress.swift */,
 				35F6115C1D0188E000500AC0 /* circularPB.swift */,
 			);
 			name = circularPB;
@@ -310,7 +307,6 @@
 				55F71BDB1CFF3ECD005F44E2 /* happlikeVC.swift in Sources */,
 				55F71BE71CFF3FA8005F44E2 /* compteVC.swift in Sources */,
 				35F6115D1D0188E000500AC0 /* circularPB.swift in Sources */,
-				35F6115B1D0186B900500AC0 /* KDCircularProgress.swift in Sources */,
 				55A60C6E1CFDE24B0034A0FB /* homePageVC.swift in Sources */,
 				55A60C681CFD997E0034A0FB /* containerVC.swift in Sources */,
 				55AA331F1CFC3337007440AD /* FBSDKLoginButtonFR.swift in Sources */,

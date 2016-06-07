@@ -11,13 +11,17 @@ import UIKit
 class happlikeVC: UIViewController {
 
     @IBOutlet weak var happieView: UIView!
-    @IBOutlet weak var happiePB: KDCircularProgress!
+    @IBOutlet weak var happiePB: circularPB!
     @IBOutlet weak var botView: UIView!
     @IBOutlet weak var topView: UIView!
     
+    var defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.happiePB.progress = 0
+        self.defaults.setFloat(0.0, forKey: "currentCount")
+        self.defaults.setFloat(5.0, forKey: "maxCount")
         self.botView.addSubview(self.happieView)
         self.topView.addSubview(self.happieView)
     }
@@ -29,6 +33,7 @@ class happlikeVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         moveUpHappie()
+        self.happiePB.progress = 0.5
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -47,6 +52,24 @@ class happlikeVC: UIViewController {
                 self.happieView.frame.size.height)
         })
     }
+    
+    // MARK: - jauge circulaire
+    
+    /*if self.currentCount != self.maxCount {
+     self.currentCount += 1
+     let newAngleValue = newAngle()
+     self.progressBar.animateToAngle(Double(newAngleValue), duration: 0.5, completion: nil)
+     }
+     else {
+     self.currentCount = 0
+     self.progressBar.animateFromAngle(self.progressBar.angle, toAngle: 0, duration: 0.5, completion: nil)
+     }
+     
+        func resetPB() {
+            self.currentCount = 0
+            self.progressBar.animateFromAngle(self.progressBar.angle, toAngle: 0, duration: 0.5, completion: nil)
+        }
+     */
     
     /*
     // MARK: - Navigation

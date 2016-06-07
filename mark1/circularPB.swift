@@ -11,7 +11,7 @@ import UIKit
 class circularPB: UIView {
 
     let circlePathLayer = CAShapeLayer()
-    let circleRadius: CGFloat = 20.0
+    let circleRadius: CGFloat = 23.0
     
     // MARK : init
     
@@ -28,12 +28,13 @@ class circularPB: UIView {
     // MARK : code
     
     func configure() {
+        transform = CGAffineTransformMakeRotation(-1.57)
         circlePathLayer.frame = bounds
         circlePathLayer.lineWidth = 2
         circlePathLayer.fillColor = UIColor.clearColor().CGColor
         circlePathLayer.strokeColor = UIColor.redColor().CGColor
         layer.addSublayer(circlePathLayer)
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.clearColor()
         progress = 0
     }
     
