@@ -1075,9 +1075,6 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZT-Bs-Ogm">
                                                     <rect key="frame" x="43" y="8" width="209" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="27" id="EIX-KY-YhC"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1189,6 +1186,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N5r-4J-dfS"/>
-        <segue reference="zoh-3y-ipI"/>
+        <segue reference="7pM-JU-2iu"/>
     </inferredMetricsTieBreakers>
 </document>
