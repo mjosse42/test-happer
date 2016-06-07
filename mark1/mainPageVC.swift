@@ -29,19 +29,15 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
 
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
     {
-        if error == nil
-        {
-             NSOperationQueue.mainQueue().addOperationWithBlock {
-                self.performSegueWithIdentifier("mainToHome", sender: self)
-            }
-        }
-        else
+        if error != nil
         {
             print(error.localizedDescription)
             return
         }
-        let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,friends"], HTTPMethod: "GET")
-        request.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+        else
+        {
+            let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,friends"], HTTPMethod: "GET")
+            request.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
             if(error == nil)
             {
                 print("result \(result)")
@@ -50,7 +46,9 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
             {
                 print("error \(error)")
             }
-        })
+            })
+        }
+        self.performSegueWithIdentifier("mainToHome", sender: self)
     }
 
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)

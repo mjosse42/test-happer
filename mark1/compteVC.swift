@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class compteVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        FBSDKAccessToken.setCurrentAccessToken(nil)
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

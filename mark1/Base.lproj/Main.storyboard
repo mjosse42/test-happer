@@ -184,7 +184,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="fbLogin" destination="33h-0X-y7j" id="2ho-P8-8US"/>
-                        <segue destination="caV-oc-TbS" kind="show" identifier="mainToHome" animates="NO" id="jEL-Za-n6W"/>
+                        <segue destination="caV-oc-TbS" kind="presentation" identifier="mainToHome" animates="NO" id="jEL-Za-n6W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1130,7 +1130,7 @@
         <image name="logoHapper" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N5r-4J-dfS"/>
+        <segue reference="jEL-Za-n6W"/>
         <segue reference="7pM-JU-2iu"/>
     </inferredMetricsTieBreakers>
 </document>
