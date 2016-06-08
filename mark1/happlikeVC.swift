@@ -32,14 +32,22 @@ class happlikeVC: UIViewController {
     @IBOutlet weak var ratingView: UIControl!
     @IBOutlet weak var modoView: UIView!
     @IBOutlet weak var uploadView: UIView!
+    @IBOutlet weak var nbCredits: UILabel!
     
     
     // MARK : - userDefault
     
     var defaults = NSUserDefaults.standardUserDefaults()
+    var ammount: CGFloat = 0.3
+    var nbh = 5
+    var nbc = 12
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateHappie()
+        updateCredits()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(happlikeVC.endRating), name: "ratingOK", object: nil)
         initPB()
         self.modoView.layer.cornerRadius = 25
         self.uploadView.layer.cornerRadius = 25
@@ -76,8 +84,6 @@ class happlikeVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         moveUpHappie()
-        self.happiePB.progress = 0.5
-        self.rankPB.progress = 0.7
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -85,7 +91,26 @@ class happlikeVC: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("scroller", object: nil)
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        moveDownHappie()
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
     // MARK : - animation
+    
+    func moveDownHappie() {
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            self.happieView.frame = CGRectMake(
+                self.happieView.frame.origin.x,
+                self.happieView.frame.origin.y + 400,
+                self.happieView.frame.size.width,
+                self.happieView.frame.size.height)
+        })
+    }
     
     func moveUpHappie() {
         UIView.animateWithDuration(0.4, animations: { () -> Void in
@@ -95,17 +120,13 @@ class happlikeVC: UIViewController {
                 self.happieView.frame.size.width,
                 self.happieView.frame.size.height)
         })
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.logoTapped))
-        self.happiePB.addGestureRecognizer(tap)
-        self.happiePB.userInteractionEnabled = true
-        self.topView.bringSubviewToFront(happiePB)
     }
     
     // MARK : - recuperation des selfies
     
     func makeSelfie() -> [selfieClass] {
         var result = NSDictionary()
-        let url = NSURL(string: "http://ec2-52-49-149-140.eu-west-1.compute.amazonaws.com:80/getselfies.php")
+        let url = NSURL(string: "http://ec2-52-49-149-140.eu-west-1.compute.amazonaws.com:80/getToRate.php")
         let jsonData = NSData(contentsOfURL: url!)
         do {
             result = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
@@ -124,16 +145,38 @@ class happlikeVC: UIViewController {
         return selfies
     }
     
-    // MARK: - jauge circulaire
+    func updateHappie() {
+        self.nbHappies.text = "\(nbh) Happies"
+    }
+    func updateCredits() {
+        self.nbCredits.text = "\(nbc) Crédits"
+    }
     
-    func logoTapped() {
-        if (self.ratingControl.rating != 0) {
-            print("noté")
-        }
-        else {
-            print("pas noté")
+    func endRating() {
+        
+        // avant tout ça on enregistre
+        self.index += 1
+        if (self.ratingControl.rating > 0) {
+            if (self.index < selfies.count - 1) {
+                self.currentSelfie.image = self.selfies [self.index].getImage()
+                self.ratingControl.rating = 0
+                self.happiePB.progress += self.ammount
+                if (self.happiePB.progress >= 1) {
+                    self.happiePB.progress = 0
+                    self.nbh -= 1
+                    self.nbc += 20
+                    updateHappie()
+                    updateCredits()
+                    self.rankPB.setProgress(self.rankPB.progress + 0.3, animated: true)
+                    if (self.rankPB.progress >= 1) {
+                        self.rankPB.progress = 0
+                    }
+                }
+            }
         }
     }
+    
+    // MARK: - jauge circulaire
     
     /*if self.currentCount != self.maxCount {
      self.currentCount += 1

@@ -14,6 +14,8 @@ class loginPageVC: UIViewController, UITextFieldDelegate
     @IBOutlet weak var tField_1: UITextField!
     @IBOutlet weak var tField_2: UITextField!
     
+    var defaults = NSUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addBackground()
@@ -101,6 +103,7 @@ class loginPageVC: UIViewController, UITextFieldDelegate
                 user.addXp(jsonData.valueForKey("exp") as! NSInteger)
                 user.loggued_in()
                 user.announce() // display console de verification
+                self.defaults.setObject(user, forKey: "userSession")
                 NSOperationQueue.mainQueue().addOperationWithBlock {
                     self.performSegueWithIdentifier("loginToHome", sender: self)
                 }

@@ -645,6 +645,7 @@
                         <outlet property="happieView" destination="DA8-Pl-4UN" id="Xq7-iq-lxL"/>
                         <outlet property="logo" destination="Wl5-CS-5yB" id="HWR-cb-fLq"/>
                         <outlet property="modoView" destination="6Yr-3y-aaD" id="Gx5-5R-k7z"/>
+                        <outlet property="nbCredits" destination="CmN-kO-qju" id="re4-XV-ttr"/>
                         <outlet property="nbHappies" destination="Odn-1O-bhE" id="bQu-vM-E0I"/>
                         <outlet property="notifView" destination="2K2-PK-U8S" id="tXS-I3-3W9"/>
                         <outlet property="rankPB" destination="bPU-GI-1cO" id="yQ3-El-13s"/>

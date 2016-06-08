@@ -313,6 +313,7 @@ public class FloatRatingView: UIView {
         if let delegate = self.delegate {
             delegate.floatRatingView(self, didUpdate: self.rating)
         }
+        NSNotificationCenter.defaultCenter().postNotificationName("ratingOK", object: nil)
     }
     
 }
