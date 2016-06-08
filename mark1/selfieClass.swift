@@ -17,12 +17,12 @@ class selfieClass {
     private let own_id: NSInteger
     private let own_un: NSString
     private let url: NSString
-    private var rate: NSInteger
+    private var rate: Float
     private var like: NSInteger
     private var image: UIImage?
     private let outfit: NSString
     
-    init(id: NSInteger, own_id: NSInteger, own_un: NSString, url: NSString, rate: NSInteger, like: NSInteger, outfit: NSString)
+    init(id: NSInteger, own_id: NSInteger, own_un: NSString, url: NSString, rate: Float, like: NSInteger, outfit: NSString)
     {
         self.id = id
         self.own_id = own_id
@@ -52,7 +52,7 @@ class selfieClass {
         let facto = NSURL(string: url as String)!
         return facto
     }
-    func getRate() -> NSInteger {
+    func getRate() -> Float {
         return self.rate
     }
     func getLike() -> String {
@@ -70,7 +70,7 @@ class selfieClass {
     func setLike(nb: NSInteger) {
         self.like = nb
     }
-    func setRate(nb: NSInteger) {
+    func setRate(nb: Float) {
         self.rate = nb
     }
 }

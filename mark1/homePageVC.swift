@@ -13,25 +13,14 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK : properties
 
     @IBOutlet weak var viewPB: UIView!
-    @IBOutlet weak var happiePB: circularPB!
     @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var logo: UIImageView!
-    
+
     var defaults = NSUserDefaults.standardUserDefaults()
-    var maxCount: Float = 0
-    var currentCount: Float = 0
     var selfies: [selfieClass] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.logo.transform = CGAffineTransformMakeRotation(-1.57)
-        self.happiePB.addSubview(logo)
-        self.happiePB.progress = 0
-        //self.happiePB.transform = CGAffineTransformMakeRotation(-1.57)
-        self.currentCount = defaults.floatForKey("currentCount")
-        self.maxCount = defaults.floatForKey("maxCount")
-        // Close menu at start
-        NSNotificationCenter.defaultCenter().postNotificationName("start", object: nil)
+    NSNotificationCenter.defaultCenter().postNotificationName("start", object: nil)
         // Catchers for notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.open), name: "open", object: nil)
         customNavBar()
@@ -96,7 +85,7 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let selfie = self.selfies[indexPath.row]
         cell.likes.text = selfie.getLike()
         cell.outfit.text = selfie.getOutfit() as String
-        cell.rating.rating = selfie.getRate()
+        cell.rating.rating = selfie.getRate() as Float
         cell.photo.image = selfie.getImage()
         return cell
     }
@@ -118,7 +107,7 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         var selfies: [selfieClass] = []
         for val in tab
         {
-            let new: selfieClass = selfieClass(id: val.value["id"] as! NSInteger, own_id: val.value["owner_id"] as! NSInteger, own_un: val.value["owner_un"] as! NSString, url: val.value["url"] as! NSString, rate: val.value["rate"] as! NSInteger, like: val.value["nb_like"] as! NSInteger, outfit: val.value["outfit"] as! NSString)
+            let new: selfieClass = selfieClass(id: val.value["id"] as! NSInteger, own_id: val.value["owner_id"] as! NSInteger, own_un: val.value["owner_un"] as! NSString, url: val.value["url"] as! NSString, rate: val.value["rate"] as! Float, like: val.value["nb_like"] as! NSInteger, outfit: val.value["outfit"] as! NSString)
             selfies += [new]
         }
         return selfies

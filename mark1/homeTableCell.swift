@@ -13,9 +13,9 @@ class homeTableCell: UITableViewCell {
     @IBOutlet weak var leftcontainView: UIView!
     @IBOutlet weak var rightContainView: UIView!
     @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var rating: ratingControl!
     @IBOutlet weak var outfit: UILabel!
     @IBOutlet weak var likes: UILabel!
+    @IBOutlet weak var rating: FloatRatingView!
     
     
     override func awakeFromNib() {

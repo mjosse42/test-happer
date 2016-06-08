@@ -38,20 +38,18 @@ class mainPageVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegat
         {
             let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,friends"], HTTPMethod: "GET")
             request.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
-            if(error == nil)
-            {
-                print("result \(result)")
-            }
-            else
-            {
-                print("error \(error)")
-            }
+                if(error == nil)
+                {
+                    print("result \(result)")
+                }
+                else
+                {
+                    print("error \(error)")
+                }
             })
         }
         self.performSegueWithIdentifier("mainToHome", sender: self)
     }
 
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
-    {
-    }
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {}
 }

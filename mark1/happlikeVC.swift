@@ -10,23 +10,51 @@ import UIKit
 
 class happlikeVC: UIViewController {
 
+    // MARK : - image centrale
+    
+    @IBOutlet weak var centerView: UIView!
+    @IBOutlet weak var currentSelfie: UIImageView!
+    var selfies: [selfieClass] = []
+    var index: Int = 0
+    
+    
+    // MARK : - elements du canvas
+    
+    @IBOutlet weak var notifView: UIView!
+    @IBOutlet weak var ratingControl: FloatRatingView!
     @IBOutlet weak var happieView: UIView!
     @IBOutlet weak var happiePB: circularPB!
     @IBOutlet weak var botView: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var nbHappies: UILabel!
+    @IBOutlet weak var ratingView: UIControl!
+    @IBOutlet weak var modoView: UIView!
+    @IBOutlet weak var uploadView: UIView!
+    
+    
+    // MARK : - userDefault
     
     var defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.modoView.layer.cornerRadius = 25
+        self.uploadView.layer.cornerRadius = 25
+        self.ratingView.addTarget(self, action: #selector(self.touchDown), forControlEvents: .TouchDown)
+        self.ratingView.userInteractionEnabled = true
+        self.selfies = makeSelfie()
+        self.currentSelfie.image = selfies[self.index].getImage()
         self.logo.transform = CGAffineTransformMakeRotation(-1.57)
         self.happiePB.addSubview(logo)
         self.happiePB.progress = 0
         self.defaults.setFloat(0.0, forKey: "currentCount")
         self.defaults.setFloat(5.0, forKey: "maxCount")
         self.botView.addSubview(self.happieView)
+        self.ratingControl.addSubview(self.happieView)
         self.topView.addSubview(self.happieView)
+        self.centerView.addSubview(self.happieView)
+        self.botView.bringSubviewToFront(self.ratingView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +82,32 @@ class happlikeVC: UIViewController {
                 self.happieView.frame.size.width,
                 self.happieView.frame.size.height)
         })
+    }
+    
+    // MARK : - recuperation des selfies
+    
+    func makeSelfie() -> [selfieClass] {
+        var result = NSDictionary()
+        let url = NSURL(string: "http://ec2-52-49-149-140.eu-west-1.compute.amazonaws.com:80/getselfies.php")
+        let jsonData = NSData(contentsOfURL: url!)
+        do {
+            result = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+        }
+        catch {
+            print("Catch-Location:: accueilTVC :: Serialisation JSON")
+            EXIT_FAILURE
+        }
+        let tab = result.valueForKey("selfies") as! NSDictionary
+        var selfies: [selfieClass] = []
+        for val in tab
+        {
+            let new: selfieClass = selfieClass(id: val.value["id"] as! NSInteger, own_id: val.value["owner_id"] as! NSInteger, own_un: val.value["owner_un"] as! NSString, url: val.value["url"] as! NSString, rate: val.value["rate"] as! Float, like: val.value["nb_like"] as! NSInteger, outfit: val.value["outfit"] as! NSString)
+            selfies += [new]
+        }
+        return selfies
+    }
+    func touchDown() {
+        print("RELEASED")
     }
     
     // MARK: - jauge circulaire
