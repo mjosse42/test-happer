@@ -20,6 +20,7 @@ class happlikeVC: UIViewController {
     
     // MARK : - elements du canvas
     
+    @IBOutlet weak var rankPB: UIProgressView!
     @IBOutlet weak var notifView: UIView!
     @IBOutlet weak var ratingControl: FloatRatingView!
     @IBOutlet weak var happieView: UIView!
@@ -39,22 +40,33 @@ class happlikeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initPB()
         self.modoView.layer.cornerRadius = 25
         self.uploadView.layer.cornerRadius = 25
-        self.ratingView.addTarget(self, action: #selector(self.touchDown), forControlEvents: .TouchDown)
-        self.ratingView.userInteractionEnabled = true
-        self.selfies = makeSelfie()
-        self.currentSelfie.image = selfies[self.index].getImage()
-        self.logo.transform = CGAffineTransformMakeRotation(-1.57)
-        self.happiePB.addSubview(logo)
-        self.happiePB.progress = 0
+        initImage()
         self.defaults.setFloat(0.0, forKey: "currentCount")
         self.defaults.setFloat(5.0, forKey: "maxCount")
+        self.defaults.setInteger(5, forKey: "happieCount")
         self.botView.addSubview(self.happieView)
         self.ratingControl.addSubview(self.happieView)
         self.topView.addSubview(self.happieView)
         self.centerView.addSubview(self.happieView)
-        self.botView.bringSubviewToFront(self.ratingView)
+    }
+    
+    //MARK: - initView
+    
+    func initImage() {
+        self.selfies = makeSelfie()
+        self.currentSelfie.image = selfies[self.index].getImage()
+    }
+    
+    func initPB() {
+        self.rankPB.progress = 0
+        self.rankPB.progressTintColor = UIColor.yellowColor()
+        self.rankPB.trackTintColor = UIColor.blackColor()
+        self.logo.transform = CGAffineTransformMakeRotation(-1.57)
+        self.happiePB.addSubview(logo)
+        self.happiePB.progress = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +77,7 @@ class happlikeVC: UIViewController {
         super.viewDidAppear(animated)
         moveUpHappie()
         self.happiePB.progress = 0.5
+        self.rankPB.progress = 0.7
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -82,6 +95,10 @@ class happlikeVC: UIViewController {
                 self.happieView.frame.size.width,
                 self.happieView.frame.size.height)
         })
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.logoTapped))
+        self.happiePB.addGestureRecognizer(tap)
+        self.happiePB.userInteractionEnabled = true
+        self.topView.bringSubviewToFront(happiePB)
     }
     
     // MARK : - recuperation des selfies
@@ -106,11 +123,17 @@ class happlikeVC: UIViewController {
         }
         return selfies
     }
-    func touchDown() {
-        print("RELEASED")
-    }
     
     // MARK: - jauge circulaire
+    
+    func logoTapped() {
+        if (self.ratingControl.rating != 0) {
+            print("noté")
+        }
+        else {
+            print("pas noté")
+        }
+    }
     
     /*if self.currentCount != self.maxCount {
      self.currentCount += 1

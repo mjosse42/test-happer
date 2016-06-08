@@ -647,6 +647,7 @@
                         <outlet property="modoView" destination="6Yr-3y-aaD" id="Gx5-5R-k7z"/>
                         <outlet property="nbHappies" destination="Odn-1O-bhE" id="bQu-vM-E0I"/>
                         <outlet property="notifView" destination="2K2-PK-U8S" id="tXS-I3-3W9"/>
+                        <outlet property="rankPB" destination="bPU-GI-1cO" id="yQ3-El-13s"/>
                         <outlet property="ratingControl" destination="Fij-S3-zn3" id="oKa-rx-Scp"/>
                         <outlet property="ratingView" destination="bH1-0Y-i5w" id="Rm1-WE-fG0"/>
                         <outlet property="topView" destination="kNL-qo-V5X" id="J7V-NQ-myw"/>
@@ -975,7 +976,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivu-8z-hb9">
                                                     <rect key="frame" x="356" y="341" width="50" height="50"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="7XM-Zb-6nc">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coup_de_coeur" translatesAutoresizingMaskIntoConstraints="NO" id="7XM-Zb-6nc">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21O-fj-D0n">
@@ -1260,14 +1261,14 @@
     <resources>
         <image name="Appareil_photo" width="131" height="101"/>
         <image name="Cloche_notif" width="91" height="100"/>
+        <image name="Coup_de_coeur" width="131" height="129"/>
         <image name="IconeFacebook" width="43" height="43"/>
         <image name="IconeInstagram" width="43" height="43"/>
         <image name="IconeMenu" width="43" height="43"/>
         <image name="IconeProduit" width="43" height="43"/>
         <image name="Point_exclamation" width="32" height="123"/>
-        <image name="emptyStar" width="30" height="30"/>
-        <image name="filledStar" width="30" height="30"/>
-        <image name="heart" width="31" height="31"/>
+        <image name="emptyStar" width="131" height="129"/>
+        <image name="filledStar" width="131" height="129"/>
         <image name="logoHapper" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
