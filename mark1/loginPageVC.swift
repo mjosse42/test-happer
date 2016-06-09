@@ -15,6 +15,7 @@ class loginPageVC: UIViewController, UITextFieldDelegate
     @IBOutlet weak var tField_2: UITextField!
     
     var defaults = NSUserDefaults()
+    var jsonData = NSDictionary()  // ici, on stockera la réponse serveur, en JSON
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,6 @@ class loginPageVC: UIViewController, UITextFieldDelegate
         
         let session = NSURLSession.sharedSession()
 
-        var jsonData = NSDictionary()  // ici, on stockera la réponse serveur, en JSON
 //  on prépare l'url avec le POST
         let url = NSURL(string: "http://ec2-52-49-149-140.eu-west-1.compute.amazonaws.com:80/login.php")
         let body = "login=\(loginMail)&passwd=\(passwd)"
@@ -75,7 +75,7 @@ class loginPageVC: UIViewController, UITextFieldDelegate
                 
                 do
                 {
-                    jsonData = try NSJSONSerialization.JSONObjectWithData(urlData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary // On convertis en Dictionnaire, ce sera plus facile a lire
+                    self.jsonData = try NSJSONSerialization.JSONObjectWithData(urlData!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary // On convertis en Dictionnaire, ce sera plus facile a lire
                 }
                 catch
                 {
@@ -89,31 +89,42 @@ class loginPageVC: UIViewController, UITextFieldDelegate
                 print(res.statusCode)
                 return
             }
-            print(jsonData) // Pour avoir le retour sur le log, j'aime bien.
-            let success = jsonData.valueForKey("id") as! NSInteger
+            print(self.jsonData) // Pour avoir le retour sur le log, j'aime bien.
+            let success = self.jsonData.valueForKey("id") as! NSInteger
             // la variable success contient 0 ou 1 Si s'est bien log ou pas
             if (success > 0) {
-                print("SUCCESS")
-                let user = userClass()
-                user.addCredit(jsonData.valueForKey("credits") as! NSInteger)
-                user.setRank(jsonData.valueForKey("rank") as! NSInteger)
-                user.setUserId(jsonData.valueForKey("id") as! NSInteger)
-                user.setUserName(jsonData.valueForKey("login") as! NSString)
-                user.setUserMail(jsonData.valueForKey("mail") as! NSString)
-                user.addXp(jsonData.valueForKey("exp") as! NSInteger)
-                user.loggued_in()
-                user.announce() // display console de verification
-                self.defaults.setObject(user, forKey: "userSession")
+                self.saveUserData()
                 NSOperationQueue.mainQueue().addOperationWithBlock {
                     self.performSegueWithIdentifier("loginToHome", sender: self)
                 }
-                // self.performSegueWithIdentifier("loginToHome", sender: self) // On bouge vers le home
             }
             else {
                 print("FAIL") // on en reste la, l'utilisateur s'est planté
             }
         })
         task.resume()
+    }
+    
+    func saveUserData() {
+        print("SUCCESS")
+        let user = userClass()
+        user.addCredit(self.jsonData.valueForKey("credits") as! NSInteger)
+        user.setRank(self.jsonData.valueForKey("rank") as! NSInteger)
+        user.setUserId(self.jsonData.valueForKey("id") as! NSInteger)
+        user.setUserName(self.jsonData.valueForKey("login") as! NSString)
+        user.setUserMail(self.jsonData.valueForKey("mail") as! NSString)
+        user.addXp(self.jsonData.valueForKey("exp") as! NSInteger)
+        user.loggued_in()
+        user.announce() // display console de verification
+        
+        self.defaults.setObject(user.getUserMail(), forKey: "email")
+        self.defaults.setObject(user.getRank(), forKey: "rank")
+        self.defaults.setObject(user.getCredit(), forKey: "credits")
+        self.defaults.setBool(user.getLog(), forKey: "loggued")
+        self.defaults.setInteger(user.getUserId(), forKey: "userId")
+        self.defaults.setObject(user.getUserName(), forKey: "userName")
+        self.defaults.setInteger(user.getXp(), forKey: "xP")
+        self.defaults.setInteger(5, forKey: "happies")
     }
 
     @IBAction func tapFunc(sender: UITapGestureRecognizer)

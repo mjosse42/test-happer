@@ -18,14 +18,28 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var defaults = NSUserDefaults.standardUserDefaults()
     var selfies: [selfieClass] = []
 
+    func checkLoggued() {
+        let log = defaults.boolForKey("loggued")
+        if (log == false) {
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let vc = story.instantiateViewControllerWithIdentifier("mainPage") as! mainPageVC
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        print("loggued est à '\(log)'")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    NSNotificationCenter.defaultCenter().postNotificationName("start", object: nil)
+        checkLoggued()
+        NSNotificationCenter.defaultCenter().postNotificationName("start", object: nil)
+        
         // Catchers for notification
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(homePageVC.open), name: "open", object: nil)
         customNavBar()
         
         // partie micka dessous
+        
         table.delegate = self
         self.selfies = makeSelfie()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapLogo))

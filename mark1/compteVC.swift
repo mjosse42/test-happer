@@ -11,9 +11,15 @@ import FBSDKCoreKit
 
 class compteVC: UIViewController {
 
+    var defaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         FBSDKAccessToken.setCurrentAccessToken(nil)
+        self.defaults.setBool(false, forKey: "loggued")
+        let story = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = story.instantiateViewControllerWithIdentifier("mainPage") as! mainPageVC
+        self.presentViewController(vc, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

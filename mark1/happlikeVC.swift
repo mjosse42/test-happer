@@ -20,6 +20,8 @@ class happlikeVC: UIViewController {
     
     // MARK : - elements du canvas
     
+    let colorTab: [UIColor] = [UIColor.darkGrayColor(), UIColor.yellowColor(), UIColor.redColor(), UIColor.lightGrayColor(), UIColor.blueColor()]
+    
     @IBOutlet weak var rankPB: UIProgressView!
     @IBOutlet weak var notifView: UIView!
     @IBOutlet weak var ratingControl: FloatRatingView!
@@ -40,14 +42,16 @@ class happlikeVC: UIViewController {
     var defaults = NSUserDefaults.standardUserDefaults()
     var ammount: CGFloat = 0.3
     var nbh = 5
-    var nbc = 12
+    var nbc = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nbc = defaults.integerForKey("credits")
         updateHappie()
         updateCredits()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(happlikeVC.endRating), name: "ratingOK", object: nil)
+        
         initPB()
         self.modoView.layer.cornerRadius = 25
         self.uploadView.layer.cornerRadius = 25
@@ -69,8 +73,8 @@ class happlikeVC: UIViewController {
     }
     
     func initPB() {
-        self.rankPB.progress = 0
-        self.rankPB.progressTintColor = UIColor.yellowColor()
+        self.rankPB.progress = Float(defaults.integerForKey("exp")) / 100
+        self.rankPB.progressTintColor = self.colorTab[defaults.integerForKey("rank")]
         self.rankPB.trackTintColor = UIColor.blackColor()
         self.logo.transform = CGAffineTransformMakeRotation(-1.57)
         self.happiePB.addSubview(logo)
@@ -146,10 +150,10 @@ class happlikeVC: UIViewController {
     }
     
     func updateHappie() {
-        self.nbHappies.text = "\(nbh) Happies"
+        self.nbHappies.text = " \(nbh) happies "
     }
     func updateCredits() {
-        self.nbCredits.text = "\(nbc) Crédits"
+        self.nbCredits.text = " \(nbc) crédits "
     }
     
     func endRating() {
@@ -169,6 +173,7 @@ class happlikeVC: UIViewController {
                     updateCredits()
                     self.rankPB.setProgress(self.rankPB.progress + 0.3, animated: true)
                     if (self.rankPB.progress >= 1) {
+                        self.rankPB.progressTintColor = self.colorTab[defaults.integerForKey("rank") + 1]
                         self.rankPB.progress = 0
                     }
                 }

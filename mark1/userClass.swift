@@ -48,6 +48,11 @@ class userClass
         print("loggued: \(self.loggued)")
     }
     
+    func serialize() -> NSMutableDictionary {
+        let tab: NSMutableDictionary = ["id" : self.userId, "userName" : self.userName, "rank" : self.rank.rawValue, "credits": self.credit, "xp" : self.xP, "loggued" : self.loggued]
+        return tab
+    }
+    
     func sync()
     {
         // Connexion au serveur et update du compte
@@ -76,9 +81,9 @@ class userClass
         return self.userMail
     }
     
-    func getRank() -> eRank
+    func getRank() -> NSInteger
     {
-        return self.rank
+        return self.rank.rawValue as NSInteger
     }
     
     func getCredit() -> NSInteger
@@ -89,6 +94,10 @@ class userClass
     func getXp() -> NSInteger
     {
         return self.xP
+    }
+    
+    func getLog() -> Bool {
+        return self.loggued
     }
     
     // MARK: setters
