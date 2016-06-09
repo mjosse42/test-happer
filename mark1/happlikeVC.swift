@@ -44,11 +44,23 @@ class happlikeVC: UIViewController {
     var nbh = 5
     var nbc = 10
     
+    @IBOutlet weak var likedIcon: UIImageView!
+    @IBOutlet weak var likedView: UIView!
+    @IBOutlet weak var LnbLike: UILabel!
+    
+    var liked: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.nbc = defaults.integerForKey("credits")
+        
         updateHappie()
         updateCredits()
+        
+        let tapg = UITapGestureRecognizer(target: self, action: #selector(happlikeVC.like))
+        self.likedView.addGestureRecognizer(tapg)
+        
+        self.likedIcon.image = UIImage(named: "emptyHeart")
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(happlikeVC.endRating), name: "ratingOK", object: nil)
         
@@ -70,6 +82,7 @@ class happlikeVC: UIViewController {
     func initImage() {
         self.selfies = makeSelfie()
         self.currentSelfie.image = selfies[self.index].getImage()
+        self.LnbLike.text = "\(selfies[self.index].getLike())"
     }
     
     func initPB() {
@@ -156,10 +169,23 @@ class happlikeVC: UIViewController {
         self.nbCredits.text = " \(nbc) crédits "
     }
     
+    func like() {
+        if self.liked == true {
+            self.liked = false
+            self.likedIcon.image = UIImage(named: "emptyHeart")
+        }
+        else {
+            self.liked = true
+            self.likedIcon.image = UIImage(named: "fullHeart")
+        }
+    }
+    
     func endRating() {
         
         // avant tout ça on enregistre
         self.index += 1
+        self.liked = false
+        self.likedIcon.image = UIImage(named: "emptyHeart")
         if (self.ratingControl.rating > 0) {
             if (self.index < selfies.count - 1) {
                 self.currentSelfie.image = self.selfies [self.index].getImage()

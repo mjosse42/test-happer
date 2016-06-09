@@ -22,6 +22,7 @@
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -601,12 +602,38 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w2T-ZE-kb6">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="492"/>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Paf-Ca-3Gd">
+                                                <rect key="frame" x="346" y="424" width="60" height="60"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVY-4x-lM9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="21" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b25-1d-2tG">
+                                                        <rect key="frame" x="9" y="15" width="42" height="21"/>
+                                                        <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="UVY-4x-lM9" secondAttribute="trailing" id="HtJ-al-Hv3"/>
+                                                    <constraint firstItem="b25-1d-2tG" firstAttribute="centerY" secondItem="Paf-Ca-3Gd" secondAttribute="centerY" constant="-5" id="LJA-sz-V37"/>
+                                                    <constraint firstItem="UVY-4x-lM9" firstAttribute="leading" secondItem="Paf-Ca-3Gd" secondAttribute="leading" id="MPO-QV-OcH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UVY-4x-lM9" secondAttribute="bottom" id="QEU-qb-iLr"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Z9o-AC-P5R"/>
+                                                    <constraint firstAttribute="width" constant="60" id="m1x-gy-2fd"/>
+                                                    <constraint firstItem="b25-1d-2tG" firstAttribute="centerX" secondItem="Paf-Ca-3Gd" secondAttribute="centerX" id="nAg-d3-IX0"/>
+                                                    <constraint firstItem="UVY-4x-lM9" firstAttribute="top" secondItem="Paf-Ca-3Gd" secondAttribute="top" id="oUP-df-vib"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Paf-Ca-3Gd" secondAttribute="trailing" constant="8" id="HKL-Iw-wDT"/>
                                             <constraint firstAttribute="bottom" secondItem="w2T-ZE-kb6" secondAttribute="bottom" id="M7f-c3-YCs"/>
                                             <constraint firstItem="w2T-ZE-kb6" firstAttribute="top" secondItem="MsG-4o-euw" secondAttribute="top" id="WZn-fc-ACt"/>
                                             <constraint firstAttribute="trailing" secondItem="w2T-ZE-kb6" secondAttribute="trailing" id="cE4-b7-tsi"/>
+                                            <constraint firstAttribute="bottom" secondItem="Paf-Ca-3Gd" secondAttribute="bottom" constant="8" id="dJ0-B3-7sl"/>
                                             <constraint firstItem="w2T-ZE-kb6" firstAttribute="leading" secondItem="MsG-4o-euw" secondAttribute="leading" id="lem-PG-3VB"/>
                                         </constraints>
                                     </view>
@@ -638,11 +665,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Happ'Like" id="WUL-WA-xte"/>
                     <connections>
+                        <outlet property="LnbLike" destination="b25-1d-2tG" id="aLv-no-Kie"/>
                         <outlet property="botView" destination="QTJ-aZ-hyS" id="6xg-pB-sGf"/>
                         <outlet property="centerView" destination="MsG-4o-euw" id="CxO-5S-Bwg"/>
                         <outlet property="currentSelfie" destination="w2T-ZE-kb6" id="Ijg-zI-IDn"/>
                         <outlet property="happiePB" destination="4zP-82-7PF" id="8BU-kM-rgi"/>
                         <outlet property="happieView" destination="DA8-Pl-4UN" id="Xq7-iq-lxL"/>
+                        <outlet property="likedIcon" destination="UVY-4x-lM9" id="NYs-oJ-PAd"/>
+                        <outlet property="likedView" destination="Paf-Ca-3Gd" id="ujb-A9-Apl"/>
                         <outlet property="logo" destination="Wl5-CS-5yB" id="HWR-cb-fLq"/>
                         <outlet property="modoView" destination="6Yr-3y-aaD" id="Gx5-5R-k7z"/>
                         <outlet property="nbCredits" destination="CmN-kO-qju" id="re4-XV-ttr"/>
@@ -977,7 +1007,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivu-8z-hb9">
                                                     <rect key="frame" x="356" y="341" width="50" height="50"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coup_de_coeur" translatesAutoresizingMaskIntoConstraints="NO" id="7XM-Zb-6nc">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fullHeart" translatesAutoresizingMaskIntoConstraints="NO" id="7XM-Zb-6nc">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21O-fj-D0n">
@@ -1002,9 +1032,9 @@
                                                     <rect key="frame" x="0.0" y="349" width="140" height="50"/>
                                                     <subviews>
                                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urY-LK-nFQ" customClass="FloatRatingView" customModule="mark1" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="28"/>
+                                                            <rect key="frame" x="5" y="5" width="130" height="25"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="28" id="sL5-Tg-2sQ"/>
+                                                                <constraint firstAttribute="height" constant="25" id="sL5-Tg-2sQ"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
@@ -1034,10 +1064,10 @@
                                                     </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="IFe-VP-N8h" secondAttribute="bottom" id="L5B-N2-p1E"/>
-                                                        <constraint firstAttribute="trailing" secondItem="urY-LK-nFQ" secondAttribute="trailing" id="N44-aQ-uTp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="urY-LK-nFQ" secondAttribute="trailing" constant="5" id="N44-aQ-uTp"/>
                                                         <constraint firstItem="IFe-VP-N8h" firstAttribute="leading" secondItem="5sA-6V-C93" secondAttribute="leading" id="U8f-uX-8mg"/>
-                                                        <constraint firstItem="urY-LK-nFQ" firstAttribute="top" secondItem="5sA-6V-C93" secondAttribute="top" id="ZNW-Q4-t5P"/>
-                                                        <constraint firstItem="urY-LK-nFQ" firstAttribute="leading" secondItem="5sA-6V-C93" secondAttribute="leading" id="i2L-2Y-1fB"/>
+                                                        <constraint firstItem="urY-LK-nFQ" firstAttribute="top" secondItem="5sA-6V-C93" secondAttribute="top" constant="5" id="ZNW-Q4-t5P"/>
+                                                        <constraint firstItem="urY-LK-nFQ" firstAttribute="leading" secondItem="5sA-6V-C93" secondAttribute="leading" constant="5" id="i2L-2Y-1fB"/>
                                                         <constraint firstAttribute="width" constant="140" id="jSc-Jq-yks"/>
                                                         <constraint firstAttribute="trailing" secondItem="IFe-VP-N8h" secondAttribute="trailing" id="sAf-DR-tRl"/>
                                                         <constraint firstAttribute="height" constant="50" id="y9S-FB-BaL"/>
@@ -1262,7 +1292,6 @@
     <resources>
         <image name="Appareil_photo" width="131" height="101"/>
         <image name="Cloche_notif" width="91" height="100"/>
-        <image name="Coup_de_coeur" width="131" height="129"/>
         <image name="IconeFacebook" width="43" height="43"/>
         <image name="IconeInstagram" width="43" height="43"/>
         <image name="IconeMenu" width="43" height="43"/>
@@ -1270,6 +1299,7 @@
         <image name="Point_exclamation" width="32" height="123"/>
         <image name="emptyStar" width="131" height="129"/>
         <image name="filledStar" width="131" height="129"/>
+        <image name="fullHeart" width="131" height="129"/>
         <image name="logoHapper" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
