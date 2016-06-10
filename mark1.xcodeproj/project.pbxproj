@@ -24,6 +24,8 @@
 		550E0BCF1CF59B8B00AD3E2E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */; };
 		550E0BD11CF59B9000AD3E2E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BD01CF59B9000AD3E2E /* FBSDKLoginKit.framework */; };
 		550E0BD31CF59B9C00AD3E2E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BD21CF59B9C00AD3E2E /* FBSDKShareKit.framework */; };
+		5597E3B01D0ACCED00BC4CDA /* cropVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597E3AF1D0ACCED00BC4CDA /* cropVC.swift */; };
+		5597E3B21D0ACD2400BC4CDA /* marqueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597E3B11D0ACD2400BC4CDA /* marqueVC.swift */; };
 		55A2518D1D01BED4009CFE55 /* coeurVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2518C1D01BED4009CFE55 /* coeurVC.swift */; };
 		55A60C681CFD997E0034A0FB /* containerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A60C671CFD997E0034A0FB /* containerVC.swift */; };
 		55A60C6A1CFDA6560034A0FB /* leftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A60C691CFDA6560034A0FB /* leftMenuVC.swift */; };
@@ -74,6 +76,8 @@
 		550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		550E0BD01CF59B9000AD3E2E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		550E0BD21CF59B9C00AD3E2E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		5597E3AF1D0ACCED00BC4CDA /* cropVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cropVC.swift; sourceTree = "<group>"; };
+		5597E3B11D0ACD2400BC4CDA /* marqueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = marqueVC.swift; sourceTree = "<group>"; };
 		55A2518C1D01BED4009CFE55 /* coeurVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coeurVC.swift; sourceTree = "<group>"; };
 		55A60C671CFD997E0034A0FB /* containerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = containerVC.swift; sourceTree = "<group>"; };
 		55A60C691CFDA6560034A0FB /* leftMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leftMenuVC.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				55AA331E1CFC3337007440AD /* FBSDKLoginButtonFR.swift */,
 				35639EA51CF4751900B2A54C /* userClass.swift */,
 				355C50AA1CEF66BC00DC2631 /* Main.storyboard */,
+				5597E3AF1D0ACCED00BC4CDA /* cropVC.swift */,
+				5597E3B11D0ACD2400BC4CDA /* marqueVC.swift */,
 				55A2518C1D01BED4009CFE55 /* coeurVC.swift */,
 				55F71BE81CFF4EB3005F44E2 /* amisVC.swift */,
 				55F71BE61CFF3FA8005F44E2 /* compteVC.swift */,
@@ -318,10 +324,12 @@
 				55F71BD71CFF1ADB005F44E2 /* menuClass.swift in Sources */,
 				55A2518D1D01BED4009CFE55 /* coeurVC.swift in Sources */,
 				3543B6F81CF6F114005762E5 /* loginPageVC.swift in Sources */,
+				5597E3B21D0ACD2400BC4CDA /* marqueVC.swift in Sources */,
 				3543B6F41CF607FA005762E5 /* signUpVC.swift in Sources */,
 				55F71BE11CFF3F2E005F44E2 /* wishlistVC.swift in Sources */,
 				55F71BD91CFF3E99005F44E2 /* partageVC.swift in Sources */,
 				355599331CFDECB900F55A06 /* selfieClass.swift in Sources */,
+				5597E3B01D0ACCED00BC4CDA /* cropVC.swift in Sources */,
 				55F71BE91CFF4EB4005F44E2 /* amisVC.swift in Sources */,
 				35F611601D01909200500AC0 /* homeTableCell.swift in Sources */,
 				35639EA61CF4751900B2A54C /* userClass.swift in Sources */,

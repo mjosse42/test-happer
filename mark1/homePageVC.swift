@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -21,6 +22,7 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func checkLoggued() {
         let log = defaults.boolForKey("loggued")
         if (log == false) {
+            FBSDKAccessToken.setCurrentAccessToken(nil)
             let story = UIStoryboard(name: "Main", bundle: nil)
             let vc = story.instantiateViewControllerWithIdentifier("mainPage") as! mainPageVC
             self.presentViewController(vc, animated: true, completion: nil)

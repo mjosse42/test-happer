@@ -8,10 +8,14 @@
 
 import UIKit
 
-class partageVC: UIViewController {
+class partageVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    let imagePicker: UIImagePickerController? = UIImagePickerController()
+    var pickedImage: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,14 +27,36 @@ class partageVC: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("scroller", object: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destination = segue.destinationViewController as! cropVC
+        destination.pickedImage = pickedImage
     }
-    */
 
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        pickedImage = image
+        dismissViewControllerAnimated(false, completion: {() -> Void in self.performSegueWithIdentifier("partageToCrop", sender: nil)})
+    }
+    @IBAction func chargerPhoto(sender: UIButton) {
+        imagePicker!.allowsEditing = false
+        imagePicker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        presentViewController(imagePicker!, animated: true, completion: nil)
+    }
+    @IBAction func prendrePhoto(sender: UIButton) {
+        if UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imagePicker!.allowsEditing = false
+            imagePicker!.sourceType = UIImagePickerControllerSourceType.Camera
+            imagePicker!.cameraCaptureMode = .Photo
+            presentViewController(imagePicker!, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Camera Not Found", message: "This device has no Camera", preferredStyle: .Alert)
+            let ok = UIAlertAction(title: "OK", style:.Default, handler: nil)
+            alert.addAction(ok)
+            presentViewController(alert, animated: true, completion: nil)
+        }
+    }
 }

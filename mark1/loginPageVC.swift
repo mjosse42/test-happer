@@ -121,9 +121,9 @@ class loginPageVC: UIViewController, UITextFieldDelegate
         self.defaults.setObject(user.getRank(), forKey: "rank")
         self.defaults.setObject(user.getCredit(), forKey: "credits")
         self.defaults.setBool(user.getLog(), forKey: "loggued")
-        self.defaults.setInteger(user.getUserId(), forKey: "userId")
+        self.defaults.setInteger(user.getUserId(), forKey: "id")
         self.defaults.setObject(user.getUserName(), forKey: "userName")
-        self.defaults.setInteger(user.getXp(), forKey: "xP")
+        self.defaults.setInteger(user.getXp(), forKey: "xp")
         self.defaults.setInteger(5, forKey: "happies")
     }
 
