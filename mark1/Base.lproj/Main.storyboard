@@ -219,7 +219,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoHapper" translatesAutoresizingMaskIntoConstraints="NO" id="79e-hy-cRP">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="79e-hy-cRP">
                                 <rect key="frame" x="167" y="248" width="80" height="80"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -1561,8 +1561,8 @@
         <image name="selfie14" width="548" height="548"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jEL-Za-n6W"/>
-        <segue reference="Klt-wO-wzK"/>
+        <segue reference="N5r-4J-dfS"/>
+        <segue reference="zoh-3y-ipI"/>
         <segue reference="JjT-2F-qql"/>
     </inferredMetricsTieBreakers>
 </document>
