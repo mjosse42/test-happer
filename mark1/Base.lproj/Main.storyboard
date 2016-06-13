@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -174,7 +174,7 @@
                                     <segue destination="1tZ-WF-BKT" kind="show" animates="NO" id="XOI-gn-Pk4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoHapper" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-qf-EkM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-qf-EkM">
                                 <rect key="frame" x="167" y="248" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9qo-KP-Bgz"/>
@@ -316,7 +316,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoHapper" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-Lz-lne">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-Lz-lne">
                                 <rect key="frame" x="167" y="248" width="80" height="80"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -1197,7 +1197,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wju-5c-WaT">
                                 <rect key="frame" x="177" y="568" width="60" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoHapper" translatesAutoresizingMaskIntoConstraints="NO" id="TwM-yG-0fK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_Happer" translatesAutoresizingMaskIntoConstraints="NO" id="TwM-yG-0fK">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     </imageView>
                                 </subviews>
@@ -1556,12 +1556,13 @@
         <image name="filledStar" width="131" height="129"/>
         <image name="fullHeart" width="131" height="129"/>
         <image name="logoHapper" width="100" height="100"/>
+        <image name="logo_Happer" width="512" height="512"/>
         <image name="partageView" width="285" height="248"/>
         <image name="selfie14" width="548" height="548"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vaA-bI-tNt"/>
         <segue reference="jEL-Za-n6W"/>
-        <segue reference="7pM-JU-2iu"/>
+        <segue reference="Klt-wO-wzK"/>
+        <segue reference="JjT-2F-qql"/>
     </inferredMetricsTieBreakers>
 </document>
