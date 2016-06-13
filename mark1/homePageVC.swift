@@ -43,7 +43,7 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // partie micka dessous
         
         table.delegate = self
-        self.selfies = makeSelfie()
+        // self.selfies = makeSelfie()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapLogo))
         self.viewPB.userInteractionEnabled = true
         self.viewPB.addGestureRecognizer(tapGesture)
@@ -93,16 +93,16 @@ class homePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK : fonctions tableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.selfies.count
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.table.dequeueReusableCellWithIdentifier("HTC", forIndexPath: indexPath) as! homeTableCell
-        let selfie = self.selfies[indexPath.row]
-        cell.likes.text = selfie.getLike()
-        cell.outfit.text = selfie.getOutfit() as String
-        cell.rating.rating = selfie.getRate() as Float
-        cell.photo.image = selfie.getImage()
+        //let selfie = self.selfies[indexPath.row]
+        cell.likes.text = "42" //selfie.getLike()
+        cell.outfit.text = "#OOTD"//selfie.getOutfit() as String
+        cell.rating.rating = 3//selfie.getRate() as Float
+        //cell.photo.image = //selfie.getImage()
         return cell
     }
     

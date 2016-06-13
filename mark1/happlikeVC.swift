@@ -67,7 +67,7 @@ class happlikeVC: UIViewController {
         initPB()
         self.modoView.layer.cornerRadius = 25
         self.uploadView.layer.cornerRadius = 25
-        initImage()
+        //initImage()
         self.defaults.setFloat(0.0, forKey: "currentCount")
         self.defaults.setFloat(5.0, forKey: "maxCount")
         self.defaults.setInteger(5, forKey: "happieCount")
@@ -187,8 +187,7 @@ class happlikeVC: UIViewController {
         self.liked = false
         self.likedIcon.image = UIImage(named: "emptyHeart")
         if (self.ratingControl.rating > 0) {
-            if (self.index < selfies.count - 1) {
-                self.currentSelfie.image = self.selfies [self.index].getImage()
+//                self.currentSelfie.image = self.selfies [self.index].getImage()
                 self.ratingControl.rating = 0
                 self.happiePB.progress += self.ammount
                 if (self.happiePB.progress >= 1) {
@@ -203,7 +202,7 @@ class happlikeVC: UIViewController {
                         self.rankPB.progress = 0
                     }
                 }
-            }
+            
         }
     }
     
