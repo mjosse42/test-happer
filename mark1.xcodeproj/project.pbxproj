@@ -24,6 +24,8 @@
 		550E0BCF1CF59B8B00AD3E2E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */; };
 		550E0BD11CF59B9000AD3E2E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BD01CF59B9000AD3E2E /* FBSDKLoginKit.framework */; };
 		550E0BD31CF59B9C00AD3E2E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550E0BD21CF59B9C00AD3E2E /* FBSDKShareKit.framework */; };
+		5512875F1D0EBD3800DF8383 /* RemachineScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5512875E1D0EBD3800DF8383 /* RemachineScript.ttf */; };
+		551287611D0EBD4B00DF8383 /* FuturaStdMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551287601D0EBD4B00DF8383 /* FuturaStdMedium.otf */; };
 		5597E3B01D0ACCED00BC4CDA /* cropVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597E3AF1D0ACCED00BC4CDA /* cropVC.swift */; };
 		5597E3B21D0ACD2400BC4CDA /* marqueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597E3B11D0ACD2400BC4CDA /* marqueVC.swift */; };
 		55A2518D1D01BED4009CFE55 /* coeurVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2518C1D01BED4009CFE55 /* coeurVC.swift */; };
@@ -76,6 +78,8 @@
 		550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		550E0BD01CF59B9000AD3E2E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		550E0BD21CF59B9C00AD3E2E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		5512875E1D0EBD3800DF8383 /* RemachineScript.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RemachineScript.ttf; sourceTree = "<group>"; };
+		551287601D0EBD4B00DF8383 /* FuturaStdMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaStdMedium.otf; sourceTree = "<group>"; };
 		5597E3AF1D0ACCED00BC4CDA /* cropVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cropVC.swift; sourceTree = "<group>"; };
 		5597E3B11D0ACD2400BC4CDA /* marqueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = marqueVC.swift; sourceTree = "<group>"; };
 		55A2518C1D01BED4009CFE55 /* coeurVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coeurVC.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		355C509A1CEF66BA00DC2631 = {
 			isa = PBXGroup;
 			children = (
+				551287601D0EBD4B00DF8383 /* FuturaStdMedium.otf */,
+				5512875E1D0EBD3800DF8383 /* RemachineScript.ttf */,
 				55E891E81CF5F87600BF79D3 /* Didot.ttf */,
 				55E891E61CF5F86900BF79D3 /* NeutraTextBook.otf */,
 				550E0BCE1CF59B8B00AD3E2E /* FBSDKCoreKit.framework */,
@@ -286,6 +292,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551287611D0EBD4B00DF8383 /* FuturaStdMedium.otf in Resources */,
+				5512875F1D0EBD3800DF8383 /* RemachineScript.ttf in Resources */,
 				355C50B11CEF66BD00DC2631 /* LaunchScreen.storyboard in Resources */,
 				355C50AE1CEF66BC00DC2631 /* Assets.xcassets in Resources */,
 				355C50AC1CEF66BC00DC2631 /* Main.storyboard in Resources */,

@@ -10,21 +10,42 @@ import UIKit
 
 class partageVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    @IBOutlet weak var styleLabel: UILabel!
+    @IBOutlet weak var chargerButton: UIButton!
+    @IBOutlet weak var prendreButton: UIButton!
     let imagePicker: UIImagePickerController? = UIImagePickerController()
     var pickedImage: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker?.delegate = self
+        chargerButton.layer.cornerRadius = (chargerButton.frame.size.height / 2) - 3
+        prendreButton.layer.cornerRadius = (prendreButton.frame.size.height / 2) - 3
+        styleLabel.layer.masksToBounds = true
+        let borderBottom = CALayer()
+        borderBottom.borderColor = UIColor.blackColor().CGColor
+        borderBottom.frame = CGRect(x: 0.0, y: styleLabel.frame.height - 1.0, width: styleLabel.frame.width, height: 1.0)
+        borderBottom.borderWidth = 1.0
+        styleLabel.layer.addSublayer(borderBottom)
+        let borderTop = CALayer()
+        borderTop.borderColor = UIColor.blackColor().CGColor
+        borderTop.frame = CGRect(x: styleLabel.frame.width / 4, y: 0.0, width: styleLabel.frame.width / 2, height: 1.0)
+        borderTop.borderWidth = 1.0
+        styleLabel.layer.addSublayer(borderTop)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        NSNotificationCenter.defaultCenter().postNotificationName("push", object: nil)
     }
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         NSNotificationCenter.defaultCenter().postNotificationName("scroller", object: nil)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

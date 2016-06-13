@@ -21,6 +21,11 @@ class cropVC: UIViewController, UIScrollViewDelegate {
         initImageView()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        NSNotificationCenter.defaultCenter().postNotificationName("push", object: nil)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

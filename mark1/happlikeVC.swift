@@ -33,7 +33,7 @@ class happlikeVC: UIViewController {
     @IBOutlet weak var nbHappies: UILabel!
     @IBOutlet weak var ratingView: UIControl!
     @IBOutlet weak var modoView: UIView!
-    @IBOutlet weak var uploadView: UIView!
+    @IBOutlet weak var uploadView: UIButton!
     @IBOutlet weak var nbCredits: UILabel!
     
     
@@ -65,8 +65,8 @@ class happlikeVC: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(happlikeVC.endRating), name: "ratingOK", object: nil)
         
         initPB()
-        self.modoView.layer.cornerRadius = 25
-        self.uploadView.layer.cornerRadius = 25
+        self.modoView.layer.cornerRadius = self.modoView.frame.height / 2
+        self.uploadView.layer.cornerRadius = self.uploadView.frame.height / 2
         //initImage()
         self.defaults.setFloat(0.0, forKey: "currentCount")
         self.defaults.setFloat(5.0, forKey: "maxCount")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -23,6 +23,19 @@
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
             <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+            <string>NeutraText-BookSC</string>
+        </mutableArray>
+        <mutableArray key="RemachineScript.ttf">
+            <string>RemachineScriptPersonalUseOnly</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -509,34 +522,28 @@
                                                     <constraint firstItem="dSX-19-S9v" firstAttribute="centerX" secondItem="6Yr-3y-aaD" secondAttribute="centerX" id="d9p-EJ-9Ol"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Go0-bJ-Xkw">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8i-He-8Ix">
                                                 <rect key="frame" x="356" y="17" width="50" height="50"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Appareil_photo" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-Yt-8sC">
-                                                        <rect key="frame" x="8" y="10" width="35" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="Lho-Jp-bVZ"/>
-                                                            <constraint firstAttribute="width" constant="35" id="zeJ-zT-wor"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="Ttz-Yt-8sC" firstAttribute="centerX" secondItem="Go0-bJ-Xkw" secondAttribute="centerX" id="0xE-4R-3zJ"/>
-                                                    <constraint firstAttribute="height" constant="50" id="2dJ-aH-ZGg"/>
-                                                    <constraint firstItem="Ttz-Yt-8sC" firstAttribute="centerY" secondItem="Go0-bJ-Xkw" secondAttribute="centerY" id="IVa-aI-nnc"/>
-                                                    <constraint firstAttribute="width" constant="50" id="hya-Zu-XDR"/>
+                                                    <constraint firstAttribute="width" constant="50" id="h6m-7s-fEl"/>
+                                                    <constraint firstAttribute="height" constant="50" id="yed-GN-Wk8"/>
                                                 </constraints>
-                                            </view>
+                                                <inset key="contentEdgeInsets" minX="7" minY="10" maxX="7" maxY="10"/>
+                                                <state key="normal" image="Appareil_photo"/>
+                                                <connections>
+                                                    <segue destination="cpJ-Rl-dN4" kind="show" id="vaA-bI-tNt"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="6Uw-nI-39a"/>
-                                            <constraint firstItem="Go0-bJ-Xkw" firstAttribute="centerY" secondItem="QTJ-aZ-hyS" secondAttribute="centerY" constant="-8" id="HQ3-Tv-4od"/>
-                                            <constraint firstAttribute="trailing" secondItem="Go0-bJ-Xkw" secondAttribute="trailing" constant="8" id="INd-0m-dwS"/>
+                                            <constraint firstItem="g8i-He-8Ix" firstAttribute="centerY" secondItem="QTJ-aZ-hyS" secondAttribute="centerY" constant="-8" id="Fxy-9v-W4t"/>
                                             <constraint firstItem="bH1-0Y-i5w" firstAttribute="centerY" secondItem="QTJ-aZ-hyS" secondAttribute="centerY" id="OiF-6w-AZ5"/>
                                             <constraint firstItem="6Yr-3y-aaD" firstAttribute="leading" secondItem="QTJ-aZ-hyS" secondAttribute="leading" constant="8" id="VZc-xM-YpY"/>
                                             <constraint firstItem="6Yr-3y-aaD" firstAttribute="centerY" secondItem="QTJ-aZ-hyS" secondAttribute="centerY" constant="-8" id="liG-uV-RAe"/>
+                                            <constraint firstAttribute="trailing" secondItem="g8i-He-8Ix" secondAttribute="trailing" constant="8" id="vXz-TB-9VI"/>
                                             <constraint firstItem="bH1-0Y-i5w" firstAttribute="centerX" secondItem="QTJ-aZ-hyS" secondAttribute="centerX" id="vxg-6G-GiS"/>
                                         </constraints>
                                     </view>
@@ -682,7 +689,7 @@
                         <outlet property="ratingControl" destination="Fij-S3-zn3" id="oKa-rx-Scp"/>
                         <outlet property="ratingView" destination="bH1-0Y-i5w" id="Rm1-WE-fG0"/>
                         <outlet property="topView" destination="kNL-qo-V5X" id="J7V-NQ-myw"/>
-                        <outlet property="uploadView" destination="Go0-bJ-Xkw" id="HZt-fj-gPH"/>
+                        <outlet property="uploadView" destination="g8i-He-8Ix" id="rxf-pI-Jup"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7A4-SG-JV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -702,12 +709,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLL-xY-QTa">
-                                <rect key="frame" x="132" y="322" width="150" height="42"/>
+                                <rect key="frame" x="132" y="530" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="iam-eU-hks"/>
-                                    <constraint firstAttribute="width" constant="150" id="sEb-Ci-bA4"/>
+                                    <constraint firstAttribute="width" constant="150" id="Ggk-ao-UxM"/>
+                                    <constraint firstAttribute="height" constant="30" id="r0r-Kr-sov"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="15"/>
                                 <state key="normal" title="Charger une photo">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -716,12 +724,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye1-V1-5jO">
-                                <rect key="frame" x="132" y="372" width="150" height="42"/>
+                                <rect key="frame" x="132" y="568" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="2UW-pt-BtM"/>
-                                    <constraint firstAttribute="width" constant="150" id="QQf-19-XuB"/>
+                                    <constraint firstAttribute="height" constant="30" id="85y-DM-H1t"/>
+                                    <constraint firstAttribute="width" constant="150" id="YcK-fy-FQV"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="15"/>
                                 <state key="normal" title="Prendre une photo">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -729,16 +738,52 @@
                                     <action selector="prendrePhoto:" destination="cpJ-Rl-dN4" eventType="touchUpInside" id="V7s-JF-Kys"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mettez en ligne vos plus beaux style" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9R-eq-0gT">
+                                <rect key="frame" x="84" y="432" width="246" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="2Zb-03-bx6"/>
+                                    <constraint firstAttribute="height" constant="90" id="TbO-r6-lMn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RemachineScriptPersonalUseOnly" family="Remachine Script Personal Use " pointSize="44"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partageView" translatesAutoresizingMaskIntoConstraints="NO" id="9hW-sR-7aM">
+                                <rect key="frame" x="84" y="210" width="246" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="Lt2-bm-ePh"/>
+                                    <constraint firstAttribute="width" constant="246" id="UjQ-Dt-rhk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hat-Ej-y9W">
+                                <rect key="frame" x="164" y="181" width="86" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="DTW-3v-GJQ"/>
+                                    <constraint firstAttribute="width" constant="86" id="b4S-Y3-oqs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HLL-xY-QTa" firstAttribute="centerY" secondItem="EaC-gE-HD0" secondAttribute="centerY" constant="-25" id="DeN-6q-BXK"/>
-                            <constraint firstItem="ye1-V1-5jO" firstAttribute="centerY" secondItem="EaC-gE-HD0" secondAttribute="centerY" constant="25" id="XBz-rv-rUj"/>
-                            <constraint firstItem="ye1-V1-5jO" firstAttribute="centerX" secondItem="EaC-gE-HD0" secondAttribute="centerX" id="bQK-QP-by1"/>
-                            <constraint firstItem="HLL-xY-QTa" firstAttribute="centerX" secondItem="EaC-gE-HD0" secondAttribute="centerX" id="ycE-dz-otu"/>
+                            <constraint firstItem="hat-Ej-y9W" firstAttribute="centerX" secondItem="EaC-gE-HD0" secondAttribute="centerX" id="CEa-ej-reo"/>
+                            <constraint firstItem="c9R-eq-0gT" firstAttribute="centerX" secondItem="EaC-gE-HD0" secondAttribute="centerX" id="Fcj-h1-L6q"/>
+                            <constraint firstItem="c9R-eq-0gT" firstAttribute="top" secondItem="9hW-sR-7aM" secondAttribute="bottom" constant="8" id="GS2-Ih-yGk"/>
+                            <constraint firstItem="HLL-xY-QTa" firstAttribute="centerX" secondItem="EaC-gE-HD0" secondAttribute="centerX" id="Hng-Im-uUG"/>
+                            <constraint firstItem="ye1-V1-5jO" firstAttribute="top" secondItem="HLL-xY-QTa" secondAttribute="bottom" constant="8" id="TH2-aB-wP4"/>
+                            <constraint firstItem="HLL-xY-QTa" firstAttribute="top" secondItem="c9R-eq-0gT" secondAttribute="bottom" constant="8" id="VLk-Um-7iP"/>
+                            <constraint firstItem="9hW-sR-7aM" firstAttribute="top" secondItem="hat-Ej-y9W" secondAttribute="bottom" constant="8" id="Yri-qu-yjJ"/>
+                            <constraint firstItem="9hW-sR-7aM" firstAttribute="centerX" secondItem="EaC-gE-HD0" secondAttribute="centerX" id="mw3-9F-eAg"/>
+                            <constraint firstItem="ye1-V1-5jO" firstAttribute="centerX" secondItem="EaC-gE-HD0" secondAttribute="centerX" id="sZa-zC-QFF"/>
+                            <constraint firstItem="9hW-sR-7aM" firstAttribute="centerY" secondItem="EaC-gE-HD0" secondAttribute="centerY" constant="-51" id="xT6-vd-mEY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chargerButton" destination="HLL-xY-QTa" id="MEO-fK-Dtc"/>
+                        <outlet property="prendreButton" destination="ye1-V1-5jO" id="2ju-6s-rbZ"/>
+                        <outlet property="styleLabel" destination="hat-Ej-y9W" id="iTe-3d-3zt"/>
                         <segue destination="QzX-qY-1fB" kind="show" identifier="partageToCrop" id="DgH-hd-oG5"/>
                     </connections>
                 </viewController>
@@ -765,6 +810,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Lgy-v2-kVA"/>
                                     <constraint firstAttribute="width" constant="250" id="hqT-VN-FIR"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="15"/>
                                 <state key="normal" title="Suivant">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -772,16 +818,6 @@
                                     <action selector="cropButton:" destination="QzX-qY-1fB" eventType="touchUpInside" id="OZj-eK-eXi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recadrer la photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0z-xD-4eg">
-                                <rect key="frame" x="139" y="189" width="136" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="YtC-hc-WoU"/>
-                                    <constraint firstAttribute="height" constant="21" id="bLo-6i-zQb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGn-TA-As7">
                                 <rect key="frame" x="0.0" y="218" width="414" height="300"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -789,6 +825,16 @@
                                     <constraint firstAttribute="height" constant="300" id="acI-tq-H5Z"/>
                                 </constraints>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recadrer la photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0z-xD-4eg">
+                                <rect key="frame" x="138" y="189" width="139" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="YtC-hc-WoU"/>
+                                    <constraint firstAttribute="height" constant="21" id="bLo-6i-zQb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -829,6 +875,7 @@
                                     <constraint firstAttribute="height" constant="30" id="04z-kS-Hcv"/>
                                     <constraint firstAttribute="width" constant="150" id="es0-Sd-eHF"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="21"/>
                                 <state key="normal" title="#OOTD">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -843,6 +890,7 @@
                                     <constraint firstAttribute="height" constant="30" id="SFU-hr-9fM"/>
                                     <constraint firstAttribute="width" constant="150" id="cV5-Ww-P6j"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="21"/>
                                 <state key="normal" title="#OOTN">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -857,6 +905,7 @@
                                     <constraint firstAttribute="width" constant="250" id="N3P-Ek-KQr"/>
                                     <constraint firstAttribute="height" constant="50" id="YIJ-Hh-8M3"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="15"/>
                                 <state key="normal" title="Enregistrer">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -870,7 +919,7 @@
                                     <constraint firstAttribute="width" constant="83" id="7D1-ZO-9UL"/>
                                     <constraint firstAttribute="height" constant="16" id="cGS-QS-Inq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -880,7 +929,7 @@
                                     <constraint firstAttribute="height" constant="16" id="3uR-91-9hO"/>
                                     <constraint firstAttribute="width" constant="83" id="y8Z-gp-fZi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="NeutraText-BookSC" family="Neutra Text" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1507,9 +1556,11 @@
         <image name="filledStar" width="131" height="129"/>
         <image name="fullHeart" width="131" height="129"/>
         <image name="logoHapper" width="100" height="100"/>
+        <image name="partageView" width="285" height="248"/>
         <image name="selfie14" width="548" height="548"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="vaA-bI-tNt"/>
         <segue reference="jEL-Za-n6W"/>
         <segue reference="7pM-JU-2iu"/>
     </inferredMetricsTieBreakers>
