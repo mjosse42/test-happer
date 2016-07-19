@@ -57,6 +57,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>FacebookUrlSchemeSuffix</key>
+	<string>mark1</string>
 	<key>FacebookAppID</key>
 	<string>842722432498229</string>
 	<key>FacebookDisplayName</key>
